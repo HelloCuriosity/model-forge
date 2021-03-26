@@ -12,7 +12,7 @@ coverage:
 	./gradlew jacocoTestReport
 
 lint:
-	./gradlew lintKotlin detekt --stacktrace
+	./gradlew lintKotlin detekt
 
 unit-test:
 	./gradlew test
