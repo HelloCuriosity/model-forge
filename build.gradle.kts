@@ -12,18 +12,42 @@ plugins {
 
 repositories {
     mavenCentral()
+    jcenter {
+        content {
+            // Only download the 'kotlinx-html-jvm' module from JCenter, but nothing else.
+            // detekt needs 'kotlinx-html-jvm' for the HTML report.
+            // TODO: update me when available on maven central
+            // https://github.com/Kotlin/kotlinx.html/issues/81
+            // https://github.com/Kotlin/kotlinx.html/issues/173
+            includeModule("org.jetbrains.kotlinx", "kotlinx-html-jvm")
+        }
+    }
 }
 
 dependencies {
+    implementation("org.junit.jupiter:junit-jupiter:5.4.2")
     testImplementation(kotlin("test-junit"))
+}
+
+tasks.withType<KotlinCompile> {
+    kotlinOptions.jvmTarget = "1.8"
 }
 
 tasks.test {
     useJUnit()
 }
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+detekt {
+    reports {
+        html.enabled = true
+        xml.enabled = true
+        txt.enabled = false
+        sarif.enabled = false
+    }
+}
+
+jacoco {
+    toolVersion = "0.8.6"
 }
 
 tasks.jacocoTestReport {
@@ -32,8 +56,4 @@ tasks.jacocoTestReport {
         html.isEnabled = false
         xml.isEnabled = true
     }
-}
-
-jacoco {
-    toolVersion = "0.8.6"
 }
