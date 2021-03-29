@@ -25,7 +25,10 @@ repositories {
 }
 
 dependencies {
-    implementation("org.junit.jupiter:junit-jupiter:5.4.2")
+    implementation("com.thedeanda:lorem:2.1")
+
+    // Testing
+    testImplementation("org.junit.jupiter:junit-jupiter:5.4.2")
     testImplementation(kotlin("test-junit"))
 }
 
