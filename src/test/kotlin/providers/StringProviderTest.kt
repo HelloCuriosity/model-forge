@@ -3,19 +3,24 @@ package providers
 import org.junit.Test
 import org.junit.jupiter.api.Assertions.assertEquals
 
-
 class StringProviderTest {
 
     @Test
     fun testGet() {
-        val stringProvider = StringProvider()
-
-        for (i in 1..3) {
-            println(i)
-            .get(wordCount = i)
-            val result = string
-            assertEquals(i, "")
+        for (i in 1..1000) {
+            val words = StringProvider(wordCount = i).get()
+            assertEquals(i, words.count())
         }
-
     }
+
+    @Test
+    fun testGet_ZeroOrLess() {
+        for (i in -1000..0) {
+            val words = StringProvider(wordCount = i).get()
+            assertEquals(1, words.count())
+        }
+    }
+
+    private fun String.count(): Int =
+        this.trim().splitToSequence(" ").count()
 }
