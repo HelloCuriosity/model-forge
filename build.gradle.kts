@@ -4,7 +4,7 @@ group = "com.hello.curiosity"
 version = "1.0-SNAPSHOT"
 
 plugins {
-    kotlin("jvm") version "1.4.31"
+    kotlin("jvm") version "1.4.32"
     id("org.jmailen.kotlinter") version "3.4.0"
     id("io.gitlab.arturbosch.detekt") version "1.15.0"
     jacoco
