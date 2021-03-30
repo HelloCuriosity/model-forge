@@ -2,6 +2,7 @@ import org.objenesis.Objenesis
 import org.objenesis.ObjenesisStd
 import org.objenesis.instantiator.ObjectInstantiator
 import providers.IntegerProvider
+import providers.LongProvider
 import providers.StringProvider
 import java.lang.reflect.Field
 import java.lang.reflect.Modifier
@@ -71,6 +72,7 @@ class ModelForge {
     private fun <T> Class<T>.generate(): Any {
         return when (this) {
             Int::class.java -> IntegerProvider().get()
+            Long::class.java -> LongProvider().get()
             String::class.java -> StringProvider().get()
             else -> throw ModelForgeException("$this is not yet supported")
         }
