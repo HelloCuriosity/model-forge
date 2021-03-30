@@ -43,6 +43,7 @@ val list = forge.buildList(TestObject::class.java, 3)
 
 Model Forge currently supports the auto generation for the following types:
 
+* Double
 * Int
 * Long
 * String 
