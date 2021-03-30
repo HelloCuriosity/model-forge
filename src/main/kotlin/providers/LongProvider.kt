@@ -9,8 +9,8 @@ class LongProvider(
 ) : Provider<Long> {
 
     companion object {
-        const val DEFAULT_MIN: Long = 1
-        const val DEFAULT_MAX: Long = 100000
+        const val DEFAULT_MIN = 1L
+        const val DEFAULT_MAX = 100000L
     }
 
     override fun get(): Long =
