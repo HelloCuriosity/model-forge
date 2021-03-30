@@ -9,7 +9,7 @@ class ModelForgeTest {
     @Test
     fun testBuild() {
         val testObject = forge.build(TestObject::class.java)
-        assertTrue { testObject.name.isNotBlank() }
+        assertTrue { testObject.stringValue.isNotBlank() }
     }
 
     @Test
@@ -17,7 +17,7 @@ class ModelForgeTest {
         val list = forge.buildList(TestObject::class.java)
         assertEquals(10, list.size)
         list.map { testObject ->
-            assertTrue { testObject.name.isNotBlank() }
+            assertTrue { testObject.stringValue.isNotBlank() }
         }
     }
 
@@ -27,11 +27,11 @@ class ModelForgeTest {
         val list = forge.buildList(TestObject::class.java, size)
         assertEquals(size, list.size)
         list.map { testObject ->
-            assertTrue { testObject.name.isNotBlank() }
+            assertTrue { testObject.stringValue.isNotBlank() }
         }
     }
 }
 
 data class TestObject(
-    val name: String
+    val stringValue: String
 )
