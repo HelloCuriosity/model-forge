@@ -1,12 +1,12 @@
 import org.objenesis.Objenesis
 import org.objenesis.ObjenesisStd
 import org.objenesis.instantiator.ObjectInstantiator
+import providers.DoubleProvider
 import providers.IntegerProvider
 import providers.LongProvider
 import providers.StringProvider
 import java.lang.reflect.Field
 import java.lang.reflect.Modifier
-import providers.DoubleProvider
 
 class ModelForge {
 
