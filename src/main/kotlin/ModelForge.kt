@@ -6,6 +6,7 @@ import providers.LongProvider
 import providers.StringProvider
 import java.lang.reflect.Field
 import java.lang.reflect.Modifier
+import providers.DoubleProvider
 
 class ModelForge {
 
@@ -71,6 +72,7 @@ class ModelForge {
      */
     private fun <T> Class<T>.generate(): Any {
         return when (this) {
+            Double::class.java -> DoubleProvider().get()
             Int::class.java -> IntegerProvider().get()
             Long::class.java -> LongProvider().get()
             String::class.java -> StringProvider().get()

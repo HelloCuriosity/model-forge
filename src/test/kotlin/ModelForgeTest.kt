@@ -12,10 +12,7 @@ class ModelForgeTest {
     @Test
     fun testBuild() {
         val testObject = forge.build(TestObject::class.java)
-        assertNotNull(testObject.intValue)
-        assertNotNull(testObject.longValue)
-        assertNotNull(testObject.stringValue)
-        assertTrue { testObject.stringValue.isNotBlank() }
+        testObject.assert()
     }
 
     @Test
@@ -23,10 +20,7 @@ class ModelForgeTest {
         val list = forge.buildList(TestObject::class.java)
         assertEquals(10, list.size)
         list.map { testObject ->
-            assertNotNull(testObject.intValue)
-            assertNotNull(testObject.longValue)
-            assertNotNull(testObject.stringValue)
-            assertTrue { testObject.stringValue.isNotBlank() }
+            testObject.assert()
         }
     }
 
@@ -36,10 +30,7 @@ class ModelForgeTest {
         val list = forge.buildList(TestObject::class.java, size)
         assertEquals(size, list.size)
         list.map { testObject ->
-            assertNotNull(testObject.intValue)
-            assertNotNull(testObject.longValue)
-            assertNotNull(testObject.stringValue)
-            assertTrue { testObject.stringValue.isNotBlank() }
+            testObject.assert()
         }
     }
 
@@ -52,9 +43,18 @@ class ModelForgeTest {
         val testObject = forge.build(UnsupportedTestObject::class.java)
         assertNull(testObject)
     }
+
+    private fun TestObject.assert() {
+        assertNotNull(this.doubleValue)
+        assertNotNull(this.intValue)
+        assertNotNull(this.longValue)
+        assertNotNull(this.stringValue)
+        assertTrue { this.stringValue.isNotBlank() }
+    }
 }
 
 data class TestObject(
+    val doubleValue: Double,
     val intValue: Int,
     val longValue: Long,
     val stringValue: String
