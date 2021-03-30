@@ -1,4 +1,4 @@
-.PHONY: all build clean coverage lint unit-test
+.PHONY: all build clean coverage format lint unit-test
 
 all: clean lint unit-test build
 
@@ -10,6 +10,9 @@ clean:
 
 coverage:
 	./gradlew jacocoTestReport
+
+format:
+	./gradlew formatKotlin
 
 lint:
 	./gradlew lintKotlin detekt
