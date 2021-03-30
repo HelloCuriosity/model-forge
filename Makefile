@@ -1,4 +1,4 @@
-.PHONY: all build clean lint unit-test
+.PHONY: all build clean coverage lint unit-test
 
 all: clean lint unit-test build
 
