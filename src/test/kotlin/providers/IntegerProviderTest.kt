@@ -11,7 +11,7 @@ import org.mockito.kotlin.eq
 import org.mockito.kotlin.verify
 import org.mockito.kotlin.verifyNoMoreInteractions
 import org.mockito.kotlin.whenever
-import java.util.Random
+import kotlin.random.Random
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
@@ -43,7 +43,8 @@ class IntegerProviderTest {
     @Test
     fun testGet_RandomCalled() {
         val randomInt = 15
-        whenever(random.nextInt(any())) doReturn randomInt
+        whenever(random.nextInt(any(), any())) doReturn randomInt
+
         val min = 5
         val max = 10
         val integer = IntegerProvider(
@@ -52,9 +53,8 @@ class IntegerProviderTest {
             random = random
         ).get()
 
-        val expected = randomInt + min
-        assertEquals(expected, integer)
+        assertEquals(randomInt, integer)
 
-        verify(random).nextInt(eq(max - min))
+        verify(random).nextInt(eq(min), eq(max))
     }
 }

@@ -11,7 +11,7 @@ import org.mockito.kotlin.eq
 import org.mockito.kotlin.verify
 import org.mockito.kotlin.verifyNoMoreInteractions
 import org.mockito.kotlin.whenever
-import java.util.Random
+import kotlin.random.Random
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
@@ -34,27 +34,27 @@ class LongProviderTest {
 
     @Test
     fun testGet_WithCustomMaxMin() {
-        val min = 5
-        val max = 10
+        val min = 5L
+        val max = 10L
         val long = LongProvider(min = min, max = max).get()
         assertTrue { long in min until max }
     }
 
     @Test
     fun testGet_RandomCalled() {
-        val randomInt = 15
-        whenever(random.nextInt(any())) doReturn randomInt
-        val min = 5
-        val max = 10
+        val randomLong = 15L
+
+        whenever(random.nextLong(any(), any())) doReturn randomLong
+        val min = 5L
+        val max = 10L
         val long = LongProvider(
             min = min,
             max = max,
             random = random
         ).get()
 
-        val expected = (randomInt + min).toLong()
-        assertEquals(expected, long)
+        assertEquals(randomLong, long)
 
-        verify(random).nextInt(eq(max - min))
+        verify(random).nextLong(eq(min), eq(max))
     }
 }
