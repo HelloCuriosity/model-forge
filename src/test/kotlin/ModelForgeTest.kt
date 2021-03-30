@@ -1,6 +1,8 @@
 import org.junit.Test
+import java.util.Random
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
+import kotlin.test.assertNull
 import kotlin.test.assertTrue
 
 class ModelForgeTest {
@@ -36,6 +38,16 @@ class ModelForgeTest {
             assertNotNull(testObject.stringValue)
             assertTrue { testObject.stringValue.isNotBlank() }
         }
+    }
+
+    @Test(expected = ModelForgeException::class)
+    fun testBuild_WithUnsupportedType() {
+        data class UnsupportedTestObject(
+            private val random: Random
+        )
+
+        val testObject = forge.build(UnsupportedTestObject::class.java)
+        assertNull(testObject)
     }
 }
 
