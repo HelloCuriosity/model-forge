@@ -1,11 +1,11 @@
 package providers
 
-import java.util.Random
+import kotlin.random.Random
 
 class IntegerProvider(
     private val min: Int = DEFAULT_MIN,
     private val max: Int = DEFAULT_MAX,
-    private val random: Random = Random()
+    private val random: Random = Random
 ) : Provider<Int> {
     companion object {
         const val DEFAULT_MIN = 1
@@ -13,5 +13,5 @@ class IntegerProvider(
     }
 
     override fun get(): Int =
-        min + random.nextInt(max - min)
+        random.nextInt(min, max)
 }
