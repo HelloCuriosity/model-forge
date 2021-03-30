@@ -1,6 +1,6 @@
 .PHONY: all build clean coverage format lint unit-test
 
-all: clean lint unit-test build
+all: clean format lint unit-test build
 
 build:
 	./gradlew build
