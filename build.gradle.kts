@@ -25,6 +25,7 @@ repositories {
 }
 
 dependencies {
+    implementation("org.objenesis:objenesis:3.2")
     implementation("com.thedeanda:lorem:2.1")
 
     // Testing

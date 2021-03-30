@@ -33,5 +33,5 @@ class ModelForgeTest {
 }
 
 data class TestObject(
-    val name: String = ""
+    val name: String
 )
