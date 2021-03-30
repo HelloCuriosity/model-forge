@@ -5,7 +5,7 @@ import java.lang.reflect.Modifier
 class ModelForge {
 
     fun <T> build(clazz: Class<T>): T {
-        val result: T = clazz.getConstructor().apply {
+        val result: T = clazz.getDeclaredConstructor().apply {
             isAccessible = true
         }.newInstance()
 
@@ -39,7 +39,7 @@ class ModelForge {
     private fun Field.generate(): Any {
         return when (this.type) {
             String::class.java -> StringProvider().get()
-            else -> throw IllegalStateException("${this.type} is not yet supported")
+            else -> throw ModelForgeException("${this.type} is not yet supported")
         }
     }
 }
