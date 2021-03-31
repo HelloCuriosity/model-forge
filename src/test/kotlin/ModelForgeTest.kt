@@ -45,6 +45,7 @@ class ModelForgeTest {
     }
 
     private fun TestObject.assert() {
+        assertNotNull(this.booleanValue)
         assertNotNull(this.doubleValue)
         assertNotNull(this.floatValue)
         assertNotNull(this.intValue)
@@ -55,6 +56,7 @@ class ModelForgeTest {
 }
 
 data class TestObject(
+    val booleanValue: Boolean,
     val doubleValue: Double,
     val floatValue: Float,
     val intValue: Int,
