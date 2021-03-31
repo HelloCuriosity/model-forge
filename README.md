@@ -18,10 +18,10 @@ Model Forge is a library to automate model generation for automated testing:
 ### Define you model
 
 ```kotlin
-data class TestObject(
-    val intValue: Int,
-    val longValue: Long,
-    val stringValue: String
+data class Employee(
+    val id: Long,
+    val name: String,
+    val age: Int,
 )
 ```
 
@@ -29,7 +29,7 @@ data class TestObject(
 
 ```kotlin
 val forge = ModelForge()
-val testObject = forge.build(TestObject::class.java)
+val testObject = forge.build(Employee::class.java)
 ```
 
 You can create different sized lists by specifying the number of elements.
@@ -44,6 +44,7 @@ val list = forge.buildList(TestObject::class.java, 3)
 Model Forge currently supports the auto generation for the following types:
 
 * Double
+* Float
 * Int
 * Long
 * String 
