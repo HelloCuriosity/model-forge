@@ -50,7 +50,7 @@ class ModelForgeTest {
         assertNotNull(this.intValue)
         assertNotNull(this.longValue)
         assertNotNull(this.stringValue)
-        assertTrue { this.stringValue.isNotBlank() }
+        assertTrue(this.stringValue.isNotBlank())
     }
 }
 

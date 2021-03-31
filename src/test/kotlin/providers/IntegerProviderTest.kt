@@ -29,7 +29,7 @@ class IntegerProviderTest {
     @Test
     fun testGet() {
         val integer = IntegerProvider().get()
-        assertTrue { integer in IntegerProvider.DEFAULT_MIN until IntegerProvider.DEFAULT_MAX }
+        assertTrue(integer in IntegerProvider.DEFAULT_MIN until IntegerProvider.DEFAULT_MAX)
     }
 
     @Test
@@ -37,7 +37,7 @@ class IntegerProviderTest {
         val min = 5
         val max = 10
         val integer = IntegerProvider(min = min, max = max).get()
-        assertTrue { integer in min until max }
+        assertTrue(integer in min until max)
     }
 
     @Test

@@ -29,7 +29,7 @@ class LongProviderTest {
     @Test
     fun testGet() {
         val long = LongProvider().get()
-        assertTrue { long in LongProvider.DEFAULT_MIN until LongProvider.DEFAULT_MAX }
+        assertTrue(long in LongProvider.DEFAULT_MIN until LongProvider.DEFAULT_MAX)
     }
 
     @Test
@@ -37,7 +37,7 @@ class LongProviderTest {
         val min = 5L
         val max = 10L
         val long = LongProvider(min = min, max = max).get()
-        assertTrue { long in min until max }
+        assertTrue(long in min until max)
     }
 
     @Test
