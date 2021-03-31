@@ -22,6 +22,7 @@ data class Employee(
     val id: Long,
     val name: String,
     val age: Int,
+    val isTeamLead: Boolean
 )
 ```
 
@@ -43,6 +44,7 @@ val list = forge.buildList(TestObject::class.java, 3)
 
 Model Forge currently supports the auto generation for the following types:
 
+* Boolean
 * Double
 * Float
 * Int
