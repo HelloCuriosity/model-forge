@@ -27,7 +27,6 @@ repositories {
 dependencies {
     implementation("org.objenesis:objenesis:3.2")
     implementation("com.thedeanda:lorem:2.1")
-    implementation("org.threeten:threetenbp:1.5.0")
 
     // Testing
     testImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
