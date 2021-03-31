@@ -1,5 +1,6 @@
 import org.junit.Test
-import java.util.Random
+import java.util.Date
+import kotlin.random.Random
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 import kotlin.test.assertNull
@@ -46,6 +47,7 @@ class ModelForgeTest {
 
     private fun TestObject.assert() {
         assertNotNull(this.booleanValue)
+        assertNotNull(this.dateValue)
         assertNotNull(this.doubleValue)
         assertNotNull(this.floatValue)
         assertNotNull(this.intValue)
@@ -57,6 +59,7 @@ class ModelForgeTest {
 
 data class TestObject(
     val booleanValue: Boolean,
+    val dateValue: Date,
     val doubleValue: Double,
     val floatValue: Float,
     val intValue: Int,

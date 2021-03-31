@@ -21,6 +21,7 @@ Model Forge is a library to automate model generation for automated testing:
 data class Employee(
     val id: Long,
     val name: String,
+    val dob: Date,
     val age: Int,
     val isTeamLead: Boolean
 )
@@ -45,6 +46,7 @@ val list = forge.buildList(TestObject::class.java, 3)
 Model Forge currently supports the auto generation for the following types:
 
 * Boolean
+* Date
 * Double
 * Float
 * Int
