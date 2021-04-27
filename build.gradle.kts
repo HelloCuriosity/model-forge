@@ -1,6 +1,6 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-group = "com.hello.curiosity"
+group = "io.github.hellocuriosity"
 version = "1.0-SNAPSHOT"
 
 plugins {
