@@ -1,4 +1,4 @@
-package providers
+package io.github.hellocuriosity.providers
 
 import org.junit.After
 import org.junit.Test
@@ -16,7 +16,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 @RunWith(MockitoJUnitRunner::class)
-class DoubleProviderTest {
+class FloatProviderTest {
 
     @Mock
     private lateinit var random: Random
@@ -28,18 +28,18 @@ class DoubleProviderTest {
 
     @Test
     fun testGet() {
-        val double = DoubleProvider().get()
-        assertTrue(double >= DoubleProvider.DEFAULT_MIN)
-        assertTrue(double <= DoubleProvider.DEFAULT_MAX)
+        val float = FloatProvider().get()
+        assertTrue(float >= FloatProvider.DEFAULT_MIN)
+        assertTrue(float <= FloatProvider.DEFAULT_MAX)
     }
 
     @Test
     fun testGet_WithCustomMaxMin() {
         val min = 5.0
         val max = 10.0
-        val double = DoubleProvider(min = min, max = max).get()
-        assertTrue(double >= min)
-        assertTrue(double <= max)
+        val float = FloatProvider(min = min, max = max).get()
+        assertTrue(float >= min)
+        assertTrue(float <= max)
     }
 
     @Test
@@ -49,13 +49,13 @@ class DoubleProviderTest {
 
         val min = 5.0
         val max = 10.0
-        val double = DoubleProvider(
+        val float = FloatProvider(
             min = min,
             max = max,
             random = random
         ).get()
 
-        assertEquals(randomDouble, double)
+        assertEquals(randomDouble.toFloat(), float)
 
         verify(random).nextDouble(eq(min), eq(max))
     }

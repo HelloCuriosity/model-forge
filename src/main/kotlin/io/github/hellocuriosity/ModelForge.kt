@@ -1,13 +1,15 @@
+package io.github.hellocuriosity
+
+import io.github.hellocuriosity.providers.BooleanProvider
+import io.github.hellocuriosity.providers.DateProvider
+import io.github.hellocuriosity.providers.DoubleProvider
+import io.github.hellocuriosity.providers.FloatProvider
+import io.github.hellocuriosity.providers.IntegerProvider
+import io.github.hellocuriosity.providers.LongProvider
+import io.github.hellocuriosity.providers.StringProvider
 import org.objenesis.Objenesis
 import org.objenesis.ObjenesisStd
 import org.objenesis.instantiator.ObjectInstantiator
-import providers.BooleanProvider
-import providers.DateProvider
-import providers.DoubleProvider
-import providers.FloatProvider
-import providers.IntegerProvider
-import providers.LongProvider
-import providers.StringProvider
 import java.lang.reflect.Field
 import java.lang.reflect.Modifier
 import java.util.Date

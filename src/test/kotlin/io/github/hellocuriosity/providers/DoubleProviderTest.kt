@@ -1,4 +1,4 @@
-package providers
+package io.github.hellocuriosity.providers
 
 import org.junit.After
 import org.junit.Test
@@ -16,7 +16,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 @RunWith(MockitoJUnitRunner::class)
-class IntegerProviderTest {
+class DoubleProviderTest {
 
     @Mock
     private lateinit var random: Random
@@ -28,33 +28,35 @@ class IntegerProviderTest {
 
     @Test
     fun testGet() {
-        val integer = IntegerProvider().get()
-        assertTrue(integer in IntegerProvider.DEFAULT_MIN until IntegerProvider.DEFAULT_MAX)
+        val double = DoubleProvider().get()
+        assertTrue(double >= DoubleProvider.DEFAULT_MIN)
+        assertTrue(double <= DoubleProvider.DEFAULT_MAX)
     }
 
     @Test
     fun testGet_WithCustomMaxMin() {
-        val min = 5
-        val max = 10
-        val integer = IntegerProvider(min = min, max = max).get()
-        assertTrue(integer in min until max)
+        val min = 5.0
+        val max = 10.0
+        val double = DoubleProvider(min = min, max = max).get()
+        assertTrue(double >= min)
+        assertTrue(double <= max)
     }
 
     @Test
     fun testGet_RandomCalled() {
-        val randomInt = 15
-        whenever(random.nextInt(any(), any())) doReturn randomInt
+        val randomDouble = 15.0
+        whenever(random.nextDouble(any(), any())) doReturn randomDouble
 
-        val min = 5
-        val max = 10
-        val integer = IntegerProvider(
+        val min = 5.0
+        val max = 10.0
+        val double = DoubleProvider(
             min = min,
             max = max,
             random = random
         ).get()
 
-        assertEquals(randomInt, integer)
+        assertEquals(randomDouble, double)
 
-        verify(random).nextInt(eq(min), eq(max))
+        verify(random).nextDouble(eq(min), eq(max))
     }
 }

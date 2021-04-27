@@ -1,3 +1,5 @@
+package io.github.hellocuriosity
+
 import org.junit.Test
 import kotlin.test.assertEquals
 

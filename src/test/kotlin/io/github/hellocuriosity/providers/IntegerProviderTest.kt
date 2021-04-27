@@ -1,4 +1,4 @@
-package providers
+package io.github.hellocuriosity.providers
 
 import org.junit.After
 import org.junit.Test
@@ -16,7 +16,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 @RunWith(MockitoJUnitRunner::class)
-class LongProviderTest {
+class IntegerProviderTest {
 
     @Mock
     private lateinit var random: Random
@@ -28,33 +28,33 @@ class LongProviderTest {
 
     @Test
     fun testGet() {
-        val long = LongProvider().get()
-        assertTrue(long in LongProvider.DEFAULT_MIN until LongProvider.DEFAULT_MAX)
+        val integer = IntegerProvider().get()
+        assertTrue(integer in IntegerProvider.DEFAULT_MIN until IntegerProvider.DEFAULT_MAX)
     }
 
     @Test
     fun testGet_WithCustomMaxMin() {
-        val min = 5L
-        val max = 10L
-        val long = LongProvider(min = min, max = max).get()
-        assertTrue(long in min until max)
+        val min = 5
+        val max = 10
+        val integer = IntegerProvider(min = min, max = max).get()
+        assertTrue(integer in min until max)
     }
 
     @Test
     fun testGet_RandomCalled() {
-        val randomLong = 15L
+        val randomInt = 15
+        whenever(random.nextInt(any(), any())) doReturn randomInt
 
-        whenever(random.nextLong(any(), any())) doReturn randomLong
-        val min = 5L
-        val max = 10L
-        val long = LongProvider(
+        val min = 5
+        val max = 10
+        val integer = IntegerProvider(
             min = min,
             max = max,
             random = random
         ).get()
 
-        assertEquals(randomLong, long)
+        assertEquals(randomInt, integer)
 
-        verify(random).nextLong(eq(min), eq(max))
+        verify(random).nextInt(eq(min), eq(max))
     }
 }

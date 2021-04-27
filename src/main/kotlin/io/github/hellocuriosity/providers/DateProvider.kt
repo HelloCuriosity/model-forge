@@ -1,4 +1,4 @@
-package providers
+package io.github.hellocuriosity.providers
 
 import java.util.Date
 import kotlin.random.Random

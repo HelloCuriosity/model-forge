@@ -1,4 +1,4 @@
-package providers
+package io.github.hellocuriosity.providers
 
 import com.thedeanda.lorem.LoremIpsum
 
