@@ -2,11 +2,21 @@
 
 set -o pipefail
 
-SONATYPE_USER=$1
-SONATYPE_PASSWORD=$2
-PGP_SIGNING_KEY=$3
-PGP_SIGNING_PASSWORD=$4
+BUILD_NR=${1}
 
-echo "Publishing Model Forge"
-./gradlew -PMAVEN_UPLOAD_USER="$SONATYPE_USER" -PMAVEN_UPLOAD_PWD="$SONATYPE_PASSWORD" \
-    -PPGP_SIGNING_KEY="$PGP_SIGNING_KEY" -PPGP_SIGNING_PASSWORD="$PGP_SIGNING_PASSWORD" build publish
+REPO_DIR="$(cd "$(dirname "$0")/../" && pwd)"
+
+# Create Version
+git fetch --all
+TAG=$(git describe --tags "$(git rev-list --tags --max-count=1)" 2>&1)
+
+if [[ "${IS_RELEASE}" == "true" ]]; then
+  export VERSION="$TAG"
+  echo "Publishing Release: $VERSION"
+else
+  export VERSION="${TAG}.${BUILD_NR}-SNAPSHOT"
+  echo "Publishing Snapshot: $VERSION"
+fi
+
+# Publish
+"${REPO_DIR}"/gradlew build publish

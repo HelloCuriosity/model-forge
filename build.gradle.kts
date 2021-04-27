@@ -1,11 +1,11 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 group = "io.github.hellocuriosity"
-
-version = "0.1.0"
+version = System.getenv("VERSION") ?: "null"
 
 plugins {
-    kotlin("jvm") version "1.4.32"
+
+    kotlin("jvm") version "1.5.0"
 
     // Quality gate
     id("org.jmailen.kotlinter") version "3.4.0"
@@ -81,19 +81,21 @@ tasks.register<Jar>("javadocJar") {
     from(tasks.javadoc.get().destinationDir)
 }
 
-val MAVEN_UPLOAD_USER: String? by project
-val MAVEN_UPLOAD_PWD: String? by project
-
 publishing {
     repositories {
         maven {
             name = "MavenCentral"
-            val releasesRepoUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2"
-            val snapshotsRepoUrl = "https://oss.sonatype.org/content/repositories/snapshots"
-            url = uri(if (version.toString().endsWith("SNAPSHOT")) snapshotsRepoUrl else releasesRepoUrl)
+            val releasesRepoUrl = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2"
+            val snapshotsRepoUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots"
+
+            url = uri(
+                if (System.getenv("IS_RELEASE") == "true") releasesRepoUrl
+                else snapshotsRepoUrl
+            )
+
             credentials {
-                username = MAVEN_UPLOAD_USER
-                password = MAVEN_UPLOAD_PWD
+                username = System.getenv("SONATYPE_USER")
+                password = System.getenv("SONATYPE_PWD")
             }
         }
     }
@@ -130,9 +132,9 @@ publishing {
     }
 
     signing {
-        val PGP_SIGNING_KEY: String? by project
-        val PGP_SIGNING_PASSWORD: String? by project
-        useInMemoryPgpKeys(PGP_SIGNING_KEY, PGP_SIGNING_PASSWORD)
+        val signingKey: String? = System.getenv("SIGNING_KEY")
+        val signingPwd: String? = System.getenv("SIGNING_PWD")
+        useInMemoryPgpKeys(signingKey, signingPwd)
         sign(publishing.publications["mavenJava"])
     }
 }

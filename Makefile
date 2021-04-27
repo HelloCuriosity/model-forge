@@ -1,8 +1,3 @@
-SONATYPE_USER ?= not set
-SONATYPE_PASSWORD ?= not set
-PGP_SIGNING_KEY ?= not set
-PGP_SIGNING_PASSWORD ?= not set
-
 .PHONY: all build clean coverage format lint publish unit-test
 
 all: clean format lint unit-test build
@@ -23,7 +18,7 @@ lint:
 	./gradlew lintKotlin detekt
 
 publish:
-	./scripts/publish.sh ${SONATYPE_USER} ${SONATYPE_PASSWORD} ${PGP_SIGNING_KEY} ${PGP_SIGNING_SONATYPE_PASSWORD}
+	./scripts/publish.sh ${GITHUB_RUN_NUMBER}
 
 unit-test:
 	./gradlew test
