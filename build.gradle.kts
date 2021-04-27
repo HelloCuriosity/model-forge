@@ -1,6 +1,6 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-group = "com.hello.curiosity"
+group = "io.github.hellocuriosity"
 version = "1.0-SNAPSHOT"
 
 plugins {
@@ -31,7 +31,7 @@ dependencies {
     // Testing
     testImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
     testImplementation(kotlin("test-junit"))
-    implementation("org.mockito.kotlin:mockito-kotlin:3.1.0")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:3.1.0")
 }
 
 tasks.withType<KotlinCompile> {

@@ -1,4 +1,4 @@
-package providers
+package io.github.hellocuriosity.providers
 
 import org.junit.After
 import org.junit.Test

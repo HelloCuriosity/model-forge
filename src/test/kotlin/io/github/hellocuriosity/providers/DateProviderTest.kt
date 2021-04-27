@@ -1,5 +1,7 @@
-package providers
+package io.github.hellocuriosity.providers
 
+import io.github.hellocuriosity.providers.DateProvider.Companion.NINETEEN_EIGHTY_SIX
+import io.github.hellocuriosity.providers.DateProvider.Companion.TWENTY_TWENTY_ONE
 import org.junit.After
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -11,8 +13,6 @@ import org.mockito.kotlin.eq
 import org.mockito.kotlin.verify
 import org.mockito.kotlin.verifyNoMoreInteractions
 import org.mockito.kotlin.whenever
-import providers.DateProvider.Companion.NINETEEN_EIGHTY_SIX
-import providers.DateProvider.Companion.TWENTY_TWENTY_ONE
 import kotlin.random.Random
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue

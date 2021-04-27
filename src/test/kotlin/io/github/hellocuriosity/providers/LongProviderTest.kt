@@ -1,4 +1,4 @@
-package providers
+package io.github.hellocuriosity.providers
 
 import org.junit.After
 import org.junit.Test
@@ -16,7 +16,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 @RunWith(MockitoJUnitRunner::class)
-class FloatProviderTest {
+class LongProviderTest {
 
     @Mock
     private lateinit var random: Random
@@ -28,35 +28,33 @@ class FloatProviderTest {
 
     @Test
     fun testGet() {
-        val float = FloatProvider().get()
-        assertTrue(float >= FloatProvider.DEFAULT_MIN)
-        assertTrue(float <= FloatProvider.DEFAULT_MAX)
+        val long = LongProvider().get()
+        assertTrue(long in LongProvider.DEFAULT_MIN until LongProvider.DEFAULT_MAX)
     }
 
     @Test
     fun testGet_WithCustomMaxMin() {
-        val min = 5.0
-        val max = 10.0
-        val float = FloatProvider(min = min, max = max).get()
-        assertTrue(float >= min)
-        assertTrue(float <= max)
+        val min = 5L
+        val max = 10L
+        val long = LongProvider(min = min, max = max).get()
+        assertTrue(long in min until max)
     }
 
     @Test
     fun testGet_RandomCalled() {
-        val randomDouble = 15.0
-        whenever(random.nextDouble(any(), any())) doReturn randomDouble
+        val randomLong = 15L
 
-        val min = 5.0
-        val max = 10.0
-        val float = FloatProvider(
+        whenever(random.nextLong(any(), any())) doReturn randomLong
+        val min = 5L
+        val max = 10L
+        val long = LongProvider(
             min = min,
             max = max,
             random = random
         ).get()
 
-        assertEquals(randomDouble.toFloat(), float)
+        assertEquals(randomLong, long)
 
-        verify(random).nextDouble(eq(min), eq(max))
+        verify(random).nextLong(eq(min), eq(max))
     }
 }
