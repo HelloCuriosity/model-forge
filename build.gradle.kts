@@ -1,13 +1,21 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 group = "io.github.hellocuriosity"
-version = "0.1.0"
+version = System.getenv("VERSION") ?: "null"
 
 plugins {
+
     kotlin("jvm") version "1.4.32"
+
+    // Quality gate
     id("org.jmailen.kotlinter") version "3.4.0"
     id("io.gitlab.arturbosch.detekt") version "1.16.0"
     jacoco
+
+    // Publishing
+    `java-library`
+    `maven-publish`
+    signing
 }
 
 repositories {
@@ -60,5 +68,73 @@ tasks.jacocoTestReport {
         csv.isEnabled = false
         html.isEnabled = false
         xml.isEnabled = true
+    }
+}
+
+tasks.register<Jar>("sourcesJar") {
+    archiveClassifier.set("sources")
+    from(sourceSets.main.get().allJava)
+}
+
+tasks.register<Jar>("javadocJar") {
+    archiveClassifier.set("javadoc")
+    from(tasks.javadoc.get().destinationDir)
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "MavenCentral"
+            val releasesRepoUrl = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2"
+            val snapshotsRepoUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots"
+
+            url = uri(
+                if (System.getenv("IS_RELEASE") == "true") releasesRepoUrl
+                else snapshotsRepoUrl
+            )
+
+            credentials {
+                username = System.getenv("SONATYPE_USER")
+                password = System.getenv("SONATYPE_PWD")
+            }
+        }
+    }
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"])
+            artifact(tasks["sourcesJar"])
+            artifact(tasks["javadocJar"])
+
+            pom {
+                name.set("Model Forge")
+                description.set("Model Forge is a library to automate model generation for automated testing.")
+                url.set("https://github.com/HelloCuriosity/model-forge")
+                licenses {
+                    license {
+                        name.set("MIT Licence")
+                        url.set("https://github.com/HelloCuriosity/model-forge/blob/main/LICENSE")
+                    }
+                }
+                developers {
+                    developer {
+                        id.set("hopeman15")
+                        name.set("Kyle Roe")
+                        email.set("kyle.roe@hello-curiosity.com")
+                    }
+                }
+                scm {
+                    connection.set("scm:git:https://github.com/HelloCuriosity/model-forge.git")
+                    developerConnection.set("scm:git:https://github.com/HelloCuriosity/model-forge.git")
+                    url.set("https://github.com/HelloCuriosity/model-forge")
+                }
+            }
+        }
+    }
+
+    signing {
+        val signingKey: String? = System.getenv("SIGNING_KEY")
+        val signingPwd: String? = System.getenv("SIGNING_PWD")
+        useInMemoryPgpKeys(signingKey, signingPwd)
+        sign(publishing.publications["mavenJava"])
     }
 }
