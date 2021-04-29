@@ -5,7 +5,7 @@ version = System.getenv("VERSION") ?: "null"
 
 plugins {
 
-    kotlin("jvm") version "1.5.0"
+    kotlin("jvm") version "1.4.32"
 
     // Quality gate
     id("org.jmailen.kotlinter") version "3.4.0"
