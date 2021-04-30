@@ -42,6 +42,12 @@ dependencies {
     testImplementation("org.mockito.kotlin:mockito-kotlin:3.1.0")
 }
 
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(8))
+    }
+}
+
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
 }
@@ -119,7 +125,6 @@ publishing {
                     developer {
                         id.set("hopeman15")
                         name.set("Kyle Roe")
-                        email.set("kyle.roe@hello-curiosity.com")
                     }
                 }
                 scm {
