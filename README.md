@@ -31,14 +31,26 @@ data class Employee(
 
 ```kotlin
 val forge = ModelForge()
-val testObject = forge.build(Employee::class.java)
+val testObject = forge.build(Employee::class)
+```
+
+or by delegating
+
+```kotlin
+val testObject: TestObject by forgery()
 ```
 
 You can create different sized lists by specifying the number of elements.
 
 ```kotlin
 val forge = ModelForge()
-val list = forge.buildList(TestObject::class.java, 3)
+val list = forge.buildList(TestObject::class, 3)
+```
+
+or by delegating
+
+```kotlin
+val testObjects: List<TestObject> by forgeries()
 ```
 
 ## Supported Types

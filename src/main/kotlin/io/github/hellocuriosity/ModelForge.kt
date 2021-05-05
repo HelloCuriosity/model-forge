@@ -14,7 +14,7 @@ import java.lang.reflect.Field
 import java.lang.reflect.Modifier
 import java.util.Date
 
-class ModelForge {
+open class ModelForge {
 
     /**
      * Creates an automatically generated model object
@@ -24,7 +24,7 @@ class ModelForge {
      *
      *  @return Instance of clazz
      */
-    fun <T> build(clazz: Class<T>): T {
+    open fun <T> build(clazz: Class<T>): T {
         val objenesis: Objenesis = ObjenesisStd()
         val instantiator: ObjectInstantiator<*> = objenesis.getInstantiatorOf(clazz)
         val model: T = instantiator.newInstance() as T
@@ -47,7 +47,7 @@ class ModelForge {
      *
      *  @return Instance of clazz
      */
-    fun <T> buildList(clazz: Class<T>, size: Int = 10): List<T> {
+    open fun <T> buildList(clazz: Class<T>, size: Int = 10): List<T> {
         val list = mutableListOf<T>()
         for (i in 0 until size) {
             list.add(i, build(clazz))
