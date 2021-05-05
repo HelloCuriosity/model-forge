@@ -37,7 +37,7 @@ val testObject = forge.build(Employee::class)
 or by delegating
 
 ```kotlin
-val testObject: TestObject by forgery()
+val testObject: Employee by forgery()
 ```
 
 You can create different sized lists by specifying the number of elements.
