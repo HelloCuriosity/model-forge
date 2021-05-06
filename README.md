@@ -15,6 +15,30 @@ Model Forge is a library to automate model generation for automated testing:
 
 ## Getting Started
 
+### Gradle Setup
+
+<details open>
+<summary>Kotlin</summary>
+
+```kotlin
+dependencies {
+    testImplementation("io.github.hellocuriosity:model-forge:0.1.1")
+}
+```
+
+</details>
+
+<details>
+<summary>Groovy</summary>
+
+```groovy
+dependencies {
+    testImplementation 'io.github.hellocuriosity:model-forge:0.1.1'
+}
+```
+
+</details>
+
 ### Define you model
 
 ```kotlin
