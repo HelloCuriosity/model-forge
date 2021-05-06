@@ -1,4 +1,4 @@
-.PHONY: all build clean coverage format lint publish unit-test
+.PHONY: all build clean coverage format lint publish test
 
 all: clean format lint test build
 
