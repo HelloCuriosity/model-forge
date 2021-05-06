@@ -5,19 +5,16 @@ import kotlin.random.Random
 import kotlin.test.assertEquals
 import kotlin.test.assertNull
 
-class ModelForgeTest {
-
-    private val forge = ModelForge()
-
+class ForgeryTest {
     @Test
-    fun testBuild() {
-        val testObject = forge.build(TestObject::class.java)
+    fun testForgery() {
+        val testObject: TestObject by forgery()
         testObject.assert()
     }
 
     @Test
-    fun testBuildList_Default() {
-        val list = forge.buildList(TestObject::class.java)
+    fun testForgeries_Default() {
+        val list: List<TestObject> by forgeries()
         assertEquals(10, list.size)
         list.map { testObject ->
             testObject.assert()
@@ -25,9 +22,9 @@ class ModelForgeTest {
     }
 
     @Test
-    fun testBuildList_WithSize() {
+    fun testForgeries_WithSize() {
         val size = 3
-        val list = forge.buildList(TestObject::class.java, size)
+        val list: List<TestObject> by forgeries(size = size)
         assertEquals(size, list.size)
         list.map { testObject ->
             testObject.assert()
@@ -35,12 +32,12 @@ class ModelForgeTest {
     }
 
     @Test(expected = ModelForgeException::class)
-    fun testBuild_WithUnsupportedType() {
+    fun testForgery_WithUnsupportedType() {
         data class UnsupportedTestObject(
             private val random: Random,
         )
 
-        val testObject = forge.build(UnsupportedTestObject::class.java)
+        val testObject: UnsupportedTestObject by forgery()
         assertNull(testObject)
     }
 }

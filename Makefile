@@ -1,6 +1,6 @@
-.PHONY: all build clean coverage format lint publish unit-test
+.PHONY: all build clean coverage format lint publish test
 
-all: clean format lint unit-test build
+all: clean format lint test build
 
 build:
 	./gradlew build
@@ -20,5 +20,5 @@ lint:
 publish:
 	./scripts/publish.sh ${GITHUB_RUN_NUMBER}
 
-unit-test:
+test:
 	./gradlew test

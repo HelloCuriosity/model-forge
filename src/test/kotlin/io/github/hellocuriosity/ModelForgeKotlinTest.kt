@@ -5,19 +5,19 @@ import kotlin.random.Random
 import kotlin.test.assertEquals
 import kotlin.test.assertNull
 
-class ModelForgeTest {
+class ModelForgeKotlinTest {
 
     private val forge = ModelForge()
 
     @Test
     fun testBuild() {
-        val testObject = forge.build(TestObject::class.java)
+        val testObject = forge.build(TestObject::class)
         testObject.assert()
     }
 
     @Test
     fun testBuildList_Default() {
-        val list = forge.buildList(TestObject::class.java)
+        val list = forge.buildList(TestObject::class)
         assertEquals(10, list.size)
         list.map { testObject ->
             testObject.assert()
@@ -27,7 +27,7 @@ class ModelForgeTest {
     @Test
     fun testBuildList_WithSize() {
         val size = 3
-        val list = forge.buildList(TestObject::class.java, size)
+        val list = forge.buildList(TestObject::class, size)
         assertEquals(size, list.size)
         list.map { testObject ->
             testObject.assert()
@@ -40,7 +40,7 @@ class ModelForgeTest {
             private val random: Random,
         )
 
-        val testObject = forge.build(UnsupportedTestObject::class.java)
+        val testObject = forge.build(UnsupportedTestObject::class)
         assertNull(testObject)
     }
 }
