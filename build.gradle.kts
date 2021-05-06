@@ -5,7 +5,7 @@ version = System.getenv("VERSION") ?: "null"
 
 plugins {
 
-    kotlin("jvm") version "1.4.32"
+    kotlin("jvm") version "1.5.0"
 
     // Quality gate
     id("org.jmailen.kotlinter") version "3.4.4"
@@ -66,7 +66,7 @@ detekt {
 }
 
 jacoco {
-    toolVersion = "0.8.6"
+    toolVersion = "0.8.7"
 }
 
 tasks.jacocoTestReport {
