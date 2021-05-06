@@ -4,6 +4,7 @@
 [![codecov](https://codecov.io/gh/HelloCuriosity/model-forge/branch/main/graph/badge.svg?token=0P2Q8SLFO7)](https://codecov.io/gh/HelloCuriosity/model-forge)
 [![License](https://img.shields.io/dub/l/vibe-d.svg)](https://github.com/HelloCuriosity/model-forge/blob/main/LICENSE)
 [![](https://img.shields.io/maven-central/v/io.github.hellocuriosity/model-forge?color=blue)](https://search.maven.org/search?q=io.github.hellocuriosity)
+[![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/io.github.hellocuriosity/model-forge?server=https%3A%2F%2Fs01.oss.sonatype.org)](https://s01.oss.sonatype.org/content/repositories/snapshots/io/github/hellocuriosity/model-forge/)
 
 ## About
 
@@ -22,7 +23,7 @@ Model Forge is a library to automate model generation for automated testing:
 
 ```kotlin
 dependencies {
-    testImplementation("io.github.hellocuriosity:model-forge:0.1.1")
+    testImplementation("io.github.hellocuriosity:model-forge:0.2.0")
 }
 ```
 
@@ -33,7 +34,41 @@ dependencies {
 
 ```groovy
 dependencies {
-    testImplementation 'io.github.hellocuriosity:model-forge:0.1.1'
+    testImplementation 'io.github.hellocuriosity:model-forge:0.2.0'
+}
+```
+
+</details>
+
+### Feeling Adventurous 💥
+
+If you're feeling adventurous you can be on the bleeding edge and test a snapshot:
+
+<details open>
+<summary>Kotlin</summary>
+
+```kotlin
+repositories {
+    maven(url = "https://s01.oss.sonatype.org/content/repositories/snapshots/")
+}
+
+dependencies {
+    testImplementation("io.github.hellocuriosity:model-forge:0.2.0.xx-SNAPSHOT")
+}
+```
+
+</details>
+
+<details>
+<summary>Groovy</summary>
+
+```groovy
+repositories {
+    maven { url 'https://s01.oss.sonatype.org/content/repositories/snapshots/' }
+}
+
+dependencies {
+    testImplementation 'io.github.hellocuriosity:model-forge:0.2.0.xx-SNAPSHOT'
 }
 ```
 
