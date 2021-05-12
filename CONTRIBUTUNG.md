@@ -48,4 +48,4 @@ existing and already tested code.
 
 You can run tests with:
 
-    $ make unit-test
+    $ make test
