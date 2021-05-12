@@ -7,7 +7,7 @@ BUILD_NR=${1}
 REPO_DIR="$(cd "$(dirname "$0")/../" && pwd)"
 
 # Create Version
-git fetch --all
+git fetch --force --tags
 TAG=$(git describe --tags "$(git rev-list --tags --max-count=1)" 2>&1)
 
 if [[ "${IS_RELEASE}" == "true" ]]; then
