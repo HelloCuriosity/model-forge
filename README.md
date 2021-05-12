@@ -74,7 +74,7 @@ dependencies {
 
 </details>
 
-### Define you model
+### Define your model
 
 ```kotlin
 data class Employee(
@@ -123,3 +123,12 @@ Model Forge currently supports the auto generation for the following types:
 * Int
 * Long
 * String 
+
+### Contributors
+
+If you contribute to model-forge, please feel free to add yourself to the list!
+
+- [Kyle Roe](https://github.com/hopeman15) - Maintainer
+- [Adriaan Duz](https://github.com/nxtstep) - Contributor
+    - Kotlin class definitions 
+    - Forgery and forgeries property delegate
