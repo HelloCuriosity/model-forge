@@ -122,6 +122,7 @@ Model Forge currently supports the auto generation for the following types:
 * Double
 * Float
 * Int
+* Instant (SNAPSHOT only)
 * Long
 * String
 

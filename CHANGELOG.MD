@@ -3,6 +3,7 @@
 Auto generation for additional types:
 
 * Calendar
+* Instant
 
 ## [0.2.0] - May 6th 2021
 
