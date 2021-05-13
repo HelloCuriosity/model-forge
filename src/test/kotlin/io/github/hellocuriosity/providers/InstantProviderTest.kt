@@ -18,7 +18,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 @RunWith(MockitoJUnitRunner::class)
-class DateProviderTest {
+class InstantProviderTest {
 
     @Mock
     private lateinit var random: Random
@@ -30,24 +30,24 @@ class DateProviderTest {
 
     @Test
     fun testGet() {
-        val date = DateProvider().get()
-        assertTrue(date.time in NINETEEN_EIGHTY_SIX until TWENTY_TWENTY_ONE)
+        val instant = InstantProvider().get()
+        assertTrue(instant.toEpochMilli() in NINETEEN_EIGHTY_SIX until TWENTY_TWENTY_ONE)
     }
 
     @Test
     fun testGet_WithCustomTimeSpan() {
         val start = 1L
         val end = 2L
-        val date = DateProvider(from = start, until = end).get()
-        assertTrue(date.time in start until end)
+        val instant = InstantProvider(from = start, until = end).get()
+        assertTrue(instant.toEpochMilli() in start until end)
     }
 
     @Test
     fun testGet_RandomCalled() {
         whenever(random.nextLong(any(), any())) doReturn 1315260000000L // 06.09.2011
 
-        val date = DateProvider(random = random).get()
-        assertEquals(1315260000000L, date.time)
+        val instant = InstantProvider(random = random).get()
+        assertEquals(1315260000000L, instant.toEpochMilli())
 
         verify(random).nextLong(eq(NINETEEN_EIGHTY_SIX), eq(TWENTY_TWENTY_ONE))
     }

@@ -1,5 +1,7 @@
 package io.github.hellocuriosity.providers
 
+import io.github.hellocuriosity.Millis.NINETEEN_EIGHTY_SIX
+import io.github.hellocuriosity.Millis.TWENTY_TWENTY_ONE
 import java.util.Calendar
 
 /**
@@ -7,7 +9,7 @@ import java.util.Calendar
  *
  * @param from start date in millis
  * @param until end date in millis
- * @param dateProvider data auto generator
+ * @param dateProvider data generator
  *
  * @return Instance of Calendar
  */
@@ -16,10 +18,6 @@ class CalendarProvider(
     private val until: Long = TWENTY_TWENTY_ONE,
     private val dateProvider: DateProvider = DateProvider(from, until)
 ) : Provider<Calendar> {
-    companion object {
-        const val NINETEEN_EIGHTY_SIX = 529714800000L
-        const val TWENTY_TWENTY_ONE = 1617141600000L
-    }
 
     override fun get(): Calendar {
         val calendar = Calendar.getInstance()
