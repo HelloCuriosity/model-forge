@@ -1,4 +1,4 @@
-## [0.3.0] - Not Released Yet (usable in SNAPSHOT)
+## [0.3.0] - Not Released Yet (available in SNAPSHOT)
 
 Auto generation for additional types:
 
