@@ -1,7 +1,7 @@
 package io.github.hellocuriosity.providers
 
-import io.github.hellocuriosity.providers.DateProvider.Companion.NINETEEN_EIGHTY_SIX
-import io.github.hellocuriosity.providers.DateProvider.Companion.TWENTY_TWENTY_ONE
+import io.github.hellocuriosity.Millis.NINETEEN_EIGHTY_SIX
+import io.github.hellocuriosity.Millis.TWENTY_TWENTY_ONE
 import org.junit.After
 import org.junit.Test
 import org.junit.runner.RunWith
