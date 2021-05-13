@@ -1,3 +1,9 @@
+## [0.3.0] - Not Released Yet (usable in SNAPSHOT)
+
+Auto generation for additional types:
+
+* Calendar
+
 ## [0.2.0] - May 6th 2021
 
 * Allow using Kotlin class definitions directly.
