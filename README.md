@@ -117,18 +117,19 @@ val testObjects: List<TestObject> by forgeries()
 Model Forge currently supports the auto generation for the following types:
 
 * Boolean
+* Calendar (SNAPSHOT only)
 * Date
 * Double
 * Float
 * Int
 * Long
-* String 
+* String
 
-### Contributors
+## Contributors
 
 If you contribute to Model Forge, please feel free to add yourself to the list!
 
 - [Kyle Roe](https://github.com/hopeman15) - Maintainer
 - [Adriaan Duz](https://github.com/nxtstep) - Contributor
-    - Kotlin class definitions 
+    - Kotlin class definitions
     - Forgery and forgeries property delegate

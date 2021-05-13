@@ -1,6 +1,7 @@
 package io.github.hellocuriosity
 
 import io.github.hellocuriosity.providers.BooleanProvider
+import io.github.hellocuriosity.providers.CalendarProvider
 import io.github.hellocuriosity.providers.DateProvider
 import io.github.hellocuriosity.providers.DoubleProvider
 import io.github.hellocuriosity.providers.FloatProvider
@@ -12,6 +13,7 @@ import org.objenesis.ObjenesisStd
 import org.objenesis.instantiator.ObjectInstantiator
 import java.lang.reflect.Field
 import java.lang.reflect.Modifier
+import java.util.Calendar
 import java.util.Date
 
 open class ModelForge {
@@ -79,6 +81,7 @@ open class ModelForge {
     private fun <T> Class<T>.generate(): Any {
         return when (this) {
             Boolean::class.java -> BooleanProvider().get()
+            Calendar::class.java -> CalendarProvider().get()
             Date::class.java -> DateProvider().get()
             Double::class.java -> DoubleProvider().get()
             Float::class.java -> FloatProvider().get()
