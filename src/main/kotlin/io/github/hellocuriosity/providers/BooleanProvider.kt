@@ -2,6 +2,13 @@ package io.github.hellocuriosity.providers
 
 import kotlin.random.Random
 
+/**
+ * Auto generates a boolean
+ *
+ * @param random random generator
+ *
+ * @return Boolean instance
+ */
 class BooleanProvider(
     private val random: Random = Random
 ) : Provider<Boolean> {

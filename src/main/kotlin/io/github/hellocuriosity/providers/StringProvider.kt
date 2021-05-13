@@ -2,6 +2,14 @@ package io.github.hellocuriosity.providers
 
 import com.thedeanda.lorem.LoremIpsum
 
+/**
+ * Auto generates a String
+ *
+ * @param wordCount amount of words to be generated
+ * @param lorem lorem ipsum generator
+ *
+ * @return String instance
+ */
 class StringProvider(
     private val wordCount: Int = DEFAULT_VALUE,
     private val lorem: LoremIpsum = LoremIpsum.getInstance()

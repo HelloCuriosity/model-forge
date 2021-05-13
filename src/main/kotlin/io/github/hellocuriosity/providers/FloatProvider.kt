@@ -2,6 +2,15 @@ package io.github.hellocuriosity.providers
 
 import kotlin.random.Random
 
+/**
+ * Auto generates a Float between two values
+ *
+ * @param min minimum value
+ * @param max maximum value
+ * @param random random generator
+ *
+ * @return Float instance
+ */
 class FloatProvider(
     private val min: Double = DEFAULT_MIN,
     private val max: Double = DEFAULT_MAX,
