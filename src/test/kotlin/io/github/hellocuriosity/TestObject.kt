@@ -1,5 +1,6 @@
 package io.github.hellocuriosity
 
+import java.time.Instant
 import java.util.Calendar
 import java.util.Date
 import kotlin.test.assertNotNull
@@ -12,6 +13,7 @@ data class TestObject(
     val doubleValue: Double,
     val floatValue: Float,
     val intValue: Int,
+    val instantValue: Instant,
     val longValue: Long,
     val stringValue: String
 )
@@ -23,6 +25,7 @@ fun TestObject.assert() {
     assertNotNull(this.doubleValue)
     assertNotNull(this.floatValue)
     assertNotNull(this.intValue)
+    assertNotNull(this.instantValue)
     assertNotNull(this.longValue)
     assertNotNull(this.stringValue)
     assertTrue(this.stringValue.isNotBlank())

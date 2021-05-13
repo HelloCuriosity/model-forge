@@ -7,7 +7,7 @@ import java.util.Calendar
  *
  * @param from start date in millis
  * @param until end date in millis
- * @param dateProvider data auto generator
+ * @param dateProvider data generator
  *
  * @return Instance of Calendar
  */

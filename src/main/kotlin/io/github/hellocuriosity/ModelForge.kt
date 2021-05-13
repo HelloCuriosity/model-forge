@@ -5,6 +5,7 @@ import io.github.hellocuriosity.providers.CalendarProvider
 import io.github.hellocuriosity.providers.DateProvider
 import io.github.hellocuriosity.providers.DoubleProvider
 import io.github.hellocuriosity.providers.FloatProvider
+import io.github.hellocuriosity.providers.InstantProvider
 import io.github.hellocuriosity.providers.IntegerProvider
 import io.github.hellocuriosity.providers.LongProvider
 import io.github.hellocuriosity.providers.StringProvider
@@ -13,6 +14,7 @@ import org.objenesis.ObjenesisStd
 import org.objenesis.instantiator.ObjectInstantiator
 import java.lang.reflect.Field
 import java.lang.reflect.Modifier
+import java.time.Instant
 import java.util.Calendar
 import java.util.Date
 
@@ -86,6 +88,7 @@ open class ModelForge {
             Double::class.java -> DoubleProvider().get()
             Float::class.java -> FloatProvider().get()
             Int::class.java -> IntegerProvider().get()
+            Instant::class.java -> InstantProvider().get()
             Long::class.java -> LongProvider().get()
             String::class.java -> StringProvider().get()
             else -> throw ModelForgeException("$this is not yet supported")
