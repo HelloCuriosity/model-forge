@@ -1,4 +1,4 @@
-name: Model Forge
+name: Publishing
 
 on:
   push:
