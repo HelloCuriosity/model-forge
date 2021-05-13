@@ -2,6 +2,15 @@ package io.github.hellocuriosity.providers
 
 import kotlin.random.Random
 
+/**
+ * Auto generates an Int between two values
+ *
+ * @param min minimum value
+ * @param max maximum value
+ * @param random random generator
+ *
+ * @return Int instance
+ */
 class IntegerProvider(
     private val min: Int = DEFAULT_MIN,
     private val max: Int = DEFAULT_MAX,
