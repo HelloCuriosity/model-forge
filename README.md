@@ -125,7 +125,7 @@ Model Forge currently supports the auto generation for the following types:
 * Long
 * String
 
-### Contributors
+## Contributors
 
 If you contribute to Model Forge, please feel free to add yourself to the list!
 
