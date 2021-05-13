@@ -19,6 +19,7 @@ import kotlin.test.assertTrue
 
 @RunWith(MockitoJUnitRunner::class)
 class InstantProviderTest {
+
     @Mock
     private lateinit var random: Random
 
