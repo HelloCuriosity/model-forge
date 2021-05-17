@@ -9,7 +9,7 @@ plugins {
 
     // Quality gate
     id("org.jmailen.kotlinter") version "3.4.4"
-    id("io.gitlab.arturbosch.detekt") version "1.16.0"
+    id("io.gitlab.arturbosch.detekt") version "1.17.0"
     jacoco
 
     // Publishing
