@@ -37,7 +37,7 @@ dependencies {
     implementation("com.thedeanda:lorem:2.1")
 
     // Testing
-    testImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.7.2")
     testImplementation(kotlin("test-junit"))
     testImplementation("org.mockito.kotlin:mockito-kotlin:3.2.0")
 }
