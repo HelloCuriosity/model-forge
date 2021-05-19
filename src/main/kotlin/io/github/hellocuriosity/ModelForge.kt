@@ -9,6 +9,7 @@ import io.github.hellocuriosity.providers.InstantProvider
 import io.github.hellocuriosity.providers.IntegerProvider
 import io.github.hellocuriosity.providers.LongProvider
 import io.github.hellocuriosity.providers.StringProvider
+import io.github.hellocuriosity.providers.getEnum
 import org.objenesis.Objenesis
 import org.objenesis.ObjenesisStd
 import org.objenesis.instantiator.ObjectInstantiator
@@ -91,7 +92,7 @@ open class ModelForge {
             Instant::class.java -> InstantProvider().get()
             Long::class.java -> LongProvider().get()
             String::class.java -> StringProvider().get()
-            else -> throw ModelForgeException("$this is not yet supported")
+            else -> if (this.isEnum) this.getEnum() else throw ModelForgeException("$this is not yet supported")
         }
     }
 }
