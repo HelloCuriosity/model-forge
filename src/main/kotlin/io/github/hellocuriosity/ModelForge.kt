@@ -92,7 +92,7 @@ open class ModelForge {
             Instant::class.java -> InstantProvider().get()
             Long::class.java -> LongProvider().get()
             String::class.java -> StringProvider().get()
-            else -> if (this.isEnum) this.getEnum() else throw ModelForgeException("$this is not yet supported")
+            else -> if (this.isEnum) getEnum() else throw ModelForgeException("$this is not yet supported")
         }
     }
 }
