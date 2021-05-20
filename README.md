@@ -120,6 +120,7 @@ Model Forge currently supports the auto generation for the following types:
 * Calendar
 * Date
 * Double
+* Enums _(SNAPSHOT ONLY)_
 * Float
 * Int
 * Instant
