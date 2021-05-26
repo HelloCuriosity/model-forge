@@ -51,7 +51,7 @@ fun TestObject.assert() {
     assertTrue(this.stringValue.isNotBlank())
     assertNotNull(this.complexObject)
 
-    // Validate complex object
+    // Validate populated values for ComplexObject
     assertNotNull(this.complexObject.booleanValue)
     assertNotNull(this.complexObject.calendarValue)
     assertNotNull(this.complexObject.dateValue)
