@@ -16,12 +16,26 @@ data class TestObject(
     val intValue: Int,
     val instantValue: Instant,
     val longValue: Long,
-    val stringValue: String
+    val stringValue: String,
+    val complexObject: ComplexObject
 )
 
 enum class TestEnum {
     ONE, TWO, THREE
 }
+
+data class ComplexObject(
+    val booleanValue: Boolean,
+    val calendarValue: Calendar,
+    val dateValue: Date,
+    val doubleValue: Double,
+    val enumValue: TestEnum,
+    val floatValue: Float,
+    val intValue: Int,
+    val instantValue: Instant,
+    val longValue: Long,
+    val stringValue: String,
+)
 
 fun TestObject.assert() {
     assertNotNull(this.booleanValue)
@@ -35,4 +49,18 @@ fun TestObject.assert() {
     assertNotNull(this.longValue)
     assertNotNull(this.stringValue)
     assertTrue(this.stringValue.isNotBlank())
+    assertNotNull(this.complexObject)
+
+    // Validate populated values for ComplexObject
+    assertNotNull(this.complexObject.booleanValue)
+    assertNotNull(this.complexObject.calendarValue)
+    assertNotNull(this.complexObject.dateValue)
+    assertNotNull(this.complexObject.doubleValue)
+    assertNotNull(this.complexObject.enumValue)
+    assertNotNull(this.complexObject.floatValue)
+    assertNotNull(this.complexObject.intValue)
+    assertNotNull(this.complexObject.instantValue)
+    assertNotNull(this.complexObject.longValue)
+    assertNotNull(this.complexObject.stringValue)
+    assertTrue(this.complexObject.stringValue.isNotBlank())
 }
