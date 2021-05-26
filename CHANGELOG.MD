@@ -1,3 +1,6 @@
+## [0.5.0] - Not released
+* Support for complex data types.
+
 ## [0.4.0] - May 26th 2021
 Auto generations for enums.
 
