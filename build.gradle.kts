@@ -20,16 +20,6 @@ plugins {
 
 repositories {
     mavenCentral()
-    jcenter {
-        content {
-            // Only download the 'kotlinx-html-jvm' module from JCenter, but nothing else.
-            // detekt needs 'kotlinx-html-jvm' for the HTML report.
-            // TODO: update me when available on maven central
-            // https://github.com/Kotlin/kotlinx.html/issues/81
-            // https://github.com/Kotlin/kotlinx.html/issues/173
-            includeModule("org.jetbrains.kotlinx", "kotlinx-html-jvm")
-        }
-    }
 }
 
 dependencies {
