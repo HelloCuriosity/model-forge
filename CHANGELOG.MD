@@ -1,7 +1,5 @@
-## [0.4.0] - Not released
-Auto generation for additional types:
-
-* Enums
+## [0.4.0] - May 26th 2021
+Auto generations for enums.
 
 ## [0.3.0] - May 13th 2021
 
