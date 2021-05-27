@@ -8,6 +8,7 @@ import io.github.hellocuriosity.providers.FloatProvider
 import io.github.hellocuriosity.providers.InstantProvider
 import io.github.hellocuriosity.providers.IntegerProvider
 import io.github.hellocuriosity.providers.LongProvider
+import io.github.hellocuriosity.providers.Provider
 import io.github.hellocuriosity.providers.StringProvider
 import io.github.hellocuriosity.providers.getEnum
 import org.objenesis.Objenesis
@@ -21,6 +22,8 @@ import java.util.Date
 
 open class ModelForge {
 
+    val providers: HashMap<Class<*>, Provider<*>> = HashMap()
+
     /**
      * Creates an automatically generated model object
      *
@@ -33,6 +36,10 @@ open class ModelForge {
         val objenesis: Objenesis = ObjenesisStd()
         val instantiator: ObjectInstantiator<*> = objenesis.getInstantiatorOf(clazz)
         val model: T = instantiator.newInstance() as T
+
+        if (providers.isNotEmpty()) {
+            providers[clazz]?.let { return it.get() as T }
+        }
 
         clazz.eligibleFields().map { field ->
             field.isAccessible = true
@@ -58,6 +65,17 @@ open class ModelForge {
             list.add(i, build(clazz))
         }
         return list
+    }
+
+    /**
+     * Adds a custom provider for generating models
+     *
+     *  @param <T> Type to instantiate
+     *  @param clazz Class to instantiate
+     *
+     */
+    open fun <T> addProvider(clazz: Class<T>, provider: Provider<T>) {
+        providers[clazz] = provider
     }
 
     /**
