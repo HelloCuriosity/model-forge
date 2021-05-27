@@ -122,7 +122,7 @@ data. This is easily achievable by defining a custom provider and adding it to t
 val testProvider: Provider<TestObject> = Provider {
     Employee(
         id = 15L,
-        name = "Jimmy",
+        name = "Josh",
         dob = Instant.ofEpochMilli(1315260000000)
     )
 }
