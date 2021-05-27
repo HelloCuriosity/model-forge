@@ -123,8 +123,7 @@ val testProvider: Provider<TestObject> = Provider {
     Employee(
         id = 15L,
         name = "Jimmy",
-        dob = Instant.now(),
-        age = 0
+        dob = Instant.ofEpochMilli(1315260000000)
     )
 }
 ```
