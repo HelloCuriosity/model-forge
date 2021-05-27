@@ -16,6 +16,13 @@ class ModelForgeKotlinTest {
     }
 
     @Test
+    fun testBuild_WithProvider() {
+        forge.addProvider(TestProviderObject::class, testProvider)
+        val testObject = forge.build(TestProviderObject::class)
+        testObject.assert()
+    }
+
+    @Test
     fun testBuildList_Default() {
         val list = forge.buildList(TestObject::class)
         assertEquals(10, list.size)

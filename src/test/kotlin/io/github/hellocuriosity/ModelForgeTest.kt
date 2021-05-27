@@ -16,6 +16,13 @@ class ModelForgeTest {
     }
 
     @Test
+    fun testBuild_WithProvider() {
+        forge.addProvider(TestProviderObject::class.java, testProvider)
+        val testObject = forge.build(TestProviderObject::class.java)
+        testObject.assert()
+    }
+
+    @Test
     fun testBuildList_Default() {
         val list = forge.buildList(TestObject::class.java)
         assertEquals(10, list.size)

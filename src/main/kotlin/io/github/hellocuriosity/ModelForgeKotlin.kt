@@ -1,5 +1,6 @@
 package io.github.hellocuriosity
 
+import io.github.hellocuriosity.providers.Provider
 import kotlin.reflect.KClass
 
 /**
@@ -25,3 +26,14 @@ fun <T : Any> ModelForge.build(clazz: KClass<T>): T =
  */
 fun <T : Any> ModelForge.buildList(clazz: KClass<T>, size: Int = 10): List<T> =
     buildList(clazz.java, size)
+
+/**
+ * Adds a custom provider for generating models
+ *
+ *  @param <T> Type to instantiate
+ *  @param clazz Class to instantiate
+ *  @param provider Provider for populating data
+ *
+ */
+fun <T : Any> ModelForge.addProvider(clazz: KClass<T>, provider: Provider<T>) =
+    addProvider(clazz.java, provider)

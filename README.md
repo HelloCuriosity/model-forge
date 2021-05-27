@@ -42,7 +42,7 @@ dependencies {
 
 ### Feeling Adventurous 💥
 
-If you're feeling adventurous you can be on the bleeding edge and test a snapshot:
+If you're feeling adventurous you can be on the cutting edge and test a snapshot:
 
 <details open>
 <summary>Kotlin</summary>
@@ -80,9 +80,8 @@ dependencies {
 data class Employee(
     val id: Long,
     val name: String,
-    val dob: Date,
-    val age: Int,
-    val isTeamLead: Boolean
+    val dob: Instant,
+    val age: Int
 )
 ```
 
@@ -112,6 +111,29 @@ or by delegating
 val testObjects: List<TestObject> by forgeries()
 ```
 
+## Custom Provider
+
+While Model Forge aims to fully automate model generation, you may run into an instance where you need to customize your
+data. This is easily achievable by defining a custom provider and adding it to the forge.
+
+### Define your provider
+
+```kotlin
+val testProvider: Provider<TestObject> = Provider {
+    Employee(
+        id = 15L,
+        name = "Josh",
+        dob = Instant.ofEpochMilli(1315260000000)
+    )
+}
+```
+
+### Add your provider to the forge
+
+```kotlin
+forge.addProvider(TestObject::class, testProvider)
+```
+
 ## Supported Types
 
 Model Forge currently supports the auto generation for the following types:
@@ -127,6 +149,8 @@ Model Forge currently supports the auto generation for the following types:
 * Long
 * String
 * Complex Data Types _(SNAPSHOT ONLY)_
+
+_Can't find your data type? Feel free to create a pull request or open an issue_ :parachute:
 
 ## Contributors
 
