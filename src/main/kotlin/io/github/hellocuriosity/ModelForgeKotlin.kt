@@ -32,6 +32,7 @@ fun <T : Any> ModelForge.buildList(clazz: KClass<T>, size: Int = 10): List<T> =
  *
  *  @param <T> Type to instantiate
  *  @param clazz Class to instantiate
+ *  @param provider Provider for populating data
  *
  */
 fun <T : Any> ModelForge.addProvider(clazz: KClass<T>, provider: Provider<T>) =

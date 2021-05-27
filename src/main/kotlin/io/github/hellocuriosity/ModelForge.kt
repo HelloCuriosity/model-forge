@@ -72,6 +72,7 @@ open class ModelForge {
      *
      *  @param <T> Type to instantiate
      *  @param clazz Class to instantiate
+     *  @param provider Provider for populating data
      *
      */
     open fun <T> addProvider(clazz: Class<T>, provider: Provider<T>) {
