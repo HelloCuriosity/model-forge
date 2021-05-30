@@ -16,7 +16,6 @@ data class TestObject(
     val floatValue: Float,
     val intValue: Int,
     val instantValue: Instant,
-
     val longValue: Long,
     val stringValue: String,
     val listValues: List<ComplexObject>,
