@@ -1,4 +1,5 @@
 ## [0.5.0] - May 30th 2021
+* Support for List collection type.
 * Support for complex data types.
 * Support for custom providers.
 

@@ -138,6 +138,7 @@ forge.addProvider(TestObject::class, testProvider)
 
 Model Forge currently supports the auto generation for the following types:
 
+### Basic Types 
 * Boolean
 * Calendar
 * Date
@@ -148,6 +149,9 @@ Model Forge currently supports the auto generation for the following types:
 * Instant
 * Long
 * String
+
+### Collection Types
+* List
 
 _Can't find your data type? Feel free to create a pull request or open an issue_ :parachute:
 
