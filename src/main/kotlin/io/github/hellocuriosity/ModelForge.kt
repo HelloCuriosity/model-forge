@@ -42,7 +42,13 @@ open class ModelForge {
             providers[clazz]?.let { return it.get() as T }
         }
 
-        clazz.eligibleFields().map { field -> field.setValues(model) }
+        clazz.eligibleFields().map { field ->
+            field.isAccessible = true
+            when (field.type) {
+                List::class.java -> field.set(model, field.getValues())
+                else -> field.set(model, field.type.generate())
+            }
+        }
 
         return model
     }
@@ -89,20 +95,6 @@ open class ModelForge {
         this.declaredFields
             .filter { field -> !Modifier.isTransient(field.modifiers) }
             .toTypedArray()
-
-    /**
-     * Set fields in the model
-     *
-     * @param Field Field to be set
-     * @param model Model to be auto generated
-     *
-     * @return Model to be auto generated
-     */
-    private fun <T> Field.setValues(model: T): T {
-        isAccessible = true
-        if (type == List::class.java) set(model, getValues()) else set(model, type.generate())
-        return model
-    }
 
     /**
      * Auto generate values for specific providers
