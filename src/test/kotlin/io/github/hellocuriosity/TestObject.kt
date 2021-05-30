@@ -3,6 +3,7 @@ package io.github.hellocuriosity
 import java.time.Instant
 import java.util.Calendar
 import java.util.Date
+import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 
@@ -17,6 +18,7 @@ data class TestObject(
     val instantValue: Instant,
     val longValue: Long,
     val stringValue: String,
+    val listValues: List<ComplexObject>,
     val complexObject: ComplexObject
 )
 
@@ -47,6 +49,8 @@ fun TestObject.assert() {
     assertNotNull(this.intValue)
     assertNotNull(this.instantValue)
     assertNotNull(this.longValue)
+    assertNotNull(this.listValues)
+    assertEquals(10, this.listValues.size)
     assertNotNull(this.stringValue)
     assertTrue(this.stringValue.isNotBlank())
     assertNotNull(this.complexObject)
