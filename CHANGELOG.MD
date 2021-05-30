@@ -1,4 +1,4 @@
-## [0.5.0] - Not released
+## [0.5.0] - May 30th 2021
 * Support for complex data types.
 * Support for custom providers.
 
