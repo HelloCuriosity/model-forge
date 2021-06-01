@@ -1,3 +1,6 @@
+## [0.5.1] - June 1st 2021
+* Support for optional variables.
+
 ## [0.5.0] - May 30th 2021
 * Support for List collection type.
 * Support for complex data types.
