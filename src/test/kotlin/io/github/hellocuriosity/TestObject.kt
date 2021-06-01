@@ -10,16 +10,22 @@ import kotlin.test.assertTrue
 data class TestObject(
     val booleanValue: Boolean,
     val calendarValue: Calendar,
+    val calendarOptional: Calendar?,
     val dateValue: Date,
+    val dateOptional: Date?,
     val doubleValue: Double,
     val enumValue: TestEnum,
+    val enumOptional: TestEnum?,
     val floatValue: Float,
     val intValue: Int,
-    val instantValue: Instant,
+    val instantValue: Instant?,
     val longValue: Long,
     val stringValue: String,
+    val stringOptional: String?,
     val listValues: List<ComplexObject>,
-    val complexObject: ComplexObject
+    val listOptional: List<ComplexObject>?,
+    val complexObject: ComplexObject,
+    val complexOptional: ComplexObject?
 )
 
 enum class TestEnum {
@@ -42,6 +48,7 @@ data class ComplexObject(
 fun TestObject.assert() {
     assertNotNull(this.booleanValue)
     assertNotNull(this.calendarValue)
+    assertNotNull(this.calendarOptional)
     assertNotNull(this.dateValue)
     assertNotNull(this.doubleValue)
     assertNotNull(this.enumValue)
