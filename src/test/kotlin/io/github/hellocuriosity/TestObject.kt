@@ -9,17 +9,23 @@ import kotlin.test.assertTrue
 
 data class TestObject(
     val booleanValue: Boolean,
+    val booleanOptional: Boolean?,
     val calendarValue: Calendar,
     val calendarOptional: Calendar?,
     val dateValue: Date,
     val dateOptional: Date?,
     val doubleValue: Double,
+    val doubleOptional: Double?,
     val enumValue: TestEnum,
     val enumOptional: TestEnum?,
     val floatValue: Float,
+    val floatOptional: Float?,
     val intValue: Int,
-    val instantValue: Instant?,
+    val intValueOptional: Int?,
+    val instantValue: Instant,
+    val instantOptional: Instant?,
     val longValue: Long,
+    val longOptional: Long?,
     val stringValue: String,
     val stringOptional: String?,
     val listValues: List<ComplexObject>,
@@ -47,20 +53,33 @@ data class ComplexObject(
 
 fun TestObject.assert() {
     assertNotNull(this.booleanValue)
+    assertNotNull(this.booleanOptional)
     assertNotNull(this.calendarValue)
     assertNotNull(this.calendarOptional)
     assertNotNull(this.dateValue)
+    assertNotNull(this.dateOptional)
     assertNotNull(this.doubleValue)
+    assertNotNull(this.doubleOptional)
     assertNotNull(this.enumValue)
+    assertNotNull(this.enumOptional)
     assertNotNull(this.floatValue)
+    assertNotNull(this.floatOptional)
     assertNotNull(this.intValue)
+    assertNotNull(this.intValueOptional)
     assertNotNull(this.instantValue)
+    assertNotNull(this.instantOptional)
     assertNotNull(this.longValue)
+    assertNotNull(this.longOptional)
     assertNotNull(this.listValues)
     assertEquals(10, this.listValues.size)
+    assertNotNull(this.listOptional)
+    assertEquals(10, this.listOptional.size)
     assertNotNull(this.stringValue)
     assertTrue(this.stringValue.isNotBlank())
+    assertNotNull(this.stringOptional)
+    assertTrue(this.stringOptional.isNotBlank())
     assertNotNull(this.complexObject)
+    assertNotNull(this.complexOptional)
 
     // Validate populated values for ComplexObject
     assertNotNull(this.complexObject.booleanValue)
