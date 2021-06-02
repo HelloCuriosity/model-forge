@@ -95,7 +95,7 @@ open class ModelForge {
      */
     private fun <T> Class<T>.eligibleFields(): Array<Field> =
         this.declaredFields
-            .filter { field -> !Modifier.isTransient(field.modifiers) }
+            .filter { field -> !Modifier.isTransient(field.modifiers) && !Modifier.isStatic(field.modifiers) }
             .toTypedArray()
 
     /**
