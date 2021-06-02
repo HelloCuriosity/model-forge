@@ -35,7 +35,11 @@ data class TestObject(
     val listOptional: List<ComplexObject>?,
     val complexObject: ComplexObject,
     val complexOptional: ComplexObject?
-)
+) {
+    companion object {
+        const val COMPANION_VALUE = 1234
+    }
+}
 
 enum class TestEnum {
     ONE, TWO, THREE

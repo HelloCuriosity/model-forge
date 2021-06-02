@@ -1,6 +1,6 @@
 ## [0.6.0] - Not released yet
-Auto generation for additional types:
-* File
+* Exclude Companion Object Values
+* Support for File type.
 
 ## [0.5.1] - June 1st 2021
 * Support for optional variables.
