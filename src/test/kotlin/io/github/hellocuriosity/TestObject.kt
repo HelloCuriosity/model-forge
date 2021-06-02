@@ -1,5 +1,6 @@
 package io.github.hellocuriosity
 
+import java.io.File
 import java.time.Instant
 import java.util.Calendar
 import java.util.Date
@@ -18,6 +19,8 @@ data class TestObject(
     val doubleOptional: Double?,
     val enumValue: TestEnum,
     val enumOptional: TestEnum?,
+    val file: File,
+    val fileOptional: File?,
     val floatValue: Float,
     val floatOptional: Float?,
     val intValue: Int,
@@ -62,6 +65,8 @@ fun TestObject.assert() {
     assertNotNull(this.doubleOptional)
     assertNotNull(this.enumValue)
     assertNotNull(this.enumOptional)
+    assertNotNull(this.file)
+    assertNotNull(this.fileOptional)
     assertNotNull(this.floatValue)
     assertNotNull(this.floatOptional)
     assertNotNull(this.intValue)

@@ -4,6 +4,7 @@ import io.github.hellocuriosity.providers.BooleanProvider
 import io.github.hellocuriosity.providers.CalendarProvider
 import io.github.hellocuriosity.providers.DateProvider
 import io.github.hellocuriosity.providers.DoubleProvider
+import io.github.hellocuriosity.providers.FileProvider
 import io.github.hellocuriosity.providers.FloatProvider
 import io.github.hellocuriosity.providers.InstantProvider
 import io.github.hellocuriosity.providers.IntegerProvider
@@ -14,6 +15,7 @@ import io.github.hellocuriosity.providers.getEnum
 import org.objenesis.Objenesis
 import org.objenesis.ObjenesisStd
 import org.objenesis.instantiator.ObjectInstantiator
+import java.io.File
 import java.lang.reflect.Field
 import java.lang.reflect.Modifier
 import java.lang.reflect.ParameterizedType
@@ -109,6 +111,7 @@ open class ModelForge {
         Calendar::class.java -> CalendarProvider().get()
         Date::class.java -> DateProvider().get()
         Double::class.java, java.lang.Double::class.java -> DoubleProvider().get()
+        File::class.java -> FileProvider().get()
         Float::class.java, java.lang.Float::class.java -> FloatProvider().get()
         Int::class.java, java.lang.Integer::class.java -> IntegerProvider().get()
         Instant::class.java -> InstantProvider().get()
