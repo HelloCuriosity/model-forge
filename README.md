@@ -23,7 +23,7 @@ Model Forge is a library to automate model generation for automated testing:
 
 ```kotlin
 dependencies {
-    testImplementation("io.github.hellocuriosity:model-forge:0.5.1")
+    testImplementation("io.github.hellocuriosity:model-forge:0.6.0")
 }
 ```
 
@@ -34,7 +34,7 @@ dependencies {
 
 ```groovy
 dependencies {
-    testImplementation 'io.github.hellocuriosity:model-forge:0.5.1'
+    testImplementation 'io.github.hellocuriosity:model-forge:0.6.0'
 }
 ```
 
@@ -53,7 +53,7 @@ repositories {
 }
 
 dependencies {
-    testImplementation("io.github.hellocuriosity:model-forge:0.5.1.xx-SNAPSHOT")
+    testImplementation("io.github.hellocuriosity:model-forge:0.6.0.xx-SNAPSHOT")
 }
 ```
 
@@ -68,7 +68,7 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'io.github.hellocuriosity:model-forge:0.5.1.xx-SNAPSHOT'
+    testImplementation 'io.github.hellocuriosity:model-forge:0.6.0.xx-SNAPSHOT'
 }
 ```
 
@@ -144,7 +144,7 @@ Model Forge currently supports the auto generation for the following types:
 * Date
 * Double
 * Enums
-* File _SNAPSHOT ONLY_
+* File
 * Float
 * Int
 * Instant
