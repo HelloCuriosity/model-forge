@@ -19,6 +19,8 @@ data class TestObject(
     val doubleOptional: Double?,
     val enumValue: TestEnum,
     val enumOptional: TestEnum?,
+    val enumWithValue: TestEnumWithValue,
+    val enumWithValueOptional: TestEnumWithValue?,
     val file: File,
     val fileOptional: File?,
     val floatValue: Float,
@@ -35,14 +37,19 @@ data class TestObject(
     val listOptional: List<ComplexObject>?,
     val complexObject: ComplexObject,
     val complexOptional: ComplexObject?
-) {
-    companion object {
-        const val COMPANION_VALUE = 1234
-    }
-}
+)
 
 enum class TestEnum {
     ONE, TWO, THREE
+}
+
+enum class TestEnumWithValue(val value: String) {
+    FOUR("four"), FIVE("five"), SIX("six");
+
+    companion object {
+        const val COMPANION_VALUE = 1234
+        fun list() = listOf(FOUR, FIVE, SIX)
+    }
 }
 
 data class ComplexObject(
@@ -69,6 +76,8 @@ fun TestObject.assert() {
     assertNotNull(this.doubleOptional)
     assertNotNull(this.enumValue)
     assertNotNull(this.enumOptional)
+    assertNotNull(this.enumWithValue)
+    assertNotNull(this.enumWithValueOptional)
     assertNotNull(this.file)
     assertNotNull(this.fileOptional)
     assertNotNull(this.floatValue)
