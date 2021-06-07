@@ -11,7 +11,7 @@ import kotlin.reflect.KClass
  *
  *  @return Instance of clazz
  */
-fun <T : Any> ModelForge.build(clazz: KClass<T>): T =
+public fun <T : Any> ModelForge.build(clazz: KClass<T>): T =
     build(clazz.java)
 
 /**
@@ -24,7 +24,7 @@ fun <T : Any> ModelForge.build(clazz: KClass<T>): T =
  *
  *  @return Instance of clazz
  */
-fun <T : Any> ModelForge.buildList(clazz: KClass<T>, size: Int = 10): List<T> =
+public fun <T : Any> ModelForge.buildList(clazz: KClass<T>, size: Int = 10): List<T> =
     buildList(clazz.java, size)
 
 /**
@@ -35,5 +35,9 @@ fun <T : Any> ModelForge.buildList(clazz: KClass<T>, size: Int = 10): List<T> =
  *  @param provider Provider for populating data
  *
  */
-fun <T : Any> ModelForge.addProvider(clazz: KClass<T>, provider: Provider<T>) =
+public fun <T : Any> ModelForge.addProvider(clazz: KClass<T>, provider: Provider<T>) =
     addProvider(clazz.java, provider)
+
+public inline fun <reified T : Any> ModelForge.build(): T = build(T::class)
+
+public inline fun <reified T : Any> ModelForge.build(size: Int = 10): List<T> = buildList(T::class, size)
