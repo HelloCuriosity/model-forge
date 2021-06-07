@@ -16,6 +16,12 @@ class ModelForgeKotlinTest {
     }
 
     @Test
+    fun testReifiedBuild() {
+        val testObject: TestObject = forge.build()
+        testObject.assert()
+    }
+
+    @Test
     fun testBuild_WithProvider() {
         forge.addProvider(TestProviderObject::class, testProvider)
         val testObject = forge.build(TestProviderObject::class)
@@ -35,6 +41,16 @@ class ModelForgeKotlinTest {
     fun testBuildList_WithSize() {
         val size = 3
         val list = forge.buildList(TestObject::class, size)
+        assertEquals(size, list.size)
+        list.map { testObject ->
+            testObject.assert()
+        }
+    }
+
+    @Test
+    fun testReifiedBuildList_WithSize() {
+        val size = 3
+        val list = forge.build<TestObject>(size)
         assertEquals(size, list.size)
         list.map { testObject ->
             testObject.assert()
