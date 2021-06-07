@@ -1,4 +1,8 @@
-## [0.6.0] - June 3 2021
+## [0.7.0] - June 7th 2021
+
+* Added reified inline extension functions
+
+## [0.6.0] - June 3rd 2021
 
 * Exclude Companion Object Values
 * Support for File type.
