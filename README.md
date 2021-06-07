@@ -23,7 +23,7 @@ Model Forge is a library to automate model generation for automated testing:
 
 ```kotlin
 dependencies {
-    testImplementation("io.github.hellocuriosity:model-forge:0.6.0")
+    testImplementation("io.github.hellocuriosity:model-forge:0.7.0")
 }
 ```
 
@@ -34,7 +34,7 @@ dependencies {
 
 ```groovy
 dependencies {
-    testImplementation 'io.github.hellocuriosity:model-forge:0.6.0'
+    testImplementation 'io.github.hellocuriosity:model-forge:0.7.0'
 }
 ```
 
@@ -53,7 +53,7 @@ repositories {
 }
 
 dependencies {
-    testImplementation("io.github.hellocuriosity:model-forge:0.6.0.xx-SNAPSHOT")
+    testImplementation("io.github.hellocuriosity:model-forge:0.7.0.xx-SNAPSHOT")
 }
 ```
 
@@ -68,7 +68,7 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'io.github.hellocuriosity:model-forge:0.6.0.xx-SNAPSHOT'
+    testImplementation 'io.github.hellocuriosity:model-forge:0.7.0.xx-SNAPSHOT'
 }
 ```
 
@@ -160,7 +160,8 @@ _Can't find your data type? Feel free to create a pull request or open an issue_
 
 If you contribute to Model Forge, please feel free to add yourself to the list!
 
-- [Kyle Roe](https://github.com/hopeman15) - Maintainer
-- [Adriaan Duz](https://github.com/nxtstep) - Contributor
-    - Kotlin class definitions
-    - Forgery and forgeries property delegate
+* [Kyle Roe](https://github.com/hopeman15) - Maintainer
+* [Adriaan Duz](https://github.com/nxtstep) - Contributor
+    * Kotlin class definitions
+    * Forgery and forgeries property delegate
+    * Reified inline extension functions
