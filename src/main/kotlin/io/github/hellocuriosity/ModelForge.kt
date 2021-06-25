@@ -36,13 +36,14 @@ open class ModelForge {
      *  @return Instance of clazz
      */
     open fun <T> build(clazz: Class<T>): T {
-        val objenesis: Objenesis = ObjenesisStd()
-        val instantiator: ObjectInstantiator<*> = objenesis.getInstantiatorOf(clazz)
-        val model: T = instantiator.newInstance() as T
 
         if (providers.isNotEmpty()) {
             providers[clazz]?.let { return it.get() as T }
         }
+
+        val objenesis: Objenesis = ObjenesisStd()
+        val instantiator: ObjectInstantiator<*> = objenesis.getInstantiatorOf(clazz)
+        val model: T = instantiator.newInstance() as T
 
         clazz.eligibleFields().map { field ->
             field.isAccessible = true
