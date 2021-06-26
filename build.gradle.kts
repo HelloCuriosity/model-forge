@@ -1,7 +1,9 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-group = "io.github.hellocuriosity"
-version = System.getenv("VERSION") ?: "null"
+allprojects {
+    group = "io.github.hellocuriosity"
+    version = System.getenv("VERSION") ?: "null"
+}
 
 plugins {
 
@@ -27,6 +29,8 @@ dependencies {
     implementation("com.thedeanda:lorem:2.1")
 
     // Testing
+    testImplementation(project(":test-utils"))
+
     testImplementation("org.junit.jupiter:junit-jupiter:5.7.2")
     testImplementation(kotlin("test-junit"))
     testImplementation("org.mockito.kotlin:mockito-kotlin:3.2.0")
