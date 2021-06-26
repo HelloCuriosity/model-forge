@@ -1,2 +1,5 @@
 rootProject.name = "model-forge"
-include("test-utils")
+include(
+    "forge-core",
+    "test-utils"
+)
