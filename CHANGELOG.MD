@@ -1,3 +1,7 @@
+## [0.7.1] - June 26th 2021
+
+* Don't instantiate reflective objects when handling custom providers
+
 ## [0.7.0] - June 7th 2021
 
 * Added reified inline extension functions
