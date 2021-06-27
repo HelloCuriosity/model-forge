@@ -1,6 +1,11 @@
 plugins {
     kotlin("jvm")
 
+    // Quality gate
+    id("org.jmailen.kotlinter")
+    id("io.gitlab.arturbosch.detekt")
+    jacoco
+
     // Publishing
     `java-library`
     `maven-publish`
@@ -17,10 +22,13 @@ dependencies {
 
     // Testing
     testImplementation(project(":forge-test-utils"))
-
     testImplementation("org.junit.jupiter:junit-jupiter:5.7.2")
     testImplementation(kotlin("test-junit"))
     testImplementation("org.mockito.kotlin:mockito-kotlin:3.2.0")
+}
+
+jacoco {
+    toolVersion = "0.8.7"
 }
 
 tasks.register<Jar>("sourcesJar") {

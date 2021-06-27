@@ -31,7 +31,7 @@ jobs:
           java-version: 1.8
       - name: Lint
         run: make lint
-      - name: Unit Test
+      - name: Test
         run: make test
       - name: Coverage
         run: make coverage
