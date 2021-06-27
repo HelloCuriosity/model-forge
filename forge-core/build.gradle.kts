@@ -16,7 +16,7 @@ dependencies {
     implementation("com.thedeanda:lorem:2.1")
 
     // Testing
-    testImplementation(project(":test-utils"))
+    testImplementation(project(":forge-test-utils"))
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.7.2")
     testImplementation(kotlin("test-junit"))

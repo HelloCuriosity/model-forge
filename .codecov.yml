@@ -36,7 +36,7 @@ github_checks:
 ignore:
   - "**/build/**/*"
   - "**/*.gradle"
-  - "test-utils/**/*"
+  - "forge-test-utils/**/*"
 
 comment:
   layout: "header, diff"
