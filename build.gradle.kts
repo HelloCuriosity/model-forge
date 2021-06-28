@@ -44,15 +44,3 @@ detekt {
         sarif.enabled = false
     }
 }
-
-jacoco {
-    toolVersion = "0.8.7"
-}
-
-tasks.jacocoTestReport {
-    reports {
-        csv.isEnabled = false
-        html.isEnabled = false
-        xml.isEnabled = true
-    }
-}

@@ -31,6 +31,14 @@ jacoco {
     toolVersion = "0.8.7"
 }
 
+tasks.jacocoTestReport {
+    reports {
+        csv.isEnabled = false
+        html.isEnabled = false
+        xml.isEnabled = true
+    }
+}
+
 tasks.register<Jar>("sourcesJar") {
     archiveClassifier.set("sources")
     from(sourceSets.main.get().allJava)
