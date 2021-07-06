@@ -73,6 +73,7 @@ publishing {
     }
     publications {
         create<MavenPublication>("mavenJava") {
+            artifactId = "model-forge"
             from(components["java"])
             artifact(tasks["sourcesJar"])
             artifact(tasks["javadocJar"])
