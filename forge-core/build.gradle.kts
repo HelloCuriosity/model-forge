@@ -49,6 +49,10 @@ tasks.register<Jar>("javadocJar") {
     from(tasks.javadoc.get().destinationDir)
 }
 
+tasks.withType<Sign>().configureEach {
+    onlyIf { System.getenv("CI") == "true" }
+}
+
 publishing {
     repositories {
         maven {

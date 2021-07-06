@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 allprojects {
     group = "io.github.hellocuriosity"
-    version = System.getenv("VERSION") ?: "null"
+    version = System.getenv("VERSION") ?: "local"
 }
 
 plugins {
