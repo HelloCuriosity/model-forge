@@ -1,4 +1,4 @@
-.PHONY: all build clean coverage format lint publish test
+.PHONY: all build clean coverage format lint local publish test
 
 all: clean format lint test build
 
@@ -16,6 +16,9 @@ format:
 
 lint:
 	./gradlew lintKotlin detekt
+
+local:
+	./gradlew build publishToMavenLocal
 
 publish:
 	./scripts/publish.sh ${GITHUB_RUN_NUMBER}
