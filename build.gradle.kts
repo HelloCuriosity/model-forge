@@ -6,7 +6,7 @@ allprojects {
 }
 
 plugins {
-    kotlin("jvm") version "1.5.20"
+    kotlin("jvm") version "1.5.21"
 
     // Quality gate
     id("org.jmailen.kotlinter") version "3.4.5"
