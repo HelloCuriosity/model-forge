@@ -10,3 +10,6 @@ build/
 
 # Misc
 .DS_Store
+
+# other stuff
+/*/out
