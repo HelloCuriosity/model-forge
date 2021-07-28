@@ -40,4 +40,20 @@ class ForgeryTest {
         val testObject: UnsupportedTestObject by forgery()
         assertNull(testObject)
     }
+
+    @Test
+    fun testForgery_withProvider() {
+        data class FancyObject(val retrieveMe: String = "wrong it")
+
+        class FancyHolder(val value: FancyObject)
+
+        val forger = ModelForge().apply {
+            addProvider {
+                FancyObject("got it")
+            }
+        }
+
+        val fancyHolder by forgery<FancyHolder>(forger)
+        assertEquals("got it", fancyHolder.value.retrieveMe)
+    }
 }
