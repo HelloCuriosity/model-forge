@@ -3,9 +3,9 @@ package io.github.hellocuriosity.providers
 import org.junit.After
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.mockito.Mock
 import org.mockito.junit.MockitoJUnitRunner
 import org.mockito.kotlin.doReturn
+import org.mockito.kotlin.mock
 import org.mockito.kotlin.verify
 import org.mockito.kotlin.verifyNoMoreInteractions
 import org.mockito.kotlin.whenever
@@ -15,8 +15,7 @@ import kotlin.test.assertTrue
 @RunWith(MockitoJUnitRunner::class)
 class CalendarProviderTest {
 
-    @Mock
-    private lateinit var dateProvider: DateProvider
+    private val dateProvider: DateProvider = mock()
 
     @After
     fun tearDown() {

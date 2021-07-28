@@ -1,5 +1,6 @@
 package io.github.hellocuriosity
 
+import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.time.Instant
 import kotlin.random.Random
@@ -11,6 +12,12 @@ class ForgeryTest {
     fun testForgery() {
         val testObject: TestObject by forgery()
         testObject.assert()
+    }
+
+    @Test
+    fun testEnumForgery() {
+        val testEnum by forgery<TestEnumWithValue>()
+        assertTrue(testEnum.value.isNotEmpty())
     }
 
     @Test

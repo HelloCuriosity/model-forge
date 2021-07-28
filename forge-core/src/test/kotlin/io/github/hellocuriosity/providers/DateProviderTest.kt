@@ -5,11 +5,11 @@ import io.github.hellocuriosity.Millis.TWENTY_TWENTY_ONE
 import org.junit.After
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.mockito.Mock
 import org.mockito.junit.MockitoJUnitRunner
 import org.mockito.kotlin.any
 import org.mockito.kotlin.doReturn
 import org.mockito.kotlin.eq
+import org.mockito.kotlin.mock
 import org.mockito.kotlin.verify
 import org.mockito.kotlin.verifyNoMoreInteractions
 import org.mockito.kotlin.whenever
@@ -20,8 +20,7 @@ import kotlin.test.assertTrue
 @RunWith(MockitoJUnitRunner::class)
 class DateProviderTest {
 
-    @Mock
-    private lateinit var random: Random
+    private val random: Random = mock()
 
     @After
     fun teardown() {
