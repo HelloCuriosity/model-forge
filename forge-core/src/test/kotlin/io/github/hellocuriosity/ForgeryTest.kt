@@ -1,6 +1,5 @@
 package io.github.hellocuriosity
 
-import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.time.Instant
 import kotlin.random.Random
@@ -17,7 +16,9 @@ class ForgeryTest {
     @Test
     fun testEnumForgery() {
         val testEnum by forgery<TestEnumWithValue>()
-        assertTrue(testEnum.value.isNotEmpty())
+
+        val rawValue = testEnum.value
+        assertEquals(testEnum, TestEnumWithValue::value.safeFindEnumCase(rawValue))
     }
 
     @Test
@@ -84,4 +85,12 @@ class ForgeryTest {
         val employee by forgery<Employee>(forge)
         assertEquals("Hendrik", employee.name)
     }
+}
+
+/**
+ * Find the enum case or null when not found.
+ * The receiver is the predicate. This allows for `Enum::value.safeFindEnumCase("value")` on an Enum(val value: String)
+ */
+private inline fun <reified T : Enum<T>, V> ((T) -> V).safeFindEnumCase(value: V): T? {
+    return enumValues<T>().firstOrNull { this(it) == value }
 }
