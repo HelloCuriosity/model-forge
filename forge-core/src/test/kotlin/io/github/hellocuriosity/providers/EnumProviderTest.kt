@@ -8,11 +8,11 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 import org.junit.runners.Suite
-import org.mockito.Mock
 import org.mockito.MockitoAnnotations
 import org.mockito.kotlin.any
 import org.mockito.kotlin.doReturn
 import org.mockito.kotlin.eq
+import org.mockito.kotlin.mock
 import org.mockito.kotlin.verify
 import org.mockito.kotlin.verifyNoMoreInteractions
 import org.mockito.kotlin.whenever
@@ -39,8 +39,7 @@ class EnumProviderTest {
             )
         }
 
-        @Mock
-        private lateinit var random: Random
+        private val random: Random = mock()
 
         @Before
         fun setup() {

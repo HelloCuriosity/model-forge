@@ -14,6 +14,14 @@ class ForgeryTest {
     }
 
     @Test
+    fun testEnumForgery() {
+        val testEnum by forgery<TestEnumWithValue>()
+
+        val rawValue = testEnum.value
+        assertEquals(testEnum, TestEnumWithValue::value.safeFindEnumCase(rawValue))
+    }
+
+    @Test
     fun testForgeries_Default() {
         val list: List<TestObject> by forgeries()
         assertEquals(10, list.size)
@@ -77,4 +85,12 @@ class ForgeryTest {
         val employee by forgery<Employee>(forge)
         assertEquals("Hendrik", employee.name)
     }
+}
+
+/**
+ * Find the enum case or null when not found.
+ * The receiver is the predicate. This allows for `Enum::value.safeFindEnumCase("value")` on an Enum(val value: String)
+ */
+private inline fun <reified T : Enum<T>, V> ((T) -> V).safeFindEnumCase(value: V): T? {
+    return enumValues<T>().firstOrNull { this(it) == value }
 }
