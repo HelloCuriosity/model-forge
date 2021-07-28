@@ -1,6 +1,7 @@
 package io.github.hellocuriosity
 
 import org.junit.Test
+import java.time.Instant
 import kotlin.random.Random
 import kotlin.test.assertEquals
 import kotlin.test.assertNull
@@ -55,5 +56,25 @@ class ForgeryTest {
 
         val fancyHolder by forgery<FancyHolder>(forger)
         assertEquals("got it", fancyHolder.value.retrieveMe)
+    }
+
+    @Test
+    fun testReadmeExample() {
+        data class Employee(
+            val id: Long,
+            val name: String,
+            val dob: Instant,
+        )
+        val forge = ModelForge().apply {
+            addProvider {
+                Employee(
+                    id = 2L,
+                    name = "Hendrik",
+                    dob = Instant.ofEpochMilli(1574486400000)
+                )
+            }
+        }
+        val employee by forgery<Employee>(forge)
+        assertEquals("Hendrik", employee.name)
     }
 }

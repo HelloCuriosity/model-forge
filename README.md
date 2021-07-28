@@ -81,7 +81,6 @@ data class Employee(
     val id: Long,
     val name: String,
     val dob: Instant,
-    val age: Int
 )
 ```
 
@@ -130,15 +129,41 @@ val testProvider: Provider<TestObject> = Provider {
 
 ### Add your provider to the forge
 
+```java
+forge.addProvider(TestObject.class,testProvider);
+```
+
+or Kotlin
+
 ```kotlin
-forge.addProvider(TestObject::class, testProvider)
+forge.addProvider(testProvider)
+```
+
+### Inline your provider(s)
+
+Alternatively you can add your forgery providers inline
+
+```kotlin
+
+val forge = ModelForge().apply {
+    addProvider {
+        Employee(
+            id = 2L,
+            name = "Hendrik",
+            dob = Instant.ofEpochMilli(1574486400000)
+        )
+    }
+}
+val employee by forgery<Employee>(forge)
+
 ```
 
 ## Supported Types
 
 Model Forge currently supports the auto generation for the following types:
 
-### Types 
+### Types
+
 * Boolean
 * Calendar
 * Date
@@ -152,6 +177,7 @@ Model Forge currently supports the auto generation for the following types:
 * String
 
 ### Collections
+
 * List
 
 _Can't find your data type? Feel free to create a pull request or open an issue_ :parachute:
