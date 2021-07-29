@@ -1,3 +1,8 @@
+## [0.7.2] - July 29th 2021
+
+* Allow for forging Enums directly through ModelForge.build
+* Add more Kotlin Provider<T> fanciness
+
 ## [0.7.1] - June 26th 2021
 
 * Don't instantiate reflective objects when handling custom providers
