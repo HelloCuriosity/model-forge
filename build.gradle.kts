@@ -9,7 +9,7 @@ plugins {
     kotlin("jvm") version "1.5.30"
 
     // Quality gate
-    id("org.jmailen.kotlinter") version "3.5.0"
+    id("org.jmailen.kotlinter") version "3.5.1"
     id("io.gitlab.arturbosch.detekt") version "1.18.0"
     jacoco
 }
