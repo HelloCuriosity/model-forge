@@ -32,7 +32,9 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v2.3.0
         with:
-          java-version: 1.8
+          distribution: 'adopt'
+          java-version: '11'
+          cache: 'gradle'
       - name: Publish
         run: |
           export IS_RELEASE=${{ github.event_name == 'push' && contains(github.ref, 'refs/tags/') }}
