@@ -9,3 +9,13 @@ updates:
     open-pull-requests-limit: 10
     labels:
       - dependencies
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: daily
+      time: "08:00"
+      timezone: Europe/Berlin
+    open-pull-requests-limit: 10
+    labels:
+      - GitHub Actions
