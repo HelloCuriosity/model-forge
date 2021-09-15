@@ -1,3 +1,8 @@
+## [0.7.3] - September 15th 2021
+
+* Add GitHub Action dependencies to dependabot
+* Dependency updates
+
 ## [0.7.2] - July 29th 2021
 
 * Allow for forging Enums directly through ModelForge.build
