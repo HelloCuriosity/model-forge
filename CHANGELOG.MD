@@ -1,3 +1,7 @@
+## [0.7.4] - September 16th 2021
+
+* Build with Java 8
+
 ## [0.7.3] - September 15th 2021
 
 * Add GitHub Action dependencies to dependabot
