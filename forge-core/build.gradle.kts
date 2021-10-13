@@ -24,7 +24,7 @@ dependencies {
     testImplementation(project(":forge-test-utils"))
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
     testImplementation(kotlin("test-junit"))
-    testImplementation("org.mockito.kotlin:mockito-kotlin:3.2.0")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:4.0.0")
 }
 
 jacoco {
