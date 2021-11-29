@@ -22,7 +22,7 @@ dependencies {
 
     // Testing
     testImplementation(project(":forge-test-utils"))
-    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.2")
     testImplementation(kotlin("test-junit"))
     testImplementation("org.mockito.kotlin:mockito-kotlin:4.0.0")
 }
