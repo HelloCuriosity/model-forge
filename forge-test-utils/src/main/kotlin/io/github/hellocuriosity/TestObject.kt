@@ -4,6 +4,7 @@ import java.io.File
 import java.time.Instant
 import java.util.Calendar
 import java.util.Date
+import java.util.UUID
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
@@ -33,6 +34,8 @@ data class TestObject(
     val longOptional: Long?,
     val stringValue: String,
     val stringOptional: String?,
+    val uuidValue: UUID,
+    val uuidOptional: UUID?,
     val listValues: List<ComplexObject>,
     val listOptional: List<ComplexObject>?,
     val complexObject: ComplexObject,
@@ -47,6 +50,11 @@ enum class TestEnumWithValue(val value: String) {
     FOUR("four"), FIVE("five"), SIX("six");
 
     companion object {
+        /**
+         * Unused because we aren't validating this, but still necessary
+         * to validate that these objects aren't being generated
+         */
+
         const val COMPANION_VALUE = 1234
         fun list() = listOf(FOUR, FIVE, SIX)
     }
@@ -66,49 +74,51 @@ data class ComplexObject(
 )
 
 fun TestObject.assert() {
-    assertNotNull(this.booleanValue)
-    assertNotNull(this.booleanOptional)
-    assertNotNull(this.calendarValue)
-    assertNotNull(this.calendarOptional)
-    assertNotNull(this.dateValue)
-    assertNotNull(this.dateOptional)
-    assertNotNull(this.doubleValue)
-    assertNotNull(this.doubleOptional)
-    assertNotNull(this.enumValue)
-    assertNotNull(this.enumOptional)
-    assertNotNull(this.enumWithValue)
-    assertNotNull(this.enumWithValueOptional)
-    assertNotNull(this.file)
-    assertNotNull(this.fileOptional)
-    assertNotNull(this.floatValue)
-    assertNotNull(this.floatOptional)
-    assertNotNull(this.intValue)
-    assertNotNull(this.intValueOptional)
-    assertNotNull(this.instantValue)
-    assertNotNull(this.instantOptional)
-    assertNotNull(this.longValue)
-    assertNotNull(this.longOptional)
-    assertNotNull(this.listValues)
-    assertEquals(10, this.listValues.size)
-    assertNotNull(this.listOptional)
-    assertEquals(10, this.listOptional.size)
-    assertNotNull(this.stringValue)
-    assertTrue(this.stringValue.isNotBlank())
-    assertNotNull(this.stringOptional)
-    assertTrue(this.stringOptional.isNotBlank())
-    assertNotNull(this.complexObject)
-    assertNotNull(this.complexOptional)
+    assertNotNull(booleanValue)
+    assertNotNull(booleanOptional)
+    assertNotNull(calendarValue)
+    assertNotNull(calendarOptional)
+    assertNotNull(dateValue)
+    assertNotNull(dateOptional)
+    assertNotNull(doubleValue)
+    assertNotNull(doubleOptional)
+    assertNotNull(enumValue)
+    assertNotNull(enumOptional)
+    assertNotNull(enumWithValue)
+    assertNotNull(enumWithValueOptional)
+    assertNotNull(file)
+    assertNotNull(fileOptional)
+    assertNotNull(floatValue)
+    assertNotNull(floatOptional)
+    assertNotNull(intValue)
+    assertNotNull(intValueOptional)
+    assertNotNull(instantValue)
+    assertNotNull(instantOptional)
+    assertNotNull(longValue)
+    assertNotNull(longOptional)
+    assertNotNull(listValues)
+    assertEquals(10, listValues.size)
+    assertNotNull(listOptional)
+    assertEquals(10, listOptional.size)
+    assertNotNull(stringValue)
+    assertTrue(stringValue.isNotBlank())
+    assertNotNull(stringOptional)
+    assertTrue(stringOptional.isNotBlank())
+    assertNotNull(uuidValue)
+    assertNotNull(uuidOptional)
+    assertNotNull(complexObject)
+    assertNotNull(complexOptional)
 
     // Validate populated values for ComplexObject
-    assertNotNull(this.complexObject.booleanValue)
-    assertNotNull(this.complexObject.calendarValue)
-    assertNotNull(this.complexObject.dateValue)
-    assertNotNull(this.complexObject.doubleValue)
-    assertNotNull(this.complexObject.enumValue)
-    assertNotNull(this.complexObject.floatValue)
-    assertNotNull(this.complexObject.intValue)
-    assertNotNull(this.complexObject.instantValue)
-    assertNotNull(this.complexObject.longValue)
-    assertNotNull(this.complexObject.stringValue)
-    assertTrue(this.complexObject.stringValue.isNotBlank())
+    assertNotNull(complexObject.booleanValue)
+    assertNotNull(complexObject.calendarValue)
+    assertNotNull(complexObject.dateValue)
+    assertNotNull(complexObject.doubleValue)
+    assertNotNull(complexObject.enumValue)
+    assertNotNull(complexObject.floatValue)
+    assertNotNull(complexObject.intValue)
+    assertNotNull(complexObject.instantValue)
+    assertNotNull(complexObject.longValue)
+    assertNotNull(complexObject.stringValue)
+    assertTrue(complexObject.stringValue.isNotBlank())
 }
