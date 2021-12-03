@@ -11,6 +11,7 @@ import io.github.hellocuriosity.providers.IntegerProvider
 import io.github.hellocuriosity.providers.LongProvider
 import io.github.hellocuriosity.providers.Provider
 import io.github.hellocuriosity.providers.StringProvider
+import io.github.hellocuriosity.providers.UuidProvider
 import io.github.hellocuriosity.providers.getEnum
 import org.objenesis.Objenesis
 import org.objenesis.ObjenesisStd
@@ -22,6 +23,7 @@ import java.lang.reflect.ParameterizedType
 import java.time.Instant
 import java.util.Calendar
 import java.util.Date
+import java.util.UUID
 
 open class ModelForge {
 
@@ -128,6 +130,7 @@ open class ModelForge {
         Instant::class.java -> InstantProvider().get() as T
         Long::class.java, java.lang.Long::class.java -> LongProvider().get() as T
         String::class.java, java.lang.String::class.java -> StringProvider().get() as T
+        UUID::class.java -> UuidProvider().get() as T
         else -> if (isEnum) getEnum() as T else orDefault()
     }
 
