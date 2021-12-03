@@ -1,3 +1,8 @@
+## [0.8.0] - Not released yet
+
+* Support for UUIDs
+* Dependency updates
+
 ## [0.7.4] - September 16th 2021
 
 * Build with Java 8
