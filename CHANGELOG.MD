@@ -1,13 +1,12 @@
 ## [0.8.0] - Not released yet
 
-Auto generation for additional types:
-
-* Byte
-* Char
-* Short
-* UUID
-
-Dependency updates
+* Auto generation for additional types:
+    * Byte
+    * Char
+    * Short
+    * UUID
+* Support for Set collection type
+* Dependency updates
 
 ## [0.7.4] - September 16th 2021
 

@@ -18,6 +18,8 @@ data class TestObject(
     val calendarOptional: Calendar?,
     val charValue: Char,
     val charOptional: Char?,
+    val complexObject: ComplexObject,
+    val complexOptional: ComplexObject?,
     val dateValue: Date,
     val dateOptional: Date?,
     val doubleValue: Double,
@@ -34,18 +36,18 @@ data class TestObject(
     val intValueOptional: Int?,
     val instantValue: Instant,
     val instantOptional: Instant?,
+    val listValues: List<ComplexObject>,
+    val listOptional: List<ComplexObject>?,
     val longValue: Long,
     val longOptional: Long?,
+    val setValues: Set<ComplexObject>,
+    val setOptional: Set<ComplexObject>?,
     val shortValue: Short,
     val shortOptional: Short?,
     val stringValue: String,
     val stringOptional: String?,
     val uuidValue: UUID,
     val uuidOptional: UUID?,
-    val listValues: List<ComplexObject>,
-    val listOptional: List<ComplexObject>?,
-    val complexObject: ComplexObject,
-    val complexOptional: ComplexObject?
 )
 
 enum class TestEnum {
@@ -88,6 +90,8 @@ fun TestObject.assert() {
     assertNotNull(calendarOptional)
     assertNotNull(charValue)
     assertNotNull(charOptional)
+    assertNotNull(complexObject)
+    assertNotNull(complexOptional)
     assertNotNull(dateValue)
     assertNotNull(dateOptional)
     assertNotNull(doubleValue)
@@ -110,6 +114,10 @@ fun TestObject.assert() {
     assertEquals(10, listValues.size)
     assertNotNull(listOptional)
     assertEquals(10, listOptional.size)
+    assertNotNull(setValues)
+    assertEquals(10, setValues.size)
+    assertNotNull(setOptional)
+    assertEquals(10, setOptional.size)
     assertNotNull(shortValue)
     assertNotNull(shortOptional)
     assertNotNull(stringValue)
@@ -118,8 +126,6 @@ fun TestObject.assert() {
     assertTrue(stringOptional.isNotBlank())
     assertNotNull(uuidValue)
     assertNotNull(uuidOptional)
-    assertNotNull(complexObject)
-    assertNotNull(complexOptional)
 
     // Validate populated values for ComplexObject
     assertNotNull(complexObject.booleanValue)
