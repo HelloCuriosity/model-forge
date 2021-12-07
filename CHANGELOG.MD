@@ -3,6 +3,7 @@
 Auto generation for additional types:
 
 * Byte
+* Char
 * Short
 * UUID
 
