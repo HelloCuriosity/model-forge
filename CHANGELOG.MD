@@ -1,7 +1,11 @@
 ## [0.8.0] - Not released yet
 
-* Support for UUIDs
-* Dependency updates
+Auto generation for additional types:
+
+* UUID
+* Short
+
+Dependency updates
 
 ## [0.7.4] - September 16th 2021
 
@@ -42,7 +46,7 @@
 
 ## [0.4.0] - May 26th 2021
 
-Auto generations for enums.
+Auto generation for enums.
 
 ## [0.3.0] - May 13th 2021
 
