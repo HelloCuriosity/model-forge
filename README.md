@@ -107,7 +107,7 @@ val list = forge.buildList(TestObject::class, 3)
 or by delegating
 
 ```kotlin
-val testObjects: List<TestObject> by forgeries()
+val testObjects: List<TestObject> by forgeryList()
 ```
 
 ## Custom Provider

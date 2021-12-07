@@ -48,9 +48,19 @@ class ModelForgeKotlinTest {
     }
 
     @Test
-    fun testReifiedBuildList_WithSize() {
+    fun testReifiedBuildListDeprecated_WithSize() {
         val size = 3
         val list = forge.build<TestObject>(size)
+        assertEquals(size, list.size)
+        list.map { testObject ->
+            testObject.assert()
+        }
+    }
+
+    @Test
+    fun testReifiedBuildList_WithSize() {
+        val size = 3
+        val list = forge.buildList<TestObject>(size)
         assertEquals(size, list.size)
         list.map { testObject ->
             testObject.assert()
@@ -65,5 +75,34 @@ class ModelForgeKotlinTest {
 
         val testObject = forge.build(UnsupportedTestObject::class)
         assertNull(testObject)
+    }
+
+    @Test
+    fun testBuildSet_Default() {
+        val set = forge.buildSet(TestObject::class)
+        assertEquals(10, set.size)
+        set.map { testObject ->
+            testObject.assert()
+        }
+    }
+
+    @Test
+    fun testBuildSet_WithSize() {
+        val size = 3
+        val set = forge.buildSet(TestObject::class, size)
+        assertEquals(size, set.size)
+        set.map { testObject ->
+            testObject.assert()
+        }
+    }
+
+    @Test
+    fun testReifiedBuildSet_WithSize() {
+        val size = 3
+        val set = forge.buildSet<TestObject>(size)
+        assertEquals(size, set.size)
+        set.map { testObject ->
+            testObject.assert()
+        }
     }
 }
