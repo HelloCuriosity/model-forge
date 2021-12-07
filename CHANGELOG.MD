@@ -2,8 +2,9 @@
 
 Auto generation for additional types:
 
-* UUID
+* Byte
 * Short
+* UUID
 
 Dependency updates
 

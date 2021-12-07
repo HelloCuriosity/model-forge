@@ -12,6 +12,8 @@ import kotlin.test.assertTrue
 data class TestObject(
     val booleanValue: Boolean,
     val booleanOptional: Boolean?,
+    val byteValue: Byte,
+    val byteOptional: Byte?,
     val calendarValue: Calendar,
     val calendarOptional: Calendar?,
     val dateValue: Date,
@@ -78,6 +80,8 @@ data class ComplexObject(
 fun TestObject.assert() {
     assertNotNull(booleanValue)
     assertNotNull(booleanOptional)
+    assertNotNull(byteValue)
+    assertNotNull(byteOptional)
     assertNotNull(calendarValue)
     assertNotNull(calendarOptional)
     assertNotNull(dateValue)
