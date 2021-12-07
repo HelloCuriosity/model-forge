@@ -3,6 +3,7 @@ package io.github.hellocuriosity
 import io.github.hellocuriosity.providers.BooleanProvider
 import io.github.hellocuriosity.providers.ByteProvider
 import io.github.hellocuriosity.providers.CalendarProvider
+import io.github.hellocuriosity.providers.CharProvider
 import io.github.hellocuriosity.providers.DateProvider
 import io.github.hellocuriosity.providers.DoubleProvider
 import io.github.hellocuriosity.providers.FileProvider
@@ -126,6 +127,7 @@ open class ModelForge {
         Boolean::class.java, java.lang.Boolean::class.java -> BooleanProvider().get() as T
         Byte::class.java, java.lang.Byte::class.java -> ByteProvider().get() as T
         Calendar::class.java -> CalendarProvider().get() as T
+        Char::class.java, java.lang.Character::class.java -> CharProvider().get() as T
         Date::class.java -> DateProvider().get() as T
         Double::class.java, java.lang.Double::class.java -> DoubleProvider().get() as T
         File::class.java -> FileProvider().get() as T
