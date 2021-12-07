@@ -174,6 +174,7 @@ Model Forge currently supports the auto generation for the following types:
 * Int
 * Instant
 * Long
+* Short (snapshot)
 * String
 * UUID (snapshot)
 
