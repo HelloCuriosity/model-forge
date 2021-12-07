@@ -1,4 +1,4 @@
-## [0.8.0] - Not released yet
+## [0.8.0] - December 7th 2021
 
 * Auto generation for additional types:
     * Byte
