@@ -16,6 +16,8 @@ data class TestObject(
     val byteOptional: Byte?,
     val calendarValue: Calendar,
     val calendarOptional: Calendar?,
+    val charValue: Char,
+    val charOptional: Char?,
     val dateValue: Date,
     val dateOptional: Date?,
     val doubleValue: Double,
@@ -84,6 +86,8 @@ fun TestObject.assert() {
     assertNotNull(byteOptional)
     assertNotNull(calendarValue)
     assertNotNull(calendarOptional)
+    assertNotNull(charValue)
+    assertNotNull(charOptional)
     assertNotNull(dateValue)
     assertNotNull(dateOptional)
     assertNotNull(doubleValue)

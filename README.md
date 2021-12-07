@@ -167,6 +167,7 @@ Model Forge currently supports the auto generation for the following types:
 * Boolean
 * Byte (snapshot)
 * Calendar
+* Char (snapshot)
 * Date
 * Double
 * Enums
