@@ -40,6 +40,44 @@ class ForgeryTest {
         }
     }
 
+    @Test
+    fun testForgeryList_Default() {
+        val list: List<TestObject> by forgeryList()
+        assertEquals(10, list.size)
+        list.map { testObject ->
+            testObject.assert()
+        }
+    }
+
+    @Test
+    fun testForgeryList_WithSize() {
+        val size = 3
+        val list: List<TestObject> by forgeryList(size = size)
+        assertEquals(size, list.size)
+        list.map { testObject ->
+            testObject.assert()
+        }
+    }
+
+    @Test
+    fun testForgerySet_Default() {
+        val set: Set<TestObject> by forgerySet()
+        assertEquals(10, set.size)
+        set.map { testObject ->
+            testObject.assert()
+        }
+    }
+
+    @Test
+    fun testForgerySet_WithSize() {
+        val size = 3
+        val set: Set<TestObject> by forgerySet(size = size)
+        assertEquals(size, set.size)
+        set.map { testObject ->
+            testObject.assert()
+        }
+    }
+
     @Test(expected = ModelForgeException::class)
     fun testForgery_WithUnsupportedType() {
         data class UnsupportedTestObject(
@@ -73,6 +111,7 @@ class ForgeryTest {
             val name: String,
             val dob: Instant,
         )
+
         val forge = ModelForge().apply {
             addProvider {
                 Employee(

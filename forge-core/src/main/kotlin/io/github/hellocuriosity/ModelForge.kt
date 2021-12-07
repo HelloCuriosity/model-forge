@@ -174,7 +174,7 @@ open class ModelForge {
         return when (this.type) {
             List::class.java -> buildList(clazz, size)
             Set::class.java -> buildSet(clazz, size)
-            else -> error("")
+            else -> throw ModelForgeException("Could not create values for: ${clazz.name}")
         }
     }
 }
