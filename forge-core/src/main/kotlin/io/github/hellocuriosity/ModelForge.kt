@@ -160,7 +160,7 @@ open class ModelForge {
     }
 
     /**
-     * Auto generate values (list/set)
+     * Auto generate values
      *
      * @param Field Field needed to determine list type
      * @param size Int number of items to create (defaulting to 10)
