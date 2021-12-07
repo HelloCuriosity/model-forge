@@ -1,13 +1,13 @@
 package io.github.hellocuriosity.providers
 
 /**
- * Auto generates a Short between two values
+ * Auto generates a Byte between two values
  *
  * @param min minimum value
  * @param max maximum value
  * @param provider IntegerProvider
  *
- * @return Short instance
+ * @return Byte instance
  */
 class ByteProvider(
     private val min: Int = DEFAULT_MIN,
