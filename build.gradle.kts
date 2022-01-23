@@ -1,5 +1,6 @@
 import io.gitlab.arturbosch.detekt.Detekt
 import io.gitlab.arturbosch.detekt.DetektCreateBaselineTask
+import kotlinx.kover.api.KoverTaskExtension
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 allprojects {
@@ -13,7 +14,7 @@ plugins {
     // Quality gate
     id("org.jmailen.kotlinter") version "3.8.0"
     id("io.gitlab.arturbosch.detekt") version "1.19.0"
-    jacoco
+    id("org.jetbrains.kotlinx.kover") version "0.4.4"
 }
 
 repositories {
@@ -50,4 +51,16 @@ tasks.withType<Detekt>().configureEach {
 
 tasks.withType<DetektCreateBaselineTask>().configureEach {
     jvmTarget = "1.8"
+}
+
+tasks.test {
+    extensions.configure(KoverTaskExtension::class) {
+        isEnabled = true
+    }
+}
+
+kover {
+    isEnabled = true
+    jacocoEngineVersion.set("0.8.7")
+    generateReportOnCheck.set(true)
 }
