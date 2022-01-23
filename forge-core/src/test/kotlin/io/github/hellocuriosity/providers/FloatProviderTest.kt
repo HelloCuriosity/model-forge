@@ -1,28 +1,22 @@
 package io.github.hellocuriosity.providers
 
+import io.mockk.confirmVerified
+import io.mockk.every
+import io.mockk.mockk
+import io.mockk.verify
 import org.junit.After
 import org.junit.Test
-import org.junit.runner.RunWith
-import org.mockito.junit.MockitoJUnitRunner
-import org.mockito.kotlin.any
-import org.mockito.kotlin.doReturn
-import org.mockito.kotlin.eq
-import org.mockito.kotlin.mock
-import org.mockito.kotlin.verify
-import org.mockito.kotlin.verifyNoMoreInteractions
-import org.mockito.kotlin.whenever
 import kotlin.random.Random
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-@RunWith(MockitoJUnitRunner::class)
 class FloatProviderTest {
 
-    private val random: Random = mock()
+    private val random: Random = mockk()
 
     @After
     fun teardown() {
-        verifyNoMoreInteractions(random)
+        confirmVerified(random)
     }
 
     @Test
@@ -33,7 +27,7 @@ class FloatProviderTest {
     }
 
     @Test
-    fun testGet_WithCustomMaxMin() {
+    fun testGetWithCustomMaxMin() {
         val min = 5.0
         val max = 10.0
         val float = FloatProvider(min = min, max = max).get()
@@ -42,9 +36,9 @@ class FloatProviderTest {
     }
 
     @Test
-    fun testGet_RandomCalled() {
+    fun testGetRandomCalled() {
         val randomDouble = 15.0
-        whenever(random.nextDouble(any(), any())) doReturn randomDouble
+        every { random.nextDouble(any(), any()) } returns randomDouble
 
         val min = 5.0
         val max = 10.0
@@ -56,6 +50,6 @@ class FloatProviderTest {
 
         assertEquals(randomDouble.toFloat(), float)
 
-        verify(random).nextDouble(eq(min), eq(max))
+        verify { random.nextDouble(eq(min), eq(max)) }
     }
 }

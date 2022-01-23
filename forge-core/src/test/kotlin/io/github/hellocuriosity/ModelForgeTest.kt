@@ -16,14 +16,14 @@ class ModelForgeTest {
     }
 
     @Test
-    fun testBuild_WithProvider() {
+    fun testBuildWithProvider() {
         forge.addProvider(TestProviderObject::class.java, testProvider)
         val testObject = forge.build(TestProviderObject::class.java)
         testObject.assert()
     }
 
     @Test
-    fun testBuildList_Default() {
+    fun testBuildListDefault() {
         val list = forge.buildList(TestObject::class.java)
         assertEquals(10, list.size)
         list.map { testObject ->
@@ -32,7 +32,7 @@ class ModelForgeTest {
     }
 
     @Test
-    fun testBuildList_WithSize() {
+    fun testBuildListWithSize() {
         val size = 3
         val list = forge.buildList(TestObject::class.java, size)
         assertEquals(size, list.size)
@@ -42,7 +42,7 @@ class ModelForgeTest {
     }
 
     @Test(expected = ModelForgeException::class)
-    fun testBuild_WithUnsupportedType() {
+    fun testBuildWithUnsupportedType() {
         data class UnsupportedTestObject(
             private val random: Random,
         )

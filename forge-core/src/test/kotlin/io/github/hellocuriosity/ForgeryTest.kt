@@ -22,7 +22,7 @@ class ForgeryTest {
     }
 
     @Test
-    fun testForgeries_Default() {
+    fun testForgeriesDefault() {
         val list: List<TestObject> by forgeries()
         assertEquals(10, list.size)
         list.map { testObject ->
@@ -31,7 +31,7 @@ class ForgeryTest {
     }
 
     @Test
-    fun testForgeries_WithSize() {
+    fun testForgeriesWithSize() {
         val size = 3
         val list: List<TestObject> by forgeries(size = size)
         assertEquals(size, list.size)
@@ -41,7 +41,7 @@ class ForgeryTest {
     }
 
     @Test
-    fun testForgeryList_Default() {
+    fun testForgeryListDefault() {
         val list: List<TestObject> by forgeryList()
         assertEquals(10, list.size)
         list.map { testObject ->
@@ -50,7 +50,7 @@ class ForgeryTest {
     }
 
     @Test
-    fun testForgeryList_WithSize() {
+    fun testForgeryListWithSize() {
         val size = 3
         val list: List<TestObject> by forgeryList(size = size)
         assertEquals(size, list.size)
@@ -60,7 +60,7 @@ class ForgeryTest {
     }
 
     @Test
-    fun testForgerySet_Default() {
+    fun testForgerySetDefault() {
         val set: Set<TestObject> by forgerySet()
         assertEquals(10, set.size)
         set.map { testObject ->
@@ -69,7 +69,7 @@ class ForgeryTest {
     }
 
     @Test
-    fun testForgerySet_WithSize() {
+    fun testForgerySetWithSize() {
         val size = 3
         val set: Set<TestObject> by forgerySet(size = size)
         assertEquals(size, set.size)
@@ -79,7 +79,7 @@ class ForgeryTest {
     }
 
     @Test(expected = ModelForgeException::class)
-    fun testForgery_WithUnsupportedType() {
+    fun testForgeryWithUnsupportedType() {
         data class UnsupportedTestObject(
             private val random: Random,
         )
@@ -89,7 +89,7 @@ class ForgeryTest {
     }
 
     @Test
-    fun testForgery_withProvider() {
+    fun testForgeryWithProvider() {
         data class FancyObject(val retrieveMe: String = "wrong it")
 
         class FancyHolder(val value: FancyObject)

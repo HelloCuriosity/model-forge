@@ -2,29 +2,23 @@ package io.github.hellocuriosity.providers
 
 import io.github.hellocuriosity.Millis.NINETEEN_EIGHTY_SIX
 import io.github.hellocuriosity.Millis.TWENTY_TWENTY_ONE
+import io.mockk.confirmVerified
+import io.mockk.every
+import io.mockk.mockk
+import io.mockk.verify
 import org.junit.After
 import org.junit.Test
-import org.junit.runner.RunWith
-import org.mockito.junit.MockitoJUnitRunner
-import org.mockito.kotlin.any
-import org.mockito.kotlin.doReturn
-import org.mockito.kotlin.eq
-import org.mockito.kotlin.mock
-import org.mockito.kotlin.verify
-import org.mockito.kotlin.verifyNoMoreInteractions
-import org.mockito.kotlin.whenever
 import kotlin.random.Random
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-@RunWith(MockitoJUnitRunner::class)
 class DateProviderTest {
 
-    private val random: Random = mock()
+    private val random: Random = mockk()
 
     @After
     fun teardown() {
-        verifyNoMoreInteractions(random)
+        confirmVerified(random)
     }
 
     @Test
@@ -34,7 +28,7 @@ class DateProviderTest {
     }
 
     @Test
-    fun testGet_WithCustomTimeSpan() {
+    fun testGetWithCustomTimeSpan() {
         val start = 1L
         val end = 2L
         val date = DateProvider(from = start, until = end).get()
@@ -42,12 +36,12 @@ class DateProviderTest {
     }
 
     @Test
-    fun testGet_RandomCalled() {
-        whenever(random.nextLong(any(), any())) doReturn 1315260000000L // 06.09.2011
+    fun testGetRandomCalled() {
+        every { random.nextLong(any(), any()) } returns 1315260000000L // 06.09.2011
 
         val date = DateProvider(random = random).get()
         assertEquals(1315260000000L, date.time)
 
-        verify(random).nextLong(eq(NINETEEN_EIGHTY_SIX), eq(TWENTY_TWENTY_ONE))
+        verify { random.nextLong(eq(NINETEEN_EIGHTY_SIX), eq(TWENTY_TWENTY_ONE)) }
     }
 }

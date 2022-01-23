@@ -22,14 +22,14 @@ class ModelForgeKotlinTest {
     }
 
     @Test
-    fun testBuild_WithProvider() {
+    fun testBuildWithProvider() {
         forge.addProvider(TestProviderObject::class, testProvider)
         val testObject = forge.build(TestProviderObject::class)
         testObject.assert()
     }
 
     @Test
-    fun testBuildList_Default() {
+    fun testBuildListDefault() {
         val list = forge.buildList(TestObject::class)
         assertEquals(10, list.size)
         list.map { testObject ->
@@ -38,7 +38,7 @@ class ModelForgeKotlinTest {
     }
 
     @Test
-    fun testBuildList_WithSize() {
+    fun testBuildListWithSize() {
         val size = 3
         val list = forge.buildList(TestObject::class, size)
         assertEquals(size, list.size)
@@ -48,7 +48,7 @@ class ModelForgeKotlinTest {
     }
 
     @Test
-    fun testReifiedBuildListDeprecated_WithSize() {
+    fun testReifiedBuildListDeprecatedWithSize() {
         val size = 3
         val list = forge.build<TestObject>(size)
         assertEquals(size, list.size)
@@ -58,7 +58,7 @@ class ModelForgeKotlinTest {
     }
 
     @Test
-    fun testReifiedBuildList_WithSize() {
+    fun testReifiedBuildListWithSize() {
         val size = 3
         val list = forge.buildList<TestObject>(size)
         assertEquals(size, list.size)
@@ -68,7 +68,7 @@ class ModelForgeKotlinTest {
     }
 
     @Test(expected = ModelForgeException::class)
-    fun testBuild_WithUnsupportedType() {
+    fun testBuildWithUnsupportedType() {
         data class UnsupportedTestObject(
             private val random: Random,
         )
@@ -78,7 +78,7 @@ class ModelForgeKotlinTest {
     }
 
     @Test
-    fun testBuildSet_Default() {
+    fun testBuildSetDefault() {
         val set = forge.buildSet(TestObject::class)
         assertEquals(10, set.size)
         set.map { testObject ->
@@ -87,7 +87,7 @@ class ModelForgeKotlinTest {
     }
 
     @Test
-    fun testBuildSet_WithSize() {
+    fun testBuildSetWithSize() {
         val size = 3
         val set = forge.buildSet(TestObject::class, size)
         assertEquals(size, set.size)
@@ -97,7 +97,7 @@ class ModelForgeKotlinTest {
     }
 
     @Test
-    fun testReifiedBuildSet_WithSize() {
+    fun testReifiedBuildSetWithSize() {
         val size = 3
         val set = forge.buildSet<TestObject>(size)
         assertEquals(size, set.size)
