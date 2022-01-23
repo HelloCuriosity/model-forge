@@ -1,20 +1,14 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
-title: ''
-labels: ''
-assignees: ''
-
+name: Feature Request
+about: Help make model-forge better by creating a feature request.
+labels: feature
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+Your feature request may already be reported!
+Please have a quick look in the [issues](https://github.com/HelloCuriosity/model-forge/issues) before creating a new one.
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+## Description**
+<!-- Add a clear description of the feature you would like to see. -->
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
-
-**Additional context**
-Add any other context or screenshots about the feature request here.
+## Proposal
+<!-- Add proposal as to how you would potentially solve this issue. -->
