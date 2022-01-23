@@ -7,7 +7,7 @@ labels: feature
 Your feature request may already be reported!
 Please have a quick look in the [issues](https://github.com/HelloCuriosity/model-forge/issues) before creating a new one.
 
-## Description**
+## Description
 <!-- Add a clear description of the feature you would like to see. -->
 
 ## Proposal
