@@ -2,20 +2,15 @@ package io.github.hellocuriosity.providers
 
 import io.github.hellocuriosity.ModelForgeException
 import io.github.hellocuriosity.TestEnum
+import io.mockk.confirmVerified
+import io.mockk.every
+import io.mockk.mockk
+import io.mockk.verify
 import org.junit.After
-import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 import org.junit.runners.Suite
-import org.mockito.MockitoAnnotations
-import org.mockito.kotlin.any
-import org.mockito.kotlin.doReturn
-import org.mockito.kotlin.eq
-import org.mockito.kotlin.mock
-import org.mockito.kotlin.verify
-import org.mockito.kotlin.verifyNoMoreInteractions
-import org.mockito.kotlin.whenever
 import kotlin.random.Random
 import kotlin.test.assertEquals
 
@@ -39,23 +34,18 @@ class EnumProviderTest {
             )
         }
 
-        private val random: Random = mock()
-
-        @Before
-        fun setup() {
-            MockitoAnnotations.openMocks(this)
-        }
+        private val random: Random = mockk()
 
         @After
         fun teardown() {
-            verifyNoMoreInteractions(random)
+            confirmVerified(random)
         }
 
         @Test
         fun testGetEnum() {
-            whenever(random.nextInt(any())) doReturn mock
+            every { random.nextInt(any()) } returns mock
             assertEquals(expected, TestEnum::class.java.getEnum(random = random))
-            verify(random).nextInt(eq(TestEnum::class.java.enumConstants.size))
+            verify { random.nextInt(eq(TestEnum::class.java.enumConstants.size)) }
         }
     }
 

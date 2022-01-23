@@ -1,28 +1,22 @@
 package io.github.hellocuriosity.providers
 
+import io.mockk.confirmVerified
+import io.mockk.every
+import io.mockk.mockk
+import io.mockk.verify
 import org.junit.After
 import org.junit.Test
-import org.junit.runner.RunWith
-import org.mockito.junit.MockitoJUnitRunner
-import org.mockito.kotlin.any
-import org.mockito.kotlin.doReturn
-import org.mockito.kotlin.eq
-import org.mockito.kotlin.mock
-import org.mockito.kotlin.verify
-import org.mockito.kotlin.verifyNoMoreInteractions
-import org.mockito.kotlin.whenever
 import kotlin.random.Random
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-@RunWith(MockitoJUnitRunner::class)
 class LongProviderTest {
 
-    private val random: Random = mock()
+    private val random: Random = mockk()
 
     @After
     fun teardown() {
-        verifyNoMoreInteractions(random)
+        confirmVerified(random)
     }
 
     @Test
@@ -43,7 +37,7 @@ class LongProviderTest {
     fun testGet_RandomCalled() {
         val randomLong = 15L
 
-        whenever(random.nextLong(any(), any())) doReturn randomLong
+        every { random.nextLong(any(), any()) } returns randomLong
         val min = 5L
         val max = 10L
         val long = LongProvider(
@@ -54,6 +48,6 @@ class LongProviderTest {
 
         assertEquals(randomLong, long)
 
-        verify(random).nextLong(eq(min), eq(max))
+        verify { random.nextLong(eq(min), eq(max)) }
     }
 }
