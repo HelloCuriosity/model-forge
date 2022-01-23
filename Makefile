@@ -1,6 +1,6 @@
 .PHONY: all build clean coverage format lint local publish test
 
-all: clean format lint test build
+all: clean format lint test coverage build
 
 build:
 	./gradlew build
@@ -9,7 +9,7 @@ clean:
 	./gradlew clean
 
 coverage:
-	./gradlew jacocoTestReport
+	./gradlew koverXmlReport
 
 format:
 	./gradlew formatKotlin

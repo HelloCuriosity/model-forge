@@ -4,7 +4,6 @@ plugins {
     // Quality gate
     id("org.jmailen.kotlinter")
     id("io.gitlab.arturbosch.detekt")
-    jacoco
 
     // Publishing
     `java-library`
@@ -27,16 +26,14 @@ dependencies {
     testImplementation("org.mockito.kotlin:mockito-kotlin:4.0.0")
 }
 
-jacoco {
-    toolVersion = "0.8.7"
+tasks.koverXmlReport {
+    isEnabled = true
+    xmlReportFile.set(file("$buildDir/reports/kover/result.xml"))
 }
 
-tasks.jacocoTestReport {
-    reports {
-        csv.isEnabled = false
-        html.isEnabled = false
-        xml.isEnabled = true
-    }
+tasks.koverHtmlReport {
+    isEnabled = true
+    htmlReportDir.set(layout.buildDirectory.dir("$buildDir/reports/kover/html-result"))
 }
 
 tasks.register<Jar>("sourcesJar") {
