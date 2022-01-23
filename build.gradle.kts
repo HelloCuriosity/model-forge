@@ -1,3 +1,5 @@
+import io.gitlab.arturbosch.detekt.Detekt
+import io.gitlab.arturbosch.detekt.DetektCreateBaselineTask
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 allprojects {
@@ -36,11 +38,16 @@ tasks.test {
     useJUnit()
 }
 
-detekt {
+tasks.withType<Detekt>().configureEach {
+    jvmTarget = "1.8"
     reports {
-        html.enabled = true
-        xml.enabled = true
-        txt.enabled = false
-        sarif.enabled = false
+        html.required.set(true)
+        xml.required.set(false)
+        txt.required.set(false)
+        sarif.required.set(false)
     }
+}
+
+tasks.withType<DetektCreateBaselineTask>().configureEach {
+    jvmTarget = "1.8"
 }
