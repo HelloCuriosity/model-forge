@@ -1,38 +1,21 @@
 ---
-name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: ''
-assignees: ''
-
+name: Bug Report 
+about: Help make model-forge better by reporting bugs, and other issues. 
+labels: bug
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+Your issue may have been reported already. Please have a quick look in the 
+[issues](https://github.com/HelloCuriosity/model-forge/issues) before creating a new
+one.
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+## Expected Behavior
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+<!-- Add a description of the expected behavior -->
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+## Observed Behavior
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+<!-- Add a description of what you observed -->
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+## How to test / reproduce
 
-**Additional context**
-Add any other context about the problem here.
+<!-- Put clear instructions on how to test. -->
