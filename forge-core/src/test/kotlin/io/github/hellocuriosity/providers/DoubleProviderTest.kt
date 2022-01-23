@@ -38,7 +38,7 @@ class DoubleProviderTest {
     @Test
     fun testGetRandomCalled() {
         val randomDouble = 15.0
-        every { random.nextDouble(org.mockito.kotlin.any(), any()) } returns randomDouble
+        every { random.nextDouble(any(), any()) } returns randomDouble
 
         val min = 5.0
         val max = 10.0
