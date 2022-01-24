@@ -61,6 +61,7 @@ open class ModelForge {
                     field.isAccessible = true
                     when (field.type) {
                         List::class.java -> field.set(model, field.getValues())
+                        Map::class.java -> field.set(model, field.getValues())
                         Set::class.java -> field.set(model, field.getValues())
                         else -> realBuild(field.type)?.also {
                             field.set(model, it)
@@ -87,6 +88,26 @@ open class ModelForge {
             list.add(i, build(clazz))
         }
         return list
+    }
+
+    /**
+     *  Creates an automatically generated model map with
+     *  a specified size.
+     *
+     *  @param type ParameterizedType to instantiate
+     *  @param size Int number of models to create
+     *
+     *  @return Instance of clazz
+     */
+    private fun buildMap(type: ParameterizedType, size: Int): Map<Any, Any> {
+        val key = type.actualTypeArguments[0] as Class<*>
+        val value = type.actualTypeArguments[1] as Class<*>
+
+        val map = mutableMapOf<Any, Any>()
+        while (map.size < size) {
+            map[build(key)] = build(value)
+        }
+        return map
     }
 
     /**
@@ -173,6 +194,7 @@ open class ModelForge {
 
         return when (this.type) {
             List::class.java -> buildList(clazz, size)
+            Map::class.java -> buildMap(type, size)
             Set::class.java -> buildSet(clazz, size)
             else -> throw ModelForgeException("Could not create values for: ${clazz.name}")
         }

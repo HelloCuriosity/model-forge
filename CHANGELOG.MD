@@ -1,3 +1,7 @@
+## [0.9.0] - Not released yet
+
+* Support for map collection type
+
 ## [0.8.0] - December 7th 2021
 
 * Auto generation for additional types:
