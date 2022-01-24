@@ -10,16 +10,10 @@ package io.github.hellocuriosity.providers
  * @return Short instance
  */
 class ShortProvider(
-    private val min: Int = DEFAULT_MIN,
-    private val max: Int = DEFAULT_MAX,
-    private val provider: IntegerProvider =
-        IntegerProvider(min, max)
+    private val min: Int = Short.MIN_VALUE.toInt(),
+    private val max: Int = Short.MAX_VALUE.toInt(),
+    private val provider: IntegerProvider = IntegerProvider(min, max)
 ) : Provider<Short> {
-
-    companion object {
-        const val DEFAULT_MIN = 1
-        const val DEFAULT_MAX = 32767
-    }
 
     override fun get(): Short =
         provider.get().toShort()
