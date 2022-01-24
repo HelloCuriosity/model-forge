@@ -22,8 +22,8 @@ class FloatProviderTest {
     @Test
     fun testGet() {
         val float = FloatProvider().get()
-        assertTrue(float >= FloatProvider.DEFAULT_MIN)
-        assertTrue(float <= FloatProvider.DEFAULT_MAX)
+        assertTrue(float >= Float.MIN_VALUE)
+        assertTrue(float <= Float.MAX_VALUE)
     }
 
     @Test
