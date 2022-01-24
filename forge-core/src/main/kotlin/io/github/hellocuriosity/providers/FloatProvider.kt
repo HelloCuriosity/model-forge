@@ -12,14 +12,10 @@ import kotlin.random.Random
  * @return Float instance
  */
 class FloatProvider(
-    private val min: Double = DEFAULT_MIN,
-    private val max: Double = DEFAULT_MAX,
+    private val min: Double = Float.MIN_VALUE.toDouble(),
+    private val max: Double = Float.MAX_VALUE.toDouble(),
     private val random: Random = Random
 ) : Provider<Float> {
-    companion object {
-        const val DEFAULT_MIN = 1.0
-        const val DEFAULT_MAX = 100000.0
-    }
 
     override fun get(): Float =
         random.nextDouble(min, max).toFloat()

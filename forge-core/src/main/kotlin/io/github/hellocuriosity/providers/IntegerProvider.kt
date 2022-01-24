@@ -12,14 +12,10 @@ import kotlin.random.Random
  * @return Int instance
  */
 class IntegerProvider(
-    private val min: Int = DEFAULT_MIN,
-    private val max: Int = DEFAULT_MAX,
+    private val min: Int = Int.MIN_VALUE,
+    private val max: Int = Int.MAX_VALUE,
     private val random: Random = Random
 ) : Provider<Int> {
-    companion object {
-        const val DEFAULT_MIN = 1
-        const val DEFAULT_MAX = 100000
-    }
 
     override fun get(): Int =
         random.nextInt(min, max)

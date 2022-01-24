@@ -8,7 +8,7 @@ class ShortProviderTest {
     @Test
     fun testGet() {
         val short = ShortProvider().get()
-        assertTrue(short in ShortProvider.DEFAULT_MIN until ShortProvider.DEFAULT_MAX)
+        assertTrue(short in Short.MIN_VALUE until Short.MAX_VALUE)
     }
 
     @Test

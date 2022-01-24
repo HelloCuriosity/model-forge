@@ -10,16 +10,11 @@ package io.github.hellocuriosity.providers
  * @return Byte instance
  */
 class ByteProvider(
-    private val min: Int = DEFAULT_MIN,
-    private val max: Int = DEFAULT_MAX,
+    private val min: Int = Byte.MIN_VALUE.toInt(),
+    private val max: Int = Byte.MAX_VALUE.toInt(),
     private val provider: IntegerProvider =
         IntegerProvider(min, max)
 ) : Provider<Byte> {
-
-    companion object {
-        const val DEFAULT_MIN = 1
-        const val DEFAULT_MAX = 127
-    }
 
     override fun get(): Byte =
         provider.get().toByte()

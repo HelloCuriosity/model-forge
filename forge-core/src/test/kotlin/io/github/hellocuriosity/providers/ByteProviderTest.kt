@@ -8,7 +8,7 @@ class ByteProviderTest {
     @Test
     fun testGet() {
         val byte = ByteProvider().get()
-        assertTrue(byte in ByteProvider.DEFAULT_MIN until ByteProvider.DEFAULT_MAX)
+        assertTrue(byte in Byte.MIN_VALUE until Byte.MAX_VALUE)
     }
 
     @Test
