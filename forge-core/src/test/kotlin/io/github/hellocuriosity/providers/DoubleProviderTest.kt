@@ -22,8 +22,8 @@ class DoubleProviderTest {
     @Test
     fun testGet() {
         val double = DoubleProvider().get()
-        assertTrue(double >= DoubleProvider.DEFAULT_MIN)
-        assertTrue(double <= DoubleProvider.DEFAULT_MAX)
+        assertTrue(double >= Double.MIN_VALUE)
+        assertTrue(double <= Double.MAX_VALUE)
     }
 
     @Test
