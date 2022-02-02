@@ -14,7 +14,7 @@ plugins {
     // Quality gate
     id("org.jmailen.kotlinter") version "3.8.0"
     id("io.gitlab.arturbosch.detekt") version "1.19.0"
-    id("org.jetbrains.kotlinx.kover") version "0.4.4"
+    id("org.jetbrains.kotlinx.kover") version "0.5.0"
 }
 
 repositories {
@@ -60,7 +60,7 @@ tasks.test {
 }
 
 kover {
-    isEnabled = true
+    isDisabled = false
     jacocoEngineVersion.set("0.8.7")
-    generateReportOnCheck.set(true)
+    generateReportOnCheck = true
 }
