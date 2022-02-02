@@ -60,7 +60,7 @@ tasks.test {
 }
 
 kover {
-    isEnabled = true
+    isDisabled = false
     jacocoEngineVersion.set("0.8.7")
-    generateReportOnCheck.set(true)
+    generateReportOnCheck = true
 }
