@@ -12,7 +12,7 @@ class ShortProviderTest {
     }
 
     @Test
-    fun testGet_WithCustomMaxMin() {
+    fun testGetWithCustomMaxMin() {
         val min = 5
         val max = 10
         val short = ShortProvider(min = min, max = max).get()

@@ -26,7 +26,7 @@ class LongProviderTest {
     }
 
     @Test
-    fun testGet_WithCustomMaxMin() {
+    fun testGetWithCustomMaxMin() {
         val min = 5L
         val max = 10L
         val long = LongProvider(min = min, max = max).get()
@@ -34,7 +34,7 @@ class LongProviderTest {
     }
 
     @Test
-    fun testGet_RandomCalled() {
+    fun testGetRandomCalled() {
         val randomLong = 15L
 
         every { random.nextLong(any(), any()) } returns randomLong
