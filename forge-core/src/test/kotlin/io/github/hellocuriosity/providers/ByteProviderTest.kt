@@ -12,7 +12,7 @@ class ByteProviderTest {
     }
 
     @Test
-    fun testGet_WithCustomMaxMin() {
+    fun testGetWithCustomMaxMin() {
         val min = 5
         val max = 10
         val byte = ByteProvider(min = min, max = max).get()

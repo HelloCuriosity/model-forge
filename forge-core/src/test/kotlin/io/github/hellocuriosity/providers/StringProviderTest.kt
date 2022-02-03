@@ -14,7 +14,7 @@ class StringProviderTest {
     }
 
     @Test
-    fun testGet_ZeroOrLess() {
+    fun testGetZeroOrLess() {
         for (i in -1000..0) {
             val words = StringProvider(wordCount = i).get()
             assertEquals(1, words.count())

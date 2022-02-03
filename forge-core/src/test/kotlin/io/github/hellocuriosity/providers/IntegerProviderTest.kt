@@ -26,7 +26,7 @@ class IntegerProviderTest {
     }
 
     @Test
-    fun testGet_WithCustomMaxMin() {
+    fun testGetWithCustomMaxMin() {
         val min = 5
         val max = 10
         val integer = IntegerProvider(min = min, max = max).get()
@@ -34,7 +34,7 @@ class IntegerProviderTest {
     }
 
     @Test
-    fun testGet_RandomCalled() {
+    fun testGetRandomCalled() {
         val randomInt = 15
         every { random.nextInt(any(), any()) } returns randomInt
 
