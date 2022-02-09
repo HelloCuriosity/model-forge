@@ -1,5 +1,6 @@
 package io.github.hellocuriosity.providers
 
+import javax.inject.Provider
 import kotlin.random.Random
 
 /**

@@ -3,6 +3,7 @@ package io.github.hellocuriosity.providers
 import io.github.hellocuriosity.Millis.NINETEEN_EIGHTY_SIX
 import io.github.hellocuriosity.Millis.TWENTY_TWENTY_ONE
 import java.util.Calendar
+import javax.inject.Provider
 
 /**
  * Auto generates a Calendar instance between two dates

@@ -1,6 +1,6 @@
 package io.github.hellocuriosity
 
-import io.github.hellocuriosity.providers.Provider
+import javax.inject.Provider
 import kotlin.reflect.KClass
 
 /**

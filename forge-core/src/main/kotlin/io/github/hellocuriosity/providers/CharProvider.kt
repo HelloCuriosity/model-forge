@@ -1,5 +1,7 @@
 package io.github.hellocuriosity.providers
 
+import javax.inject.Provider
+
 /**
  * Auto generates a Char
  *

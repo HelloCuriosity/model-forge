@@ -1,6 +1,7 @@
 package io.github.hellocuriosity.providers
 
 import java.util.UUID
+import javax.inject.Provider
 
 /**
  * Auto generates an UUID
