@@ -103,10 +103,10 @@ open class ModelForge {
         val key = type.actualTypeArguments[0] as Class<*>
         val value = type.actualTypeArguments[1] as Class<*>
 
-        val map = mutableMapOf<Any, Any>()
-        while (map.size < size) {
-            map[build(key)] = build(value)
-        }
+        val map = (0 until size).map {
+            build(key) to build(value)
+        }.toMap()
+
         return map
     }
 
