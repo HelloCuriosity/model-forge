@@ -196,3 +196,5 @@ If you contribute to Model Forge, please feel free to add yourself to the list!
     * Kotlin class definitions
     * Forgery and forgeries property delegate
     * Reified inline extension functions
+* [Alicja Kozikowska](https://github.com/Ashlett) - Contributor
+    * Fix StringProvider treatment of invalid wordCount
