@@ -1,6 +1,7 @@
 ## [0.9.0] - Not released yet
 
 * Support for map collection type
+* Better output message when using `attempt`
 
 ## [0.8.0] - December 7th 2021
 
