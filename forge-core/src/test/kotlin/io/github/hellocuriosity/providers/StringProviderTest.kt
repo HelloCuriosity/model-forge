@@ -1,5 +1,6 @@
 package io.github.hellocuriosity.providers
 
+import io.github.hellocuriosity.ModelForgeException
 import org.junit.Test
 import org.junit.jupiter.api.Assertions.assertEquals
 
@@ -14,11 +15,14 @@ class StringProviderTest {
     }
 
     @Test
-    fun testGetZeroOrLess() {
-        for (i in -1000..0) {
-            val words = StringProvider(wordCount = i).get()
-            assertEquals(1, words.count())
-        }
+    fun testGetZero() {
+        val emptyString = StringProvider(wordCount = 0).get()
+        assertEquals("", emptyString)
+    }
+
+    @Test(expected = ModelForgeException::class)
+    fun testGetLessThanZero() {
+        StringProvider(wordCount = -1).get()
     }
 
     private fun String.count(): Int =

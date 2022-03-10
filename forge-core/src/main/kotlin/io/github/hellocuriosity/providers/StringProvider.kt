@@ -1,6 +1,7 @@
 package io.github.hellocuriosity.providers
 
 import com.thedeanda.lorem.LoremIpsum
+import io.github.hellocuriosity.ModelForgeException
 
 /**
  * Auto generates a String
@@ -20,10 +21,10 @@ class StringProvider(
     }
 
     override fun get(): String {
-        if (wordCount <= 0) {
-            println("$wordCount is not a valid input, reverting to default $DEFAULT_VALUE")
-            return lorem.getWords(wordCount)
+        return when {
+            wordCount < 0 -> throw ModelForgeException("Cannot generate string of $wordCount words")
+            wordCount == 0 -> ""
+            else -> lorem.getWords(wordCount)
         }
-        return lorem.getWords(wordCount)
     }
 }
