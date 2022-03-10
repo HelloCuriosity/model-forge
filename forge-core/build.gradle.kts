@@ -23,7 +23,7 @@ dependencies {
     testImplementation(project(":forge-test-utils"))
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.2")
     testImplementation(kotlin("test-junit"))
-    testImplementation("io.mockk:mockk:1.12.2")
+    testImplementation("io.mockk:mockk:1.12.3")
 }
 
 tasks.koverXmlReport {
