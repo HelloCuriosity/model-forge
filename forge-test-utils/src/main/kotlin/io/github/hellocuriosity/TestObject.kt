@@ -40,6 +40,8 @@ data class TestObject(
     val listOptional: List<ComplexObject>?,
     val longValue: Long,
     val longOptional: Long?,
+    val mapValues: Map<String, ComplexObject>,
+    val mapOptional: Map<String, ComplexObject>?,
     val setValues: Set<ComplexObject>,
     val setOptional: Set<ComplexObject>?,
     val shortValue: Short,
@@ -114,6 +116,10 @@ fun TestObject.assert() {
     assertEquals(10, listValues.size)
     assertNotNull(listOptional)
     assertEquals(10, listOptional.size)
+    assertNotNull(mapValues)
+    assertTrue(mapValues.size in 0 until 11)
+    assertNotNull(mapOptional)
+    assertTrue(mapOptional.size in 0 until 11)
     assertNotNull(setValues)
     assertEquals(10, setValues.size)
     assertNotNull(setOptional)
