@@ -21,9 +21,10 @@ class StringProvider(
     }
 
     override fun get(): String {
-        if (wordCount < 0) {
-            throw ModelForgeException("$wordCount is not a valid word count")
+        return when {
+            wordCount < 0 -> throw ModelForgeException("Cannot generate string of $wordCount words")
+            wordCount == 0 -> ""
+            else -> lorem.getWords(wordCount)
         }
-        return lorem.getWords(wordCount)
     }
 }
