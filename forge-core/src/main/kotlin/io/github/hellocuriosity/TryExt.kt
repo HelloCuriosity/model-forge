@@ -1,9 +1,9 @@
 package io.github.hellocuriosity
 
 @Suppress("SwallowedException")
-fun <T> Any.attempt(block: () -> T) = try {
+fun <T> attempt(block: () -> T) = try {
     block()
 } catch (e: InstantiationError) {
     // Throw model forge exception instead
-    throw ModelForgeException("$this is not yet supported")
+    throw ModelForgeException("${e.message} is not yet supported")
 }
