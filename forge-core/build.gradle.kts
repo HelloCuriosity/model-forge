@@ -19,7 +19,7 @@ dependencies {
     implementation(Dependency.objenesis)
     implementation(Dependency.lorem)
     // Javax inject
-    implementation(Dependency.JavaX.inject)
+    api(Dependency.JavaX.inject)
 
     // Testing
     testImplementation(project(":forge-test-utils"))
