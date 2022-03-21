@@ -2,7 +2,6 @@ package io.github.hellocuriosity.providers
 
 import com.thedeanda.lorem.LoremIpsum
 import io.github.hellocuriosity.ModelForgeException
-import javax.inject.Provider
 
 /**
  * Auto generates a String
