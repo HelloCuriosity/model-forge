@@ -2,6 +2,7 @@
 
 * Support for map collection type
 * Better output message when using `attempt`
+* Removed the custom Provider interface in favor of `javax.inject.Provider`.
 
 ## [0.8.0] - December 7th 2021
 

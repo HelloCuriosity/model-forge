@@ -16,14 +16,16 @@ repositories {
 }
 
 dependencies {
-    implementation("org.objenesis:objenesis:3.2")
-    implementation("com.thedeanda:lorem:2.1")
+    implementation(Dependency.objenesis)
+    implementation(Dependency.lorem)
+    // Javax inject
+    api(Dependency.JavaX.inject)
 
     // Testing
     testImplementation(project(":forge-test-utils"))
-    testImplementation("org.junit.jupiter:junit-jupiter:5.8.2")
+    testImplementation(Dependency.Test.junitJupiter)
     testImplementation(kotlin("test-junit"))
-    testImplementation("io.mockk:mockk:1.12.3")
+    testImplementation(Dependency.Test.mockK)
 }
 
 tasks.koverXmlReport {

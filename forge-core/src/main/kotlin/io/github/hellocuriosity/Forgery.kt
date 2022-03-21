@@ -1,6 +1,6 @@
 package io.github.hellocuriosity
 
-import io.github.hellocuriosity.providers.Provider
+import javax.inject.Provider
 
 public inline fun <reified T : Any> forgery(forger: ModelForge = ModelForge()): Lazy<T> = lazy {
     forger.build(T::class)

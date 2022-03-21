@@ -1,5 +1,8 @@
 package io.github.hellocuriosity.providers
 
-fun interface Provider<T> {
-    fun get(): T
-}
+import javax.inject.Provider as JavaxProvider
+
+/**
+ * Legacy support for the removed Provider interface
+ */
+typealias Provider<T> = JavaxProvider<T>

@@ -11,7 +11,6 @@ import io.github.hellocuriosity.providers.FloatProvider
 import io.github.hellocuriosity.providers.InstantProvider
 import io.github.hellocuriosity.providers.IntegerProvider
 import io.github.hellocuriosity.providers.LongProvider
-import io.github.hellocuriosity.providers.Provider
 import io.github.hellocuriosity.providers.ShortProvider
 import io.github.hellocuriosity.providers.StringProvider
 import io.github.hellocuriosity.providers.UuidProvider
@@ -27,6 +26,7 @@ import java.time.Instant
 import java.util.Calendar
 import java.util.Date
 import java.util.UUID
+import javax.inject.Provider
 
 open class ModelForge {
 
