@@ -9,12 +9,12 @@ allprojects {
 }
 
 plugins {
-    kotlin("jvm") version "1.6.10"
+    kotlin("jvm") version Versions.kotlin
 
     // Quality gate
-    id("org.jmailen.kotlinter") version "3.9.0"
-    id("io.gitlab.arturbosch.detekt") version "1.19.0"
-    id("org.jetbrains.kotlinx.kover") version "0.5.0"
+    id("org.jmailen.kotlinter") version Versions.kotlinter
+    id("io.gitlab.arturbosch.detekt") version Versions.detekt
+    id("org.jetbrains.kotlinx.kover") version Versions.kover
 }
 
 repositories {
@@ -32,7 +32,7 @@ java {
 }
 
 tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+    kotlinOptions.jvmTarget = "11"
 }
 
 tasks.test {
@@ -40,7 +40,7 @@ tasks.test {
 }
 
 tasks.withType<Detekt>().configureEach {
-    jvmTarget = "1.8"
+    jvmTarget = "11"
     reports {
         html.required.set(true)
         xml.required.set(false)
@@ -50,7 +50,7 @@ tasks.withType<Detekt>().configureEach {
 }
 
 tasks.withType<DetektCreateBaselineTask>().configureEach {
-    jvmTarget = "1.8"
+    jvmTarget = "11"
 }
 
 tasks.test {
