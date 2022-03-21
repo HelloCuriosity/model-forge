@@ -28,6 +28,11 @@ dependencies {
     testImplementation(Dependency.Test.mockK)
 }
 
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
 tasks.koverXmlReport {
     isEnabled = true
     xmlReportFile.set(file("$buildDir/reports/kover/result.xml"))
@@ -36,16 +41,6 @@ tasks.koverXmlReport {
 tasks.koverHtmlReport {
     isEnabled = true
     htmlReportDir.set(layout.buildDirectory.dir("$buildDir/reports/kover/html-result"))
-}
-
-tasks.register<Jar>("sourcesJar") {
-    archiveClassifier.set("sources")
-    from(sourceSets.main.get().allJava)
-}
-
-tasks.register<Jar>("javadocJar") {
-    archiveClassifier.set("javadoc")
-    from(tasks.javadoc.get().destinationDir)
 }
 
 tasks.withType<Sign>().configureEach {
@@ -74,8 +69,6 @@ publishing {
         create<MavenPublication>("mavenJava") {
             artifactId = "model-forge"
             from(components["java"])
-            artifact(tasks["sourcesJar"])
-            artifact(tasks["javadocJar"])
 
             pom {
                 name.set("Model Forge")
