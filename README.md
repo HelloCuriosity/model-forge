@@ -183,7 +183,7 @@ Model Forge currently supports the auto generation for the following types:
 ### Collections
 
 * List
-* Map (_SNAPSHOT_)
+* Map
 * Set
 
 _Can't find your data type? Feel free to create a pull request or open an issue_ :parachute:
