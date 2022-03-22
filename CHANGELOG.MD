@@ -1,8 +1,11 @@
-## [0.9.0] - Not released yet
+## [0.9.0] - March 22nd 2022
 
-* Support for map collection type
-* Better output message when using `attempt`
+* Support for map collection type.
+* Better output message when using `attempt`.
 * Removed the custom Provider interface in favor of `javax.inject.Provider`.
+  * See [Migration Guide](https://github.com/HelloCuriosity/model-forge/blob/main/MIGRATION.MD) for details.
+* Moved dependency definitions to `buildSrc`
+* Fixed StringProvider to be more explicit when generating strings.
 
 ## [0.8.0] - December 7th 2021
 
