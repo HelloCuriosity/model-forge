@@ -7,7 +7,7 @@ public inline fun <reified T : Any> forgery(forger: ModelForge = ModelForge()): 
 }
 
 @Deprecated(
-    "forgeries is not used and will be removed in the future.",
+    "forgeries is not used and will be removed in version 1.0.0.",
     ReplaceWith("forgeryList(forger: ModelForge = ModelForge(), size: Int = 10)")
 )
 public inline fun <reified T : Any> forgeries(forger: ModelForge = ModelForge(), size: Int = 10): Lazy<List<T>> = lazy {
