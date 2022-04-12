@@ -4,7 +4,7 @@ object Versions {
     const val lorem = "2.1"
     const val jupiter = "5.8.2"
     const val mockk = "1.12.3"
-    const val kotlin = "1.6.10"
+    const val kotlin = "1.6.20"
     const val kotlinter = "3.9.0"
     const val detekt = "1.19.0"
     const val kover = "0.5.0"
