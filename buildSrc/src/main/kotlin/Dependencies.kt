@@ -8,6 +8,7 @@ object Versions {
     const val kotlinter = "3.9.0"
     const val detekt = "1.19.0"
     const val kover = "0.5.0"
+    const val versions = "0.42.0"
 }
 
 object Dependency {
@@ -22,4 +23,10 @@ object Dependency {
         const val junitJupiter = "org.junit.jupiter:junit-jupiter:${Versions.jupiter}"
         const val mockK = "io.mockk:mockk:${Versions.mockk}"
     }
+
+    // Quality Gates
+    const val detekt = "io.gitlab.arturbosch.detekt"
+    const val kotlinter = "org.jmailen.kotlinter"
+    const val kover = "org.jetbrains.kotlinx.kover"
+    const val versions = "com.github.ben-manes.versions"
 }

@@ -1,3 +1,4 @@
+import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 import io.gitlab.arturbosch.detekt.Detekt
 import io.gitlab.arturbosch.detekt.DetektCreateBaselineTask
 import kotlinx.kover.api.KoverTaskExtension
@@ -12,9 +13,10 @@ plugins {
     kotlin("jvm") version Versions.kotlin
 
     // Quality gate
-    id("org.jmailen.kotlinter") version Versions.kotlinter
-    id("io.gitlab.arturbosch.detekt") version Versions.detekt
-    id("org.jetbrains.kotlinx.kover") version Versions.kover
+    id(Dependency.kotlinter) version Versions.kotlinter
+    id(Dependency.detekt) version Versions.detekt
+    id(Dependency.kover) version Versions.kover
+    id(Dependency.versions) version Versions.versions
 }
 
 repositories {
@@ -57,4 +59,18 @@ kover {
     isDisabled = false
     jacocoEngineVersion.set("0.8.7")
     generateReportOnCheck = true
+}
+
+fun isNonStable(version: String): Boolean {
+    val stableKeyword = listOf("RELEASE", "FINAL", "GA").any { version.toUpperCase().contains(it) }
+    val regex = "^[0-9,.v-]+(-r)?$".toRegex()
+    val isStable = stableKeyword || regex.matches(version)
+    return isStable.not()
+}
+
+tasks.withType<DependencyUpdatesTask> {
+    rejectVersionIf {
+        isNonStable(candidate.version)
+    }
+    outputFormatter = "html"
 }
