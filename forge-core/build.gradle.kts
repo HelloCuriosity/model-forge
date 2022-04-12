@@ -2,8 +2,8 @@ plugins {
     kotlin("jvm")
 
     // Quality gate
-    id("org.jmailen.kotlinter")
-    id("io.gitlab.arturbosch.detekt")
+    id(Dependency.kotlinter)
+    id(Dependency.detekt)
 
     // Publishing
     `java-library`

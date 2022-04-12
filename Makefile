@@ -1,4 +1,4 @@
-.PHONY: all build clean coverage format lint local publish test
+.PHONY: all build clean dependencies coverage format lint local publish test
 
 all: clean format lint test coverage build
 
@@ -10,6 +10,9 @@ clean:
 
 coverage:
 	./gradlew koverXmlReport
+
+dependencies:
+	./gradlew dependencyUpdates
 
 format:
 	./gradlew formatKotlin
