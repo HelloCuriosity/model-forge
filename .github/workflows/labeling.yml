@@ -14,6 +14,9 @@ jobs:
     name: Adding Labels
     runs-on: ubuntu-latest
     steps:
+      - name: Bug
+        if: ${{ contains(github.event.pull_request.title, 'Bug') || contains(github.event.pull_request.title, 'Fix') }}
+        run: gh pr edit $PR_NUMBER --add-label 'bug :bug:' -R $REPO
       - name: CI/CD
         if: ${{ contains(github.event.pull_request.title, 'CI/CD') }}
         run: gh pr edit $PR_NUMBER --add-label 'CI/CD :cd:' -R $REPO
