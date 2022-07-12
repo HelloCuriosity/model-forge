@@ -20,6 +20,9 @@ jobs:
       - name: Dependencies
         if: ${{ contains(github.event.pull_request.title, 'Dependency') || contains(github.event.pull_request.title, 'Dependencies') }}
         run: gh pr edit $PR_NUMBER --add-label 'dependencies' -R $REPO
+      - name: Documentation
+        if: ${{ contains(github.event.pull_request.title, 'Documentation') }}
+        run: gh pr edit $PR_NUMBER --add-label 'documentation :book:' -R $REPO
       - name: Feature
         if: ${{ contains(github.event.pull_request.title, 'Feature') }}
         run: gh pr edit $PR_NUMBER --add-label 'feature :moneybag:' -R $REPO
