@@ -81,7 +81,7 @@ class ForgeryTest {
     @Test(expected = ModelForgeException::class)
     fun testForgeryWithUnsupportedType() {
         data class UnsupportedTestObject(
-            private val random: Random,
+            private val random: Random
         )
 
         val testObject: UnsupportedTestObject by forgery()
@@ -109,7 +109,7 @@ class ForgeryTest {
         data class Employee(
             val id: Long,
             val name: String,
-            val dob: Instant,
+            val dob: Instant
         )
 
         val forge = ModelForge().apply {

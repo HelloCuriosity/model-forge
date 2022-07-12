@@ -9,7 +9,7 @@ data class TestProviderObject(
     val enumValue: TestEnum,
     val floatValue: Float,
     val intValue: Int,
-    val stringValue: String,
+    val stringValue: String
 )
 
 val testProvider: Provider<TestProviderObject> = Provider {
@@ -18,7 +18,7 @@ val testProvider: Provider<TestProviderObject> = Provider {
         enumValue = TestEnum.TWO,
         floatValue = 15.0f,
         intValue = 15,
-        stringValue = "custom string",
+        stringValue = "custom string"
     )
 }
 

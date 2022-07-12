@@ -30,7 +30,7 @@ class EnumProviderTest {
             fun data() = listOf(
                 arrayOf(TestEnum.ONE, 0),
                 arrayOf(TestEnum.TWO, 1),
-                arrayOf(TestEnum.THREE, 2),
+                arrayOf(TestEnum.THREE, 2)
             )
         }
 
