@@ -2,16 +2,18 @@ name: Labeling
 
 on:
   pull_request:
-    types: [ synchronize, opened, reopened ]
+    types: [ synchronize, opened, reopened, labeled, unlabeled ]
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  PR_NUMBER: ${{ github.event.number }}
+  REPO: ${{ github.repository_owner }}/${{ github.event.repository.name }}
 
 jobs:
-  labeling:
+  dependencies:
+    if: ${{ contains(github.event.pull_request.title, 'Dependency') || contains(github.event.pull_request.title, 'Dependencies') }}
     name: Adding Labels
     runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      PR_NUMBER: ${{ github.event.number }}
-      REPO: ${{ github.repository_owner }}/${{ github.event.repository.name }}
     steps:
       - name: Dependencies
         run: |
