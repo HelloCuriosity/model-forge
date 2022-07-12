@@ -29,6 +29,9 @@ jobs:
       - name: Feature
         if: ${{ contains(github.event.pull_request.title, 'Feature') }}
         run: gh pr edit $PR_NUMBER --add-label 'feature :moneybag:' -R $REPO
+      - name: Housekeeping
+        if: ${{ contains(github.event.pull_request.title, 'Housekeeping') }}
+        run: gh pr edit $PR_NUMBER --add-label 'housekeeping :broom:' -R $REPO
       - name: Release
         if: ${{ contains(github.event.pull_request.title, 'Release') }}
         run: gh pr edit $PR_NUMBER --add-label 'release :tada:' -R $REPO
