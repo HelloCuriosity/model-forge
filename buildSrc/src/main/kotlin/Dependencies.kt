@@ -6,7 +6,7 @@ object Versions {
     const val mockk = "1.12.3"
     const val kotlin = "1.6.20"
     const val kotlinter = "3.10.0"
-    const val detekt = "1.19.0"
+    const val detekt = "1.20.0"
     const val kover = "0.5.0"
     const val versions = "0.42.0"
 }
