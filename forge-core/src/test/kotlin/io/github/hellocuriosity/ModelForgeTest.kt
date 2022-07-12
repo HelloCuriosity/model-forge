@@ -44,7 +44,7 @@ class ModelForgeTest {
     @Test(expected = ModelForgeException::class)
     fun testBuildWithUnsupportedType() {
         data class UnsupportedTestObject(
-            private val random: Random,
+            private val random: Random
         )
 
         val testObject = forge.build(UnsupportedTestObject::class.java)
