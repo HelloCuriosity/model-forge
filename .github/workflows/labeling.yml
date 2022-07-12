@@ -10,11 +10,13 @@ env:
   REPO: ${{ github.repository_owner }}/${{ github.event.repository.name }}
 
 jobs:
-  dependencies:
-    if: ${{ contains(github.event.pull_request.title, 'Dependency') || contains(github.event.pull_request.title, 'Dependencies') }}
+  labeling:
     name: Adding Labels
     runs-on: ubuntu-latest
     steps:
       - name: Dependencies
-        run: |
-          gh pr edit $PR_NUMBER --add-label 'dependencies' -R $REPO
+        if: ${{ contains(github.event.pull_request.title, 'Dependency') || contains(github.event.pull_request.title, 'Dependencies') }}
+        run: gh pr edit $PR_NUMBER --add-label 'dependencies' -R $REPO
+      - name: Feature
+        if: ${{ contains(github.event.pull_request.title, 'Feature') }}
+        run: gh pr edit $PR_NUMBER --add-label 'feature :moneybag:' -R $REPO
