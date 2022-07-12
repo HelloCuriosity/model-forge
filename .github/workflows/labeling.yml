@@ -23,6 +23,9 @@ jobs:
       - name: Documentation
         if: ${{ contains(github.event.pull_request.title, 'Documentation') }}
         run: gh pr edit $PR_NUMBER --add-label 'documentation :book:' -R $REPO
+      - name: Enhancement
+        if: ${{ contains(github.event.pull_request.title, 'Enhancement') }}
+        run: gh pr edit $PR_NUMBER --add-label 'enhancement :sparkles:' -R $REPO
       - name: Feature
         if: ${{ contains(github.event.pull_request.title, 'Feature') }}
         run: gh pr edit $PR_NUMBER --add-label 'feature :moneybag:' -R $REPO
