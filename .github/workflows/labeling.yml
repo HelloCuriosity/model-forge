@@ -38,3 +38,6 @@ jobs:
       - name: Release
         if: ${{ contains(github.event.pull_request.title, 'Release') }}
         run: gh pr edit $PR_NUMBER --add-label 'release :tada:' -R $REPO
+      - name: Testing
+        if: ${{ contains(github.event.pull_request.title, 'Testing') }}
+        run: gh pr edit $PR_NUMBER --add-label 'release testing :test_tube:' -R $REPO
