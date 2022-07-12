@@ -4,15 +4,14 @@ on:
   pull_request:
     types: [ synchronize, opened, reopened, labeled, unlabeled ]
 
-env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  PR_NUMBER: ${{ github.event.number }}
-  REPO: ${{ github.repository_owner }}/${{ github.event.repository.name }}
-
 jobs:
   labeling:
     name: Adding Labels
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PR_NUMBER: ${{ github.event.number }}
+      REPO: ${{ github.repository_owner }}/${{ github.event.repository.name }}
     steps:
       - name: Bug
         if: ${{ contains(github.event.pull_request.title, 'Bug') || contains(github.event.pull_request.title, 'Fix') }}
