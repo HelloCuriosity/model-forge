@@ -14,6 +14,9 @@ jobs:
     name: Adding Labels
     runs-on: ubuntu-latest
     steps:
+      - name: CI/CD
+        if: ${{ contains(github.event.pull_request.title, 'CI/CD') }}
+        run: gh pr edit $PR_NUMBER --add-label 'CI/CD :cd:' -R $REPO
       - name: Dependencies
         if: ${{ contains(github.event.pull_request.title, 'Dependency') || contains(github.event.pull_request.title, 'Dependencies') }}
         run: gh pr edit $PR_NUMBER --add-label 'dependencies' -R $REPO
