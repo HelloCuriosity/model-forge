@@ -9,7 +9,7 @@ The `calendar` provider generates a random calendar instance between two `timest
 ### Default Behavoir
 From `529714800000L` until `1617141600000L`
 
-### Extending Calendar Provider
+### Extending the Provider
 
 If you need a specific range you can pass custom `timestamps` to the provider:
 

@@ -10,7 +10,7 @@ The `char` provider generates a random character from a list of chars.
 
 From `('a'..'z') + ('A'..'Z') + ('0'..'9')`
 
-### Extending Calendar Provider
+### Extending the Provider
 
 You can specify a list of chars to pass to the provider:
 
