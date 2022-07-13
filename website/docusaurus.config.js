@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Model Forge',
   tagline: 'Kotlin model generation for tests',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://hellocuriosity.github.io/model-forge/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -90,6 +90,10 @@ const config = {
               {
                 label: 'Custom Providers',
                 to: '/docs/getting-started/custom-providers',
+              },
+              {
+                label: 'Supported Types',
+                to: 'docs/category/supported-types',
               },
             ],
           },

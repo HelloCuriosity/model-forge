@@ -2,7 +2,7 @@
 sidebar_position: 12
 ---
 
-# Lont
+# Long
 
 The `long` provider generates a random long value between two longs.
 
