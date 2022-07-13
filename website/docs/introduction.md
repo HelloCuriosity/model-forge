@@ -30,11 +30,3 @@ supports the auto generation for the following types:
 * List
 * Map
 * Set
-
-### Gradle Setup
-
-```kotlin
-dependencies {
-    testImplementation("io.github.hellocuriosity:model-forge:0.9.0")
-}
-```
