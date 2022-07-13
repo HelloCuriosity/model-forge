@@ -10,4 +10,11 @@ class CharProviderTest {
         val char = CharProvider().get()
         assertTrue(CharProvider.DEFAULT_CHAR_LIST.contains(char))
     }
+
+    @Test
+    fun testGetWithCustomChars() {
+        val customChars = listOf('a', 'b')
+        val char = CharProvider(chars = customChars).get()
+        assertTrue(customChars.contains(char))
+    }
 }
