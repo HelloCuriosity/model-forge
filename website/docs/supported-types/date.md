@@ -15,5 +15,4 @@ If you need a specific range you can pass custom `timestamps` to the provider:
 
 ```kotlin
     val date = DateProvider(from = 1315260000000L, until = 1574486400000L).get()
-    
 ```
