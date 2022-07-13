@@ -12,7 +12,7 @@ From `('a'..'z') + ('A'..'Z') + ('0'..'9')`
 
 ### Extending Calendar Provider
 
-If you need a specific range you can pass custom `timestamps` to the provider:
+You can specify a list of chars to pass to the provider:
 
 ```kotlin
     val char = CharProvider(chars = listOf('a', 'b')).get()
