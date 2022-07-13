@@ -5,6 +5,7 @@
 [![License](https://img.shields.io/dub/l/vibe-d.svg)](https://github.com/HelloCuriosity/model-forge/blob/main/LICENSE)
 [![](https://img.shields.io/maven-central/v/io.github.hellocuriosity/model-forge?color=blue)](https://search.maven.org/search?q=io.github.hellocuriosity)
 [![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/io.github.hellocuriosity/model-forge?server=https%3A%2F%2Fs01.oss.sonatype.org)](https://s01.oss.sonatype.org/content/repositories/snapshots/io/github/hellocuriosity/model-forge/)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 
 ## About
 
@@ -186,9 +187,14 @@ Model Forge currently supports the auto generation for the following types:
 * Map
 * Set
 
-_Can't find your data type? Feel free to create a pull request or open an issue_ :parachute:
+_Can't find your data type? Feel free to create a pull request or open an issue_ 🪂
 
-## Contributors
+## Contributing
+
+Thanks for showing your interest in wanting to improve Model Forge. Before you get started take a look at our
+[code of conduct](CODE_OF_CONDUCT.md) and [contribution](CONTRIBUTING.md) guides 🙌
+
+### Contributors
 
 If you contribute to Model Forge, please feel free to add yourself to the list!
 
