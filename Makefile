@@ -1,6 +1,6 @@
 BUMP ?= patch
 
-.PHONY: all build clean dependencies coverage format lint local publish test version
+.PHONY: all build clean dependencies coverage format lint local publish start-docs test version
 
 all: clean format lint test coverage build
 
@@ -27,6 +27,9 @@ local:
 
 publish:
 	./scripts/publish.sh ${GITHUB_RUN_NUMBER}
+
+start-docs:
+	(cd website/ && npx docusaurus start)
 
 test:
 	./gradlew test
