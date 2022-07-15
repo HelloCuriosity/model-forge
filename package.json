@@ -1,5 +1,10 @@
 {
   "devDependencies": {
     "docusaurus": "^1.14.7"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^2.0.0-rc.1",
+    "@docusaurus/module-type-aliases": "^2.0.0-rc.1",
+    "@docusaurus/preset-classic": "^2.0.0-rc.1"
   }
 }

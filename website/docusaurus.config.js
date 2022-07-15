@@ -8,8 +8,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Model Forge',
   tagline: 'Kotlin model generation for tests',
-  url: 'https://hellocuriosity.github.io/model-forge/',
-  baseUrl: '/',
+  url: 'https://hellocuriosity.github.io/',
+  baseUrl: '/model-forge/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
