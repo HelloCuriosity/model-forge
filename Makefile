@@ -1,6 +1,6 @@
 BUMP ?= patch
 
-.PHONY: all build clean dependencies docs coverage format lint local publish start-docs test version
+.PHONY: all build clean dependencies coverage format lint local publish test version build-docs install-docs start-docs
 
 all: clean format lint test coverage build
 
@@ -28,11 +28,18 @@ local:
 publish:
 	./scripts/publish.sh ${GITHUB_RUN_NUMBER}
 
-start-docs:
-	(cd website/ && yarn start)
-
 test:
 	./gradlew test
 
 version:
 	./scripts/create-release.sh ${BUMP}
+
+# Website
+build-docs:
+	(cd website/ && yarn build)
+
+install-docs:
+	(cd website/ && yarn install)
+
+start-docs:
+	(cd website/ && yarn start)
