@@ -4,32 +4,41 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'Auto Generate Models',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Model forge <strong>auto generates</strong> models for use in unit or integration tests. Removing the need to create
+        static models and removes redundancy in your tests.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Extendability',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Model forge can easily be <strong>extended</strong> with custom providers, helping you specify distinct behavior where
+        needed.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Android Friendly',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Model forge can be used in jvm and <strong>android</strong> projects alike.
+      </>
+    ),
+  },
+  {
+    title: 'Open-Source',
+    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    description: (
+      <>
+        Model forge is <strong>open-source</strong> and developed by the community. Help us shape the future by joining us
+        on GitHub.
       </>
     ),
   },
@@ -37,9 +46,9 @@ const FeatureList = [
 
 function Feature({Svg, title, description}) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col--6')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <Svg className={styles.featureSvg} role="img"/>
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
