@@ -7,22 +7,22 @@ is covered in the `forgeryList()` and `buildList()` functions
 
 Replace instances of:
 ```kotlin
-    forgeries()
+forgeries()
 ```
 
 with:
 ```kotlin
-    forgeryList()
+forgeryList()
 ```
 
 Replace all instances of:
 ```kotlin
-    build()
+build() // list
 ```
 
 with:
 ```kotlin
-    buildList()
+buildList()
 ```
 
 ## 0.9.0
