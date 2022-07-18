@@ -2,9 +2,10 @@
 
 ## 1.0.0
 
-In version 1.0.0 we removed the forgeries function.
+In version 1.0.0 we removed the deprecated `forgeries` and `build` (list) reified functions. The same functionality
+is covered in the `forgeryList()` and `buildList()` functions
 
-Replace all instances of:
+Replace instances of:
 ```kotlin
     forgeries()
 ```
@@ -12,6 +13,16 @@ Replace all instances of:
 with:
 ```kotlin
     forgeryList()
+```
+
+Replace all instances of:
+```kotlin
+    build()
+```
+
+with:
+```kotlin
+    buildList()
 ```
 
 ## 0.9.0
