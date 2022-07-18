@@ -48,16 +48,6 @@ class ModelForgeKotlinTest {
     }
 
     @Test
-    fun testReifiedBuildListDeprecatedWithSize() {
-        val size = 3
-        val list = forge.build<TestObject>(size)
-        assertEquals(size, list.size)
-        list.map { testObject ->
-            testObject.assert()
-        }
-    }
-
-    @Test
     fun testReifiedBuildListWithSize() {
         val size = 3
         val list = forge.buildList<TestObject>(size)

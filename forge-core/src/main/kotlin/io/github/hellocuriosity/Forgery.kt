@@ -6,14 +6,6 @@ public inline fun <reified T : Any> forgery(forger: ModelForge = ModelForge()): 
     forger.build(T::class)
 }
 
-@Deprecated(
-    "forgeries is not used and will be removed in version 1.0.0.",
-    ReplaceWith("forgeryList(forger: ModelForge = ModelForge(), size: Int = 10)")
-)
-public inline fun <reified T : Any> forgeries(forger: ModelForge = ModelForge(), size: Int = 10): Lazy<List<T>> = lazy {
-    forger.buildList(T::class, size)
-}
-
 public inline fun <reified T : Any> forgeryList(forger: ModelForge = ModelForge(), size: Int = 10): Lazy<List<T>> =
     lazy { forger.buildList(T::class, size) }
 
