@@ -1,6 +1,6 @@
 # Migration Guide
 
-## 1.0.0
+## 1.0.0 - July 18th 2022
 
 In version 1.0.0 we removed the deprecated `forgeries` and `build` (list) reified functions. The same functionality
 is covered in the `forgeryList()` and `buildList()` functions.
@@ -25,7 +25,7 @@ with:
 buildList()
 ```
 
-## 0.9.0
+## 0.9.0 - March 22nd 2022
 
 In version 0.9.0 we removed the custom provider in favor of javax provider for easier 
 adaptation in other projects. 
