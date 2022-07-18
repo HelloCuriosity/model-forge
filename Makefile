@@ -1,4 +1,4 @@
-.PHONY: all build clean dependencies coverage format lint local publish test
+.PHONY: all build clean dependencies coverage format lint local publish test version
 
 all: clean format lint test coverage build
 
@@ -28,3 +28,7 @@ publish:
 
 test:
 	./gradlew test
+
+version:
+	./scripts/bump-version.sh
+
