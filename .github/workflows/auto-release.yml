@@ -1,7 +1,8 @@
 name: Release ✈️
 
 on:
-  push:
+  pull_request:
+    types: [ closed ]
     branches:
       - main
 
@@ -16,7 +17,7 @@ jobs:
           access_token: ${{ github.token }}
 
   create-release:
-    if: ${{ contains(github.event.*.labels.*.name, 'release :tada:') }}
+    if: ${{ (github.event.pull_request.merged == true) && (contains(github.event.pull_request.labels.*.name, 'release :tada:')) }}
     name: Create Release
     runs-on: ubuntu-latest
     needs: cancel-previous
