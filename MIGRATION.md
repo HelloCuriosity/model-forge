@@ -3,7 +3,7 @@
 ## 1.0.0
 
 In version 1.0.0 we removed the deprecated `forgeries` and `build` (list) reified functions. The same functionality
-is covered in the `forgeryList()` and `buildList()` functions
+is covered in the `forgeryList()` and `buildList()` functions.
 
 Replace instances of:
 ```kotlin
