@@ -53,12 +53,6 @@ public fun <T : Any> ModelForge.addProvider(clazz: KClass<T>, provider: Provider
 
 public inline fun <reified T : Any> ModelForge.build(): T = build(T::class)
 
-@Deprecated(
-    "ModelForge.build is not used and will be removed in version 1.0.0.",
-    ReplaceWith("ModelForge.buildList(size: Int = 10)")
-)
-public inline fun <reified T : Any> ModelForge.build(size: Int = 10): List<T> = buildList(T::class, size)
-
 public inline fun <reified T : Any> ModelForge.buildList(size: Int = 10): List<T> = buildList(T::class, size)
 
 public inline fun <reified T : Any> ModelForge.buildSet(size: Int = 10): Set<T> = buildSet(T::class, size)

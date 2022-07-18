@@ -22,25 +22,6 @@ class ForgeryTest {
     }
 
     @Test
-    fun testForgeriesDefault() {
-        val list: List<TestObject> by forgeries()
-        assertEquals(10, list.size)
-        list.map { testObject ->
-            testObject.assert()
-        }
-    }
-
-    @Test
-    fun testForgeriesWithSize() {
-        val size = 3
-        val list: List<TestObject> by forgeries(size = size)
-        assertEquals(size, list.size)
-        list.map { testObject ->
-            testObject.assert()
-        }
-    }
-
-    @Test
     fun testForgeryListDefault() {
         val list: List<TestObject> by forgeryList()
         assertEquals(10, list.size)
