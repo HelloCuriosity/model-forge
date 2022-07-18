@@ -1,3 +1,13 @@
+## [1.0.0] - July 18th 2022
+
+* Auto publishing via CI
+* Auto labeling via CI
+* Removed deprecated reified functions
+* Added missing test for custom char provider
+* Added code of conduct
+* Minor housekeeping tasks
+* Dependency updates
+
 ## [0.9.0] - March 22nd 2022
 
 * Support for map collection type.
