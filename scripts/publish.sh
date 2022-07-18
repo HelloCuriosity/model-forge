@@ -8,7 +8,7 @@ REPO_DIR="$(cd "$(dirname "$0")/../" && pwd)"
 
 # Create Version
 git fetch --force --tags
-TAG=$(git describe --tags "$(git rev-list --tags --max-count=1)" 2>&1)
+TAG=$(git tag --sort=committerdate | tail -1)
 
 if [[ "${IS_RELEASE}" == "true" ]]; then
   export VERSION="$TAG"

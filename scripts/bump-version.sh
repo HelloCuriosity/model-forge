@@ -2,21 +2,21 @@
 
 set -o pipefail
 
-#
+RELEASE_TYPE=${1}
+
+# Get current release version
 git fetch --force --tags
-CURRENT_RELEASE=$(git describe --tags "$(git rev-list --tags --max-count=1)" 2>&1)
+CURRENT_RELEASE=$(git tag --sort=committerdate | tail -1)
 
 # Separate major, minor and patch numbers
 IFS='.' read -r MAJOR MINOR PATCH <<<"$CURRENT_RELEASE"
 
-RELEASE_TYPE="patch"
-
 # $/${} is unnecessary on arithmetic variables.
 # shellcheck disable=SC2004
 if [[ "${RELEASE_TYPE}" == "major" ]]; then
-  NEW_RELEASE="$(($MAJOR + 1)).$MINOR.$PATCH"
+  NEW_RELEASE="$(($MAJOR + 1)).0.0"
 elif [ "${RELEASE_TYPE}" == "minor" ]; then
-  NEW_RELEASE="$MAJOR.$(($MINOR + 1)).$PATCH"
+  NEW_RELEASE="$MAJOR.$(($MINOR + 1)).0"
 else
   NEW_RELEASE="$MAJOR.$MINOR.$(($PATCH + 1))"
 fi
