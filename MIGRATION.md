@@ -1,6 +1,6 @@
 # Migration Guide
 
-## 1.0.0 - July 18th 2022
+## 1.0.0 - July 25th 2022
 
 In version 1.0.0 we removed the deprecated `forgeries` and `build` (list) reified functions. The same functionality
 is covered in the `forgeryList()` and `buildList()` functions.

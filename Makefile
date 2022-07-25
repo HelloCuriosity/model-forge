@@ -1,4 +1,4 @@
-BUMP ?= empty
+BUMP ?= patch
 
 .PHONY: all build clean dependencies coverage format lint local publish test version
 

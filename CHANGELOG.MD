@@ -1,4 +1,4 @@
-## [1.0.0] - July 18th 2022
+## [1.0.0] - July 25th 2022
 
 * Auto publishing via CI
 * Auto labeling via CI
