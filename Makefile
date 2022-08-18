@@ -32,4 +32,4 @@ test:
 	./gradlew test
 
 version:
-	./scripts/bump-version.sh ${BUMP}
+	./scripts/create-release.sh ${BUMP}
