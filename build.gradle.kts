@@ -10,7 +10,7 @@ allprojects {
 }
 
 plugins {
-    kotlin("jvm") version Versions.kotlin
+    kotlin("jvm") version 1.7.10
 
     // Quality gate
     id(Dependency.kotlinter) version Versions.kotlinter
