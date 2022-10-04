@@ -1,6 +1,6 @@
 object Versions {
     const val javax = "1"
-    const val objenesis = "3.2"
+    const val objenesis = "3.3"
     const val lorem = "2.1"
     const val jupiter = "5.8.2"
     const val mockk = "1.13.2"
