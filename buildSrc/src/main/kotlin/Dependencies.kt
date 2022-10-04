@@ -3,7 +3,7 @@ object Versions {
     const val objenesis = "3.2"
     const val lorem = "2.1"
     const val jupiter = "5.8.2"
-    const val mockk = "1.12.4"
+    const val mockk = "1.13.2"
     const val kotlin = "1.7.20"
     const val kotlinter = "3.11.1"
     const val detekt = "1.20.0"
