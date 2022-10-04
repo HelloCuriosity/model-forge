@@ -7,7 +7,7 @@ object Versions {
     const val kotlin = "1.7.10"
     const val kotlinter = "3.11.1"
     const val detekt = "1.20.0"
-    const val kover = "0.6.0"
+    const val kover = "0.6.1"
     const val versions = "0.42.0"
 }
 
