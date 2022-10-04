@@ -40,7 +40,19 @@ jobs:
         run: make lint
       - name: Test
         run: make test
-      - name: Coverage
+
+  report:
+    name: "Report"
+    runs-on: ubuntu-latest
+    needs: cancel-previous
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: "Generate Coverage Report"
         run: make coverage
-      - name: Report
-        run: bash <(curl -s https://codecov.io/bash)
+      - name: "Upload Coverage Report"
+        uses: codecov/codecov-action@v3.1.1
+        with:
+          files: ./build/reports/kover/result.xml

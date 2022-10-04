@@ -7,7 +7,7 @@ object Versions {
     const val kotlin = "1.7.10"
     const val kotlinter = "3.11.1"
     const val detekt = "1.20.0"
-    const val kover = "0.5.1"
+    const val kover = "0.6.1"
     const val versions = "0.42.0"
 }
 
@@ -29,4 +29,11 @@ object Dependency {
     const val kotlinter = "org.jmailen.kotlinter"
     const val kover = "org.jetbrains.kotlinx.kover"
     const val versions = "com.github.ben-manes.versions"
+}
+
+fun isNonStable(version: String): Boolean {
+    val stableKeyword = setOf("RELEASE", "FINAL", "GA").any { version.toUpperCase().contains(it) }
+    val regex = "^[0-9,.v-]+(-r)?$".toRegex()
+    val isStable = stableKeyword || regex.matches(version)
+    return isStable.not()
 }
