@@ -33,16 +33,6 @@ java {
     withJavadocJar()
 }
 
-tasks.koverXmlReport {
-    isEnabled = true
-    xmlReportFile.set(file("$buildDir/reports/kover/result.xml"))
-}
-
-tasks.koverHtmlReport {
-    isEnabled = true
-    htmlReportDir.set(layout.buildDirectory.dir("$buildDir/reports/kover/html-result"))
-}
-
 tasks.withType<Sign>().configureEach {
     onlyIf { System.getenv("CI") == "true" }
 }

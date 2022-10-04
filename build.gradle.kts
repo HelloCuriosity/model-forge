@@ -1,12 +1,29 @@
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 import io.gitlab.arturbosch.detekt.Detekt
 import io.gitlab.arturbosch.detekt.DetektCreateBaselineTask
-import kotlinx.kover.api.KoverTaskExtension
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 allprojects {
     group = "io.github.hellocuriosity"
     version = System.getenv("VERSION") ?: "local"
+
+    apply(plugin = "kover")
+
+    extensions.configure<kotlinx.kover.api.KoverProjectConfig> {
+        isDisabled.set(false)
+        engine.set(kotlinx.kover.api.JacocoEngine("0.8.8"))
+    }
+
+    koverMerged {
+        xmlReport {
+            onCheck.set(false)
+            reportFile.set(layout.buildDirectory.file("$buildDir/reports/kover/result.xml"))
+        }
+        htmlReport {
+            onCheck.set(false)
+            reportDir.set(layout.buildDirectory.dir("$buildDir/reports/kover/html-result"))
+        }
+    }
 }
 
 plugins {
@@ -49,16 +66,8 @@ tasks.withType<DetektCreateBaselineTask>().configureEach {
     jvmTarget = "11"
 }
 
-tasks.test {
-    extensions.configure(KoverTaskExtension::class) {
-        isEnabled = true
-    }
-}
-
-kover {
-    isDisabled = false
-    jacocoEngineVersion.set("0.8.7")
-    generateReportOnCheck = true
+koverMerged {
+    enable()
 }
 
 tasks.withType<DependencyUpdatesTask> {
