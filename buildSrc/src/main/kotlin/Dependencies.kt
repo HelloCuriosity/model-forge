@@ -30,3 +30,10 @@ object Dependency {
     const val kover = "org.jetbrains.kotlinx.kover"
     const val versions = "com.github.ben-manes.versions"
 }
+
+fun isNonStable(version: String): Boolean {
+    val stableKeyword = setOf("RELEASE", "FINAL", "GA").any { version.toUpperCase().contains(it) }
+    val regex = "^[0-9,.v-]+(-r)?$".toRegex()
+    val isStable = stableKeyword || regex.matches(version)
+    return isStable.not()
+}
