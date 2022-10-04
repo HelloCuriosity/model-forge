@@ -11,7 +11,7 @@ allprojects {
 
     extensions.configure<kotlinx.kover.api.KoverProjectConfig> {
         isDisabled.set(false)
-        engine.set(kotlinx.kover.api.JacocoEngine("0.8.8"))
+        engine.set(kotlinx.kover.api.IntellijEngine("1.0.683"))
     }
 
     koverMerged {
