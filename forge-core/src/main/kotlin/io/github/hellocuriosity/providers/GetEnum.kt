@@ -15,5 +15,7 @@ fun <T> Class<T>.getEnum(random: Random = Random): Any {
     if (enumConstants.isNotEmpty()) {
         val idx = random.nextInt(enumConstants.size)
         return enumConstants[idx] ?: throw ModelForgeException("$this is null")
-    } else throw ModelForgeException("$this does not define enum values")
+    } else {
+        throw ModelForgeException("$this does not define enum values")
+    }
 }

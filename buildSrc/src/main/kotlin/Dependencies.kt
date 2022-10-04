@@ -5,7 +5,7 @@ object Versions {
     const val jupiter = "5.9.1"
     const val mockk = "1.13.2"
     const val kotlin = "1.7.20"
-    const val kotlinter = "3.11.1"
+    const val kotlinter = "3.12.0"
     const val detekt = "1.21.0"
     const val kover = "0.6.1"
     const val versions = "0.42.0"
