@@ -1,3 +1,8 @@
+## [1.1.0] - October 5th 2022
+
+* Dependency updates
+* Housekeeping and general clean up
+
 ## [1.0.0] - July 25th 2022
 
 * Auto publishing via CI
