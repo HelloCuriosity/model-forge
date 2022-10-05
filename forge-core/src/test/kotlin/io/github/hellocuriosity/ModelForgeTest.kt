@@ -22,6 +22,16 @@ class ModelForgeTest {
         testObject.assert()
     }
 
+    @Test(expected = ModelForgeException::class)
+    fun testBuildWithUnsupportedType() {
+        data class UnsupportedTestObject(
+            private val random: Random
+        )
+
+        val testObject = forge.build(UnsupportedTestObject::class.java)
+        assertNull(testObject)
+    }
+
     @Test
     fun testBuildListDefault() {
         val list = forge.buildList(TestObject::class.java)
@@ -41,13 +51,22 @@ class ModelForgeTest {
         }
     }
 
-    @Test(expected = ModelForgeException::class)
-    fun testBuildWithUnsupportedType() {
-        data class UnsupportedTestObject(
-            private val random: Random
-        )
+    @Test
+    fun testBuildSetDefault() {
+        val set = forge.buildSet(TestObject::class.java)
+        assertEquals(10, set.size)
+        for (testObject in set) {
+            testObject.assert()
+        }
+    }
 
-        val testObject = forge.build(UnsupportedTestObject::class.java)
-        assertNull(testObject)
+    @Test
+    fun testBuildSetWithSize() {
+        val size = 3
+        val set = forge.buildSet(TestObject::class.java, size)
+        assertEquals(size, set.size)
+        for (testObject in set) {
+            testObject.assert()
+        }
     }
 }
