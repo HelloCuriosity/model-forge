@@ -17,6 +17,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
+            // className={clsx('button button--secondary1 button--lg', styles.button)}
             to="/docs/introduction">
             Start Forging 🔥🔨
           </Link>
@@ -32,9 +33,9 @@ export default function Home() {
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
+      <HomepageHeader/>
       <main>
-        <HomepageFeatures />
+        <HomepageFeatures/>
       </main>
     </Layout>
   );

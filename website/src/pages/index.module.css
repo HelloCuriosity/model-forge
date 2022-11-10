@@ -8,8 +8,6 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  /*background: linear-gradient(90deg, rgba(254, 198, 1) 0%, rgba(234, 115, 23) 100%);*/
-  background: radial-gradient(rgba(254, 198, 1) 0%, rgba(234, 115, 23) 100%);
 }
 
 @media screen and (max-width: 996px) {
