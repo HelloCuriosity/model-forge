@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Cancel Previous Build
-        uses: styfle/cancel-workflow-action@0.10.0
+        uses: styfle/cancel-workflow-action@0.11.0
         with:
           access_token: ${{ github.token }}
 
@@ -48,7 +48,7 @@ jobs:
         run: yarn build
 
       - name: Deploy Github Pages (only on main)
-        uses: JamesIves/github-pages-deploy-action@v4.3.4
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         with:
           branch: gh-pages
