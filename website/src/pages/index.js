@@ -17,7 +17,6 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            // className={clsx('button button--secondary1 button--lg', styles.button)}
             to="/docs/introduction">
             Start Forging 🔥🔨
           </Link>
