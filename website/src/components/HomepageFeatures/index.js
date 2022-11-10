@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Auto Generate Models',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/build.svg').default,
     description: (
       <>
         Model forge <strong>auto generates</strong> models for use in unit or integration tests. Removing the need to create
@@ -15,7 +15,7 @@ const FeatureList = [
   },
   {
     title: 'Extendability',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/extendability.svg').default,
     description: (
       <>
         Model forge can easily be <strong>extended</strong> with custom providers, helping you specify distinct behavior where
@@ -25,7 +25,7 @@ const FeatureList = [
   },
   {
     title: 'Android Friendly',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/android.svg').default,
     description: (
       <>
         Model forge can be used in jvm and <strong>android</strong> projects alike.
@@ -34,7 +34,7 @@ const FeatureList = [
   },
   {
     title: 'Open-Source',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/open_source.svg').default,
     description: (
       <>
         Model forge is <strong>open-source</strong> and developed by the community. Help us shape the future by joining us
