@@ -1,6 +1,7 @@
 BUMP ?= patch
 
-.PHONY: all build clean dependencies coverage format lint local publish test version build-docs install-docs start-docs
+.PHONY: all build clean dependencies coverage format lint local publish test version \
+build-docs install-docs start-docs upgrade-docs
 
 all: clean format lint test coverage build
 
@@ -43,3 +44,6 @@ install-docs:
 
 start-docs:
 	(cd website/ && yarn start)
+
+upgrade-docs:
+	(cd website/ && yarn upgrade @docusaurus/core@latest @docusaurus/preset-classic@latest @docusaurus/module-type-aliases@latest)
