@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Changelog
 
-## [1.1.1] - November 12th 2022
+## [1.2.0] - November 12th 2022
 
 * Add missing tests for sets
 * Added asserts for types in tests
