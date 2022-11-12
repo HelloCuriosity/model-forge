@@ -4,6 +4,10 @@ sidebar_position: 4
 
 # Changelog
 
+## [1.1.1] - November 12th 2022
+
+* Docusaurus Website
+
 ## [1.1.0] - October 5th 2022
 
 * Dependency updates
