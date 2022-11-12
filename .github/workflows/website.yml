@@ -1,0 +1,55 @@
+name: Website
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  cancel-previous:
+    name: Cancel Previous
+    permissions:
+      contents: read
+      actions: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cancel Previous Build
+        uses: styfle/cancel-workflow-action@0.11.0
+        with:
+          access_token: ${{ github.token }}
+
+  build:
+    name: Build
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v3.4.1
+        with:
+          node-version: '16'
+          cache: 'yarn'
+          cache-dependency-path: 'website/yarn.lock'
+
+      - name: Install Dependencies
+        working-directory: website/
+        run: yarn install
+
+      - name: Build the Website
+        working-directory: website/
+        run: yarn build
+
+      - name: Deploy Github Pages (only on main)
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        with:
+          branch: gh-pages
+          folder: website/build/

@@ -1,3 +1,15 @@
+---
+sidebar_position: 4
+---
+
+# Changelog
+
+## [1.1.1] - November 12th 2022
+
+* Add missing tests for sets
+* Docusaurus website
+* Workflow dependency updates
+
 ## [1.1.0] - October 5th 2022
 
 * Dependency updates
@@ -18,7 +30,7 @@
 * Support for map collection type.
 * Better output message when using `attempt`.
 * Removed the custom Provider interface in favor of `javax.inject.Provider`.
-  * See [Migration Guide](https://github.com/HelloCuriosity/model-forge/blob/main/MIGRATION.MD) for details.
+    * See [Migration Guide](migration.md) for details.
 * Moved dependency definitions to `buildSrc`
 * Fixed StringProvider to be more explicit when generating strings.
 
@@ -44,7 +56,7 @@
 ## [0.7.2] - July 29th 2021
 
 * Allow for forging Enums directly through ModelForge.build
-* Add more Kotlin Provider<T> fanciness
+* Add more Kotlin Provider<T\> fanciness
 
 ## [0.7.1] - June 26th 2021
 
