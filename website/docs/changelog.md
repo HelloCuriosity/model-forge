@@ -24,7 +24,7 @@ sidebar_position: 4
 * Support for map collection type.
 * Better output message when using `attempt`.
 * Removed the custom Provider interface in favor of `javax.inject.Provider`.
-    * See [Migration Guide](https://github.com/HelloCuriosity/model-forge/blob/main/MIGRATION.MD) for details.
+    * See [Migration Guide](migration.md) for details.
 * Moved dependency definitions to `buildSrc`
 * Fixed StringProvider to be more explicit when generating strings.
 

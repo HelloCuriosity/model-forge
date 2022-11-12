@@ -1,3 +1,7 @@
+---
+sidebar_position: 5
+---
+
 # Migration Guide
 
 ## 1.0.0 - July 25th 2022
