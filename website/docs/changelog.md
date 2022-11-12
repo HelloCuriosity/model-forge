@@ -6,7 +6,9 @@ sidebar_position: 4
 
 ## [1.1.1] - November 12th 2022
 
-* Docusaurus Website
+* Add missing tests for sets
+* Docusaurus website
+* Workflow dependency updates
 
 ## [1.1.0] - October 5th 2022
 
