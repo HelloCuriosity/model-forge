@@ -7,6 +7,7 @@ sidebar_position: 4
 ## [1.1.1] - November 12th 2022
 
 * Add missing tests for sets
+* Added asserts for types in tests
 * Docusaurus website
 * Workflow dependency updates
 
