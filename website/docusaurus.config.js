@@ -53,7 +53,7 @@ const config = {
         title: 'Model Forge',
         logo: {
           alt: 'Model Forge Logo',
-          src: 'img/logo.svg', // svg maybe
+          src: 'img/logo.svg',
         },
         items: [
           {
