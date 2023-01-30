@@ -8,7 +8,7 @@ object Versions {
     const val kotlinter = "3.12.0"
     const val detekt = "1.21.0"
     const val kover = "0.6.1"
-    const val versions = "0.42.0"
+    const val versions = "0.44.0"
 }
 
 object Dependency {
