@@ -11,15 +11,18 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       actions: read
+    strategy:
+      matrix:
+        file: [ 'website/docs/changelog.md','README.md' ]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Major
         if: ${{ contains(github.event.*.labels.*.name, 'major :1st_place_medal:') }}
-        run: echo major
+        run: make verify-doc BUMP=major FILE=${{ matrix.file }}
       - name: Minor
         if: ${{ contains(github.event.*.labels.*.name, 'minor :2nd_place_medal:') }}
-        run: echo minor
+        run: make verify-doc BUMP=minor FILE=${{ matrix.file }}
       - name: Patch
         if: ${{ contains(github.event.*.labels.*.name, 'patch :3rd_place_medal:') }}
-        run: echo patch
+        run: make verify-doc BUMP=patch FILE=${{ matrix.file }}
