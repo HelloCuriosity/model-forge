@@ -5,9 +5,9 @@ on:
     types: [ synchronize, opened, reopened, labeled, unlabeled ]
 
 jobs:
-  check_change_log:
+  check_docs:
     if: ${{ contains(github.event.pull_request.labels.*.name, 'release :tada:') }}
-    name: Check Changelog
+    name: Check Changelog/Readme
     runs-on: ubuntu-latest
     permissions:
       actions: read

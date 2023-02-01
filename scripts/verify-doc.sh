@@ -7,11 +7,11 @@ FILE=${2}
 
 VERSION=$(./scripts/get_next_version.sh "$RELEASE_TYPE")
 
-echo "Verifying file for version: $VERSION"
+echo "Verifying version $VERSION is defined in: $FILE."
 if grep -R "$VERSION" "$FILE"; then
-  echo "Version found"
+  echo "Version info found."
   exit 0
 else
-  echo "Version not found"
+  echo "Version info not found in: $FILE"
   exit 1
 fi
