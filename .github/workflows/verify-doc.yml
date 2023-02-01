@@ -1,0 +1,28 @@
+name: Verify Documentation
+
+on:
+  pull_request:
+    types: [ synchronize, opened, reopened, labeled, unlabeled ]
+
+jobs:
+  check_docs:
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'release :tada:') }}
+    name: Check Changelog/Readme
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+    strategy:
+      matrix:
+        file: [ 'website/docs/changelog.md','README.md' ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Major
+        if: ${{ contains(github.event.*.labels.*.name, 'major :1st_place_medal:') }}
+        run: make verify-doc BUMP=major FILE=${{ matrix.file }}
+      - name: Minor
+        if: ${{ contains(github.event.*.labels.*.name, 'minor :2nd_place_medal:') }}
+        run: make verify-doc BUMP=minor FILE=${{ matrix.file }}
+      - name: Patch
+        if: ${{ contains(github.event.*.labels.*.name, 'patch :3rd_place_medal:') }}
+        run: make verify-doc BUMP=patch FILE=${{ matrix.file }}

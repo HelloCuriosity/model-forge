@@ -1,6 +1,7 @@
 BUMP ?= patch
+FILE ?= empty
 
-.PHONY: all build clean dependencies coverage format lint local publish test version \
+.PHONY: all build clean dependencies coverage format lint local publish test verify-doc version \
 build-docs install-docs start-docs upgrade-docs
 
 all: clean format lint test coverage build
@@ -31,6 +32,9 @@ publish:
 
 test:
 	./gradlew test
+
+verify-doc:
+	./scripts/verify-doc.sh ${BUMP} ${FILE}
 
 version:
 	./scripts/create-release.sh ${BUMP}
