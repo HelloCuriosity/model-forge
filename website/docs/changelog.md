@@ -4,6 +4,11 @@ sidebar_position: 4
 
 # Changelog
 
+## [1.3.0] - February 2nd 2023
+
+* Support Kotlin version 1.8.0
+* Dependency updates
+
 ## [1.2.0] - November 12th 2022
 
 * Add missing tests for sets

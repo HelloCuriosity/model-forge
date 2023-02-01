@@ -7,7 +7,7 @@ on:
 jobs:
   check_docs:
     if: ${{ contains(github.event.pull_request.labels.*.name, 'release :tada:') }}
-    name: Check Changelog/Readme
+    name: Check
     runs-on: ubuntu-latest
     permissions:
       actions: read
