@@ -1,0 +1,25 @@
+name: Verify Documentation
+
+on:
+  pull_request:
+    types: [ synchronize, opened, reopened, labeled, unlabeled ]
+
+jobs:
+  check_change_log:
+    if: ${{ contains(github.event.pull_request.labels.*.name, 'release :tada:') }}
+    name: Check Changelog
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Major
+        if: ${{ contains(github.event.*.labels.*.name, 'major :1st_place_medal:') }}
+        run: echo major
+      - name: Minor
+        if: ${{ contains(github.event.*.labels.*.name, 'minor :2nd_place_medal:') }}
+        run: echo minor
+      - name: Patch
+        if: ${{ contains(github.event.*.labels.*.name, 'patch :3rd_place_medal:') }}
+        run: echo patch
