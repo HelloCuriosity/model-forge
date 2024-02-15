@@ -21,40 +21,51 @@ data class Employee(
 <Tabs groupId="generation">
   <TabItem value="model" label="Model" default>
 
-    val forge = ModelForge()
-    val employee = forge.build<Employee>()
-
+  ```kotlin
+  val forge = ModelForge()
+  val employee = forge.build<Employee>()
+  ```
   </TabItem>
   <TabItem value="list" label="List">
 
-    val forge = ModelForge()
-    val employees = forge.buildList<Employee>(size = 3)
+  ```kotlin
+  val forge = ModelForge()
+  val employees = forge.buildList<Employee>(size = 3)
+  ```
 
   </TabItem>
   <TabItem value="set" label="Set">
 
-    val forge = ModelForge()
-    val employees = forge.buildSet<Employee>(size = 3)
-
+  ```kotlin
+  val forge = ModelForge()
+  val employees = forge.buildSet<Employee>(size = 3)
+  ```
+    
   </TabItem>
 </Tabs>
 
 #### or by Delegation
 <Tabs groupId="generation">
   <TabItem value="model" label="Model" default>
-
-    val employee: Employee by forgery()
+  
+  ```kotlin
+  val employee: Employee by forgery()
+  ```
 
   </TabItem>
   <TabItem value="list" label="List">
 
-    val employees: List<Employee> by forgeryList(size = 3)
+  ```kotlin
+  val employees: List<Employee> by forgeryList(size = 3)
+  ```
 
   </TabItem>
 
   <TabItem value="set" label="Set">
 
-    val employees: List<Employee> by forgerySet(size = 3)
+  ```kotlin
+  val employees: List<Employee> by forgerySet(size = 3)
+  ```
 
   </TabItem>
 </Tabs>
