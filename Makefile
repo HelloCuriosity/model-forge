@@ -43,6 +43,9 @@ version:
 build-docs:
 	(cd website/ && yarn build)
 
+lint-docs:
+	npx docusaurus-mdx-checker
+
 install-docs:
 	(cd website/ && yarn install)
 
