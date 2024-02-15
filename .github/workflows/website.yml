@@ -39,6 +39,9 @@ jobs:
           cache: 'yarn'
           cache-dependency-path: 'website/yarn.lock'
 
+      - name: Lint
+        run: make lint-docs
+
       - name: Install Dependencies
         working-directory: website/
         run: yarn install
