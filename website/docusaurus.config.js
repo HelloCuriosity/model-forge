@@ -112,8 +112,8 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Model Forge Team - Built with Docusaurus.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: lightTheme,
+        darkTheme: darkTheme,
       },
       colorMode: {
         defaultMode: 'light',
