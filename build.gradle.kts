@@ -1,6 +1,6 @@
-import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 import io.gitlab.arturbosch.detekt.Detekt
 import io.gitlab.arturbosch.detekt.DetektCreateBaselineTask
+import kotlinx.kover.api.KoverProjectConfig
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 allprojects {
@@ -9,7 +9,7 @@ allprojects {
 
     apply(plugin = "kover")
 
-    extensions.configure<kotlinx.kover.api.KoverProjectConfig> {
+    extensions.configure<KoverProjectConfig> {
         isDisabled.set(false)
         engine.set(kotlinx.kover.api.IntellijEngine("1.0.683"))
     }
@@ -27,13 +27,12 @@ allprojects {
 }
 
 plugins {
-    kotlin("jvm") version Versions.kotlin
+    kotlin("jvm") version libs.versions.kotlin.get()
 
     // Quality gate
-    id(Dependency.kotlinter) version Versions.kotlinter
-    id(Dependency.detekt) version Versions.detekt
-    id(Dependency.kover) version Versions.kover
-    id(Dependency.versions) version Versions.versions
+    alias(libs.plugins.kotlinter)
+    alias(libs.plugins.detekt)
+    alias(libs.plugins.kover)
 }
 
 repositories {
@@ -68,11 +67,4 @@ tasks.withType<DetektCreateBaselineTask>().configureEach {
 
 koverMerged {
     enable()
-}
-
-tasks.withType<DependencyUpdatesTask> {
-    rejectVersionIf {
-        isNonStable(candidate.version)
-    }
-    outputFormatter = "html"
 }

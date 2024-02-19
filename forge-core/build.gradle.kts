@@ -1,9 +1,11 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     kotlin("jvm")
 
     // Quality gate
-    id(Dependency.kotlinter)
-    id(Dependency.detekt)
+    alias(libs.plugins.kotlinter)
+    alias(libs.plugins.detekt)
 
     // Publishing
     `java-library`
@@ -16,16 +18,16 @@ repositories {
 }
 
 dependencies {
-    implementation(Dependency.objenesis)
-    implementation(Dependency.lorem)
+    implementation(libs.objenesis)
+    implementation(libs.lorem)
     // Javax inject
-    api(Dependency.JavaX.inject)
+    api(libs.inject)
 
     // Testing
     testImplementation(project(":forge-test-utils"))
-    testImplementation(Dependency.Test.junitJupiter)
+    testImplementation(libs.junitJupiter)
     testImplementation(kotlin("test-junit"))
-    testImplementation(Dependency.Test.mockK)
+    testImplementation(libs.mockK)
 }
 
 java {
