@@ -1,0 +1,24 @@
+[versions]
+javax = "1"
+objenesis = "3.3"
+lorem = "2.2"
+jupiter = "5.10.2"
+mockk = "1.13.9"
+kotlin = "1.9.22"
+kotlinter = "3.13.0"
+detekt = "1.22.0"
+kover = "0.6.1"
+
+[libraries]
+objenesis = { module = "org.objenesis:objenesis", version.ref = "objenesis" }
+lorem = { module = "com.thedeanda:lorem", version.ref = "lorem" }
+
+inject = { module = "javax.inject:javax.inject", version.ref = "javax" }
+
+junitJupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "jupiter" }
+mockK = { module = "io.mockk:mockk", version.ref = "mockk" }
+
+[plugins]
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+kotlinter = { id = "org.jmailen.kotlinter", version.ref = "kotlinter" }
+kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
