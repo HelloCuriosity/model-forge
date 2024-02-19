@@ -8,7 +8,5 @@ import java.util.UUID
  * @return UUID instance
  */
 class UuidProvider : Provider<UUID> {
-
-    override fun get(): UUID =
-        UUID.randomUUID()
+    override fun get(): UUID = UUID.randomUUID()
 }

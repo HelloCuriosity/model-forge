@@ -11,7 +11,6 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 class FloatProviderTest {
-
     private val random: Random = mockk()
 
     @After
@@ -42,11 +41,12 @@ class FloatProviderTest {
 
         val min = 5.0
         val max = 10.0
-        val float = FloatProvider(
-            min = min,
-            max = max,
-            random = random
-        ).get()
+        val float =
+            FloatProvider(
+                min = min,
+                max = max,
+                random = random,
+            ).get()
 
         assertEquals(randomDouble.toFloat(), float)
 

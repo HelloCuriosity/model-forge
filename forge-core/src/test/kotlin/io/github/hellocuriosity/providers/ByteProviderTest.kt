@@ -4,7 +4,6 @@ import kotlin.test.Test
 import kotlin.test.assertTrue
 
 class ByteProviderTest {
-
     @Test
     fun testGet() {
         val byte = ByteProvider().get()

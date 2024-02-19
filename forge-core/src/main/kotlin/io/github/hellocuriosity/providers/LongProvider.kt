@@ -14,9 +14,7 @@ import kotlin.random.Random
 class LongProvider(
     private val min: Long = Long.MIN_VALUE,
     private val max: Long = Long.MAX_VALUE,
-    private val random: Random = Random
+    private val random: Random = Random,
 ) : Provider<Long> {
-
-    override fun get(): Long =
-        random.nextLong(min, max)
+    override fun get(): Long = random.nextLong(min, max)
 }

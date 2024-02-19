@@ -14,9 +14,7 @@ import kotlin.random.Random
 class FloatProvider(
     private val min: Double = Float.MIN_VALUE.toDouble(),
     private val max: Double = Float.MAX_VALUE.toDouble(),
-    private val random: Random = Random
+    private val random: Random = Random,
 ) : Provider<Float> {
-
-    override fun get(): Float =
-        random.nextDouble(min, max).toFloat()
+    override fun get(): Float = random.nextDouble(min, max).toFloat()
 }

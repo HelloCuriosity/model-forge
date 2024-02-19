@@ -13,7 +13,6 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 class InstantProviderTest {
-
     private val random: Random = mockk()
 
     @After

@@ -11,7 +11,6 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 class LongProviderTest {
-
     private val random: Random = mockk()
 
     @After
@@ -40,11 +39,12 @@ class LongProviderTest {
         every { random.nextLong(any(), any()) } returns randomLong
         val min = 5L
         val max = 10L
-        val long = LongProvider(
-            min = min,
-            max = max,
-            random = random
-        ).get()
+        val long =
+            LongProvider(
+                min = min,
+                max = max,
+                random = random,
+            ).get()
 
         assertEquals(randomLong, long)
 

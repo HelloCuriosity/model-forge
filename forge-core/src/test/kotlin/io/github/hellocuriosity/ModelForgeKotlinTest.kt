@@ -6,7 +6,6 @@ import kotlin.test.assertEquals
 import kotlin.test.assertNull
 
 class ModelForgeKotlinTest {
-
     private val forge = ModelForge()
 
     @Test
@@ -60,7 +59,7 @@ class ModelForgeKotlinTest {
     @Test(expected = ModelForgeException::class)
     fun testBuildWithUnsupportedType() {
         data class UnsupportedTestObject(
-            private val random: Random
+            private val random: Random,
         )
 
         val testObject = forge.build(UnsupportedTestObject::class)

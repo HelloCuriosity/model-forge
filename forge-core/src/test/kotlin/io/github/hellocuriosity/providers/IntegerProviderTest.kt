@@ -11,7 +11,6 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 class IntegerProviderTest {
-
     private val random: Random = mockk()
 
     @After
@@ -40,11 +39,12 @@ class IntegerProviderTest {
 
         val min = 5
         val max = 10
-        val integer = IntegerProvider(
-            min = min,
-            max = max,
-            random = random
-        ).get()
+        val integer =
+            IntegerProvider(
+                min = min,
+                max = max,
+                random = random,
+            ).get()
 
         assertEquals(randomInt, integer)
 

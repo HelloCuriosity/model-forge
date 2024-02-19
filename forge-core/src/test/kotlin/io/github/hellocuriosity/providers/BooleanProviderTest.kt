@@ -10,7 +10,6 @@ import kotlin.random.Random
 import kotlin.test.assertTrue
 
 class BooleanProviderTest {
-
     private val random: Random = mockk()
 
     @After

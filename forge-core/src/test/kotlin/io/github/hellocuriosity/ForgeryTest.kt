@@ -62,7 +62,7 @@ class ForgeryTest {
     @Test(expected = ModelForgeException::class)
     fun testForgeryWithUnsupportedType() {
         data class UnsupportedTestObject(
-            private val random: Random
+            private val random: Random,
         )
 
         val testObject: UnsupportedTestObject by forgery()
@@ -75,11 +75,12 @@ class ForgeryTest {
 
         class FancyHolder(val value: FancyObject)
 
-        val forger = ModelForge().apply {
-            addProvider {
-                FancyObject("got it")
+        val forger =
+            ModelForge().apply {
+                addProvider {
+                    FancyObject("got it")
+                }
             }
-        }
 
         val fancyHolder by forgery<FancyHolder>(forger)
         assertEquals("got it", fancyHolder.value.retrieveMe)
@@ -90,18 +91,19 @@ class ForgeryTest {
         data class Employee(
             val id: Long,
             val name: String,
-            val dob: Instant
+            val dob: Instant,
         )
 
-        val forge = ModelForge().apply {
-            addProvider {
-                Employee(
-                    id = 2L,
-                    name = "Hendrik",
-                    dob = Instant.ofEpochMilli(1574486400000)
-                )
+        val forge =
+            ModelForge().apply {
+                addProvider {
+                    Employee(
+                        id = 2L,
+                        name = "Hendrik",
+                        dob = Instant.ofEpochMilli(1574486400000),
+                    )
+                }
             }
-        }
         val employee by forgery<Employee>(forge)
         assertEquals("Hendrik", employee.name)
     }

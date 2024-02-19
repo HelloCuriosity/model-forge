@@ -4,7 +4,6 @@ import org.junit.Test
 import kotlin.test.assertTrue
 
 class CharProviderTest {
-
     @Test
     fun testGet() {
         val char = CharProvider().get()

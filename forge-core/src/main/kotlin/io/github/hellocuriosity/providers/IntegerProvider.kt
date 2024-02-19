@@ -14,9 +14,7 @@ import kotlin.random.Random
 class IntegerProvider(
     private val min: Int = Int.MIN_VALUE,
     private val max: Int = Int.MAX_VALUE,
-    private val random: Random = Random
+    private val random: Random = Random,
 ) : Provider<Int> {
-
-    override fun get(): Int =
-        random.nextInt(min, max)
+    override fun get(): Int = random.nextInt(min, max)
 }

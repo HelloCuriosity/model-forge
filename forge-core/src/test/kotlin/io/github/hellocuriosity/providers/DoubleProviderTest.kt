@@ -11,7 +11,6 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 class DoubleProviderTest {
-
     private val random: Random = mockk()
 
     @After
@@ -42,11 +41,12 @@ class DoubleProviderTest {
 
         val min = 5.0
         val max = 10.0
-        val double = DoubleProvider(
-            min = min,
-            max = max,
-            random = random
-        ).get()
+        val double =
+            DoubleProvider(
+                min = min,
+                max = max,
+                random = random,
+            ).get()
 
         assertEquals(randomDouble, double)
 

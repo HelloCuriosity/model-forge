@@ -4,7 +4,6 @@ import org.junit.Test
 import kotlin.test.assertEquals
 
 class UuidProviderTest {
-
     @Test
     fun testGet() {
         val uuid = UuidProvider().get().toString()

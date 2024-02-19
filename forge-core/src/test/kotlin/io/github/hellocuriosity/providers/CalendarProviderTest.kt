@@ -10,7 +10,6 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 class CalendarProviderTest {
-
     private val dateProvider: DateProvider = mockk()
 
     @After

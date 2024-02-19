@@ -12,9 +12,7 @@ package io.github.hellocuriosity.providers
 class ShortProvider(
     private val min: Int = Short.MIN_VALUE.toInt(),
     private val max: Int = Short.MAX_VALUE.toInt(),
-    private val provider: IntegerProvider = IntegerProvider(min, max)
+    private val provider: IntegerProvider = IntegerProvider(min, max),
 ) : Provider<Short> {
-
-    override fun get(): Short =
-        provider.get().toShort()
+    override fun get(): Short = provider.get().toShort()
 }
