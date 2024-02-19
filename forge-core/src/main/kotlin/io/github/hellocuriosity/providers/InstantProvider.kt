@@ -17,9 +17,7 @@ import kotlin.random.Random
 class InstantProvider(
     private val from: Long = NINETEEN_EIGHTY_SIX,
     private val until: Long = TWENTY_TWENTY_ONE,
-    private val random: Random = Random
+    private val random: Random = Random,
 ) : Provider<Instant> {
-
-    override fun get(): Instant =
-        Instant.ofEpochMilli(random.nextLong(from, until))
+    override fun get(): Instant = Instant.ofEpochMilli(random.nextLong(from, until))
 }

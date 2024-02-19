@@ -5,7 +5,6 @@ import org.junit.Test
 import org.junit.jupiter.api.Assertions.assertEquals
 
 class StringProviderTest {
-
     @Test
     fun testGet() {
         for (i in 1..1000) {
@@ -25,6 +24,5 @@ class StringProviderTest {
         StringProvider(wordCount = -1).get()
     }
 
-    private fun String.count(): Int =
-        this.trim().splitToSequence(" ").count()
+    private fun String.count(): Int = this.trim().splitToSequence(" ").count()
 }

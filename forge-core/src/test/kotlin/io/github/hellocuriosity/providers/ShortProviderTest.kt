@@ -4,7 +4,6 @@ import kotlin.test.Test
 import kotlin.test.assertTrue
 
 class ShortProviderTest {
-
     @Test
     fun testGet() {
         val short = ShortProvider().get()

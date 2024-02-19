@@ -17,21 +17,20 @@ import kotlin.test.assertEquals
 @RunWith(Suite::class)
 @Suite.SuiteClasses(
     EnumProviderTest.TestEnums::class,
-    EnumProviderTest.TestExceptions::class
+    EnumProviderTest.TestExceptions::class,
 )
 class EnumProviderTest {
-
     @RunWith(Parameterized::class)
     open class TestEnums(private val expected: TestEnum, private val mock: Int) {
-
         companion object {
             @JvmStatic
             @Parameterized.Parameters
-            fun data() = listOf(
-                arrayOf(TestEnum.ONE, 0),
-                arrayOf(TestEnum.TWO, 1),
-                arrayOf(TestEnum.THREE, 2)
-            )
+            fun data() =
+                listOf(
+                    arrayOf(TestEnum.ONE, 0),
+                    arrayOf(TestEnum.TWO, 1),
+                    arrayOf(TestEnum.THREE, 2),
+                )
         }
 
         private val random: Random = mockk()
@@ -50,7 +49,6 @@ class EnumProviderTest {
     }
 
     open class TestExceptions {
-
         private enum class NoValueEnum
 
         @Test(expected = ModelForgeException::class)

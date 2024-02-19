@@ -11,8 +11,7 @@ import kotlin.reflect.KClass
  *
  *  @return Instance of clazz
  */
-public fun <T : Any> ModelForge.build(clazz: KClass<T>): T =
-    build(clazz.java)
+public fun <T : Any> ModelForge.build(clazz: KClass<T>): T = build(clazz.java)
 
 /**
  *  Creates an automatically generated model list with
@@ -24,8 +23,10 @@ public fun <T : Any> ModelForge.build(clazz: KClass<T>): T =
  *
  *  @return Instance of clazz
  */
-public fun <T : Any> ModelForge.buildList(clazz: KClass<T>, size: Int = 10): List<T> =
-    buildList(clazz.java, size)
+public fun <T : Any> ModelForge.buildList(
+    clazz: KClass<T>,
+    size: Int = 10,
+): List<T> = buildList(clazz.java, size)
 
 /**
  *  Creates an automatically generated model set with
@@ -37,8 +38,10 @@ public fun <T : Any> ModelForge.buildList(clazz: KClass<T>, size: Int = 10): Lis
  *
  *  @return Instance of clazz
  */
-public fun <T : Any> ModelForge.buildSet(clazz: KClass<T>, size: Int = 10): Set<T> =
-    buildSet(clazz.java, size)
+public fun <T : Any> ModelForge.buildSet(
+    clazz: KClass<T>,
+    size: Int = 10,
+): Set<T> = buildSet(clazz.java, size)
 
 /**
  * Adds a custom provider for generating models
@@ -48,8 +51,10 @@ public fun <T : Any> ModelForge.buildSet(clazz: KClass<T>, size: Int = 10): Set<
  *  @param provider Provider for populating data
  *
  */
-public fun <T : Any> ModelForge.addProvider(clazz: KClass<T>, provider: Provider<T>) =
-    addProvider(clazz.java, provider)
+public fun <T : Any> ModelForge.addProvider(
+    clazz: KClass<T>,
+    provider: Provider<T>,
+) = addProvider(clazz.java, provider)
 
 public inline fun <reified T : Any> ModelForge.build(): T = build(T::class)
 

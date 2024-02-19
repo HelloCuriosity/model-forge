@@ -13,9 +13,8 @@ import io.github.hellocuriosity.ModelForgeException
  */
 class StringProvider(
     private val wordCount: Int = DEFAULT_VALUE,
-    private val lorem: LoremIpsum = LoremIpsum.getInstance()
+    private val lorem: LoremIpsum = LoremIpsum.getInstance(),
 ) : Provider<String> {
-
     companion object {
         const val DEFAULT_VALUE = 1
     }

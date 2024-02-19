@@ -14,9 +14,7 @@ import kotlin.random.Random
 class DoubleProvider(
     private val min: Double = Double.MIN_VALUE,
     private val max: Double = Double.MAX_VALUE,
-    private val random: Random = Random
+    private val random: Random = Random,
 ) : Provider<Double> {
-
-    override fun get(): Double =
-        random.nextDouble(min, max)
+    override fun get(): Double = random.nextDouble(min, max)
 }

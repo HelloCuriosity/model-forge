@@ -17,9 +17,7 @@ import kotlin.random.Random
 class DateProvider(
     private val from: Long = NINETEEN_EIGHTY_SIX,
     private val until: Long = TWENTY_TWENTY_ONE,
-    private val random: Random = Random
+    private val random: Random = Random,
 ) : Provider<Date> {
-
-    override fun get(): Date =
-        Date(random.nextLong(from, until))
+    override fun get(): Date = Date(random.nextLong(from, until))
 }
