@@ -6,7 +6,7 @@ jupiter = "5.10.2"
 mockk = "1.13.9"
 kotlin = "1.9.22"
 kotlinter = "3.13.0"
-detekt = "1.22.0"
+detekt = "1.23.5"
 kover = "0.6.1"
 
 [libraries]
