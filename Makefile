@@ -13,7 +13,7 @@ clean:
 	./gradlew clean
 
 coverage:
-	./gradlew koverMergedReport
+	./gradlew koverHtmlReport koverXmlReport ${GRADLE_ARGS}
 
 dependencies:
 	./gradlew dependencyUpdates
