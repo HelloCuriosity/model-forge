@@ -4,6 +4,11 @@ sidebar_position: 4
 
 # Changelog
 
+## [1.4.0] - February 19th 2024
+
+* Support Kotlin version 1.9.22
+* Dependency updates
+
 ## [1.3.0] - February 2nd 2023
 
 * Support Kotlin version 1.8.0
