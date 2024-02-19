@@ -8,7 +8,7 @@ Add the dependency to your `build.gradle` file to get started:
 
 ```kotlin
 dependencies {
-    testImplementation("io.github.hellocuriosity:model-forge:1.3.0")
+    testImplementation("io.github.hellocuriosity:model-forge:1.4.0")
 }
 ```
 
@@ -22,6 +22,6 @@ repositories {
 }
 
 dependencies {
-    testImplementation("io.github.hellocuriosity:model-forge:1.3.0.xx-SNAPSHOT")
+    testImplementation("io.github.hellocuriosity:model-forge:1.4.0.xx-SNAPSHOT")
 }
 ```
