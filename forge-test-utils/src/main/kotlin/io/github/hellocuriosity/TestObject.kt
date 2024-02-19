@@ -48,6 +48,8 @@ data class TestObject(
     val shortOptional: Short?,
     val stringValue: String,
     val stringOptional: String?,
+    val uIntValue: UInt,
+    val uIntOptional: UInt?,
     val uuidValue: UUID,
     val uuidOptional: UUID?,
 )
@@ -156,6 +158,9 @@ fun TestObject.assert() {
     assertNotNull(stringOptional)
     assertTrue(stringOptional.isNotBlank())
     assertString(stringOptional)
+    assertInt(uIntValue)
+    assertNotNull(uIntOptional)
+    assertInt(uIntOptional)
     assertNotNull(uuidValue)
     assertUUID(uuidValue)
     assertNotNull(uuidOptional)

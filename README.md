@@ -180,6 +180,7 @@ Model Forge currently supports the auto generation for the following types:
 * Long
 * Short
 * String
+* UInt (snapshot)
 * UUID
 
 ### Collections
