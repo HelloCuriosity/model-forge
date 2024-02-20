@@ -17,3 +17,5 @@ Before you create a pull request make sure you've reviewed our
 - [ ] Description contains clear instructions on how to test the feature (where applicable)
 - [ ] Tests have been written
 - [ ] Appropriate labels have been applied
+- [ ] Update [README](../README.md) (where applicable)
+- [ ] Update [Documentation](../website/docs/introduction.md) (where applicable)
