@@ -46,6 +46,12 @@ fun <T : Any> assertShort(value: T) =
 fun <T : Any> assertString(value: T) =
     assertType(String::class.java, value::class.java)
 
+fun <T : Any> assertUByte(value: T) =
+    assertType(UByte::class.java, value::class.java)
+
+fun <T : Any> assertUInt(value: T) =
+    assertType(UInt::class.java, value::class.java)
+
 fun <T : Any> assertUUID(value: T) =
     assertType(UUID::class.java, value::class.java)
 
