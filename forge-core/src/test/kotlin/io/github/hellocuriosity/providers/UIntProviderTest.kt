@@ -1,20 +1,9 @@
 package io.github.hellocuriosity.providers
 
-import io.mockk.confirmVerified
-import io.mockk.mockk
-import org.junit.After
 import org.junit.Test
-import kotlin.random.Random
 import kotlin.test.assertTrue
 
 class UIntProviderTest {
-    private val random: Random = mockk()
-
-    @After
-    fun teardown() {
-        confirmVerified(random)
-    }
-
     @Test
     fun testGet() {
         val uInteger = UIntProvider().get()
