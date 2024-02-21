@@ -25,6 +25,7 @@ supports the auto generation for the following types:
 * String
 * UByte (snapshot)
 * UInt (snapshot)
+* ULong (snapshot)
 * UUID
 
 #### Collections
