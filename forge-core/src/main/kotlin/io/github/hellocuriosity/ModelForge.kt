@@ -15,6 +15,7 @@ import io.github.hellocuriosity.providers.ShortProvider
 import io.github.hellocuriosity.providers.StringProvider
 import io.github.hellocuriosity.providers.UByteProvider
 import io.github.hellocuriosity.providers.UIntProvider
+import io.github.hellocuriosity.providers.ULongProvider
 import io.github.hellocuriosity.providers.UuidProvider
 import io.github.hellocuriosity.providers.getEnum
 import org.objenesis.Objenesis
@@ -194,6 +195,7 @@ open class ModelForge {
             String::class.java, java.lang.String::class.java -> StringProvider().get() as T
             UByte::class.java -> UByteProvider().get() as T
             UInt::class.java -> UIntProvider().get() as T
+            ULong::class.java -> ULongProvider().get() as T
             UUID::class.java -> UuidProvider().get() as T
             else -> if (isEnum) getEnum() as T else orDefault()
         }
