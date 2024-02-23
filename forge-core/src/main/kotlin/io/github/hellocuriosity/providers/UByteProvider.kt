@@ -1,7 +1,7 @@
 package io.github.hellocuriosity.providers
 
 /**
- * Auto generates a Byte between two values
+ * Auto generates a UByte between two values
  *
  * @param min minimum value
  * @param max maximum value
