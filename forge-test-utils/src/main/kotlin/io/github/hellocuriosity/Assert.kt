@@ -55,6 +55,9 @@ fun <T : Any> assertUInt(value: T) =
 fun <T : Any> assertULong(value: T) =
     assertType(ULong::class.java, value::class.java)
 
+fun <T : Any> assertUShort(value: T) =
+    assertType(UShort::class.java, value::class.java)
+
 fun <T : Any> assertUUID(value: T) =
     assertType(UUID::class.java, value::class.java)
 
