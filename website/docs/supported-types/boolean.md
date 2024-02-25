@@ -6,5 +6,5 @@ sidebar_position: 1
 
 The `boolean` provider generates a random boolean value.
 
-### Default Behavoir
+### Default Behavior
 `true` or `false`

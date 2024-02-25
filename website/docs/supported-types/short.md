@@ -6,7 +6,7 @@ sidebar_position: 13
 
 The `short` provider generates a random short value between two integers.
 
-### Default Behavoir
+### Default Behavior
 Between `-32768` and `32767`
 
 ### Extending the Provider

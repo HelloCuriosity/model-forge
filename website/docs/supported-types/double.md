@@ -6,7 +6,7 @@ sidebar_position: 6
 
 The `double` provider generates a random double value between two doubles.
 
-### Default Behavoir
+### Default Behavior
 
 Between `4.9E-324` and `1.7976931348623157E308`
 

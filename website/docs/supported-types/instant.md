@@ -6,7 +6,7 @@ sidebar_position: 11
 
 The `instant` provider generates a random instant between two `timestamps`.
 
-### Default Behavoir
+### Default Behavior
 From `529714800000L` until `1617141600000L`
 
 ### Extending the Provider

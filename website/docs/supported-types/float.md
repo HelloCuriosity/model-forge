@@ -6,7 +6,7 @@ sidebar_position: 9
 
 The `float` provider generates a random float value between two doubles.
 
-### Default Behavoir
+### Default Behavior
 
 Between `1.4E-45F` and `3.4028235E38F`
 

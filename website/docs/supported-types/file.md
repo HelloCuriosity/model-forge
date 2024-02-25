@@ -6,7 +6,7 @@ sidebar_position: 8
 
 The `file` provider generates a file with a random name from the `StringProvider`.
 
-### Default Behavoir
+### Default Behavior
 
 See [string](string.md).
 

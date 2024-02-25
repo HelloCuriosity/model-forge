@@ -6,7 +6,7 @@ sidebar_position: 16
 
 The `UInt` provider generates a random UInt value between two unsigned integers.
 
-### Default Behavoir
+### Default Behavior
 
 Between <code>0</code> and <code>4,294,967,295 (2<sup>32 - 1</sup>)</code>
 
