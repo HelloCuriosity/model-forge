@@ -6,7 +6,7 @@ sidebar_position: 12
 
 The `long` provider generates a random long value between two longs.
 
-### Default Behavoir
+### Default Behavior
 Between `-9223372036854775807L - 1L` and `9223372036854775807L`
 
 ### Extending the Provider

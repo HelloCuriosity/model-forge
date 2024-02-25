@@ -6,7 +6,7 @@ sidebar_position: 3
 
 The `calendar` provider generates a random calendar instance between two `timestamps`.
 
-### Default Behavoir
+### Default Behavior
 From `529714800000L` until `1617141600000L`
 
 ### Extending the Provider

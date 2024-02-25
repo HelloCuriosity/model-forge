@@ -6,7 +6,7 @@ sidebar_position: 10
 
 The `int` provider generates a random int value between two integers.
 
-### Default Behavoir
+### Default Behavior
 Between `-2147483648` and `2147483647`
 
 ### Extending the Provider

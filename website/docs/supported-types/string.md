@@ -6,7 +6,7 @@ sidebar_position: 14
 
 The `string` provider generate a random string.
 
-### Default Behavoir
+### Default Behavior
 
 `1` word
 

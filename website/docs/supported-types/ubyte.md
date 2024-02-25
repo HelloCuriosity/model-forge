@@ -6,7 +6,7 @@ sidebar_position: 15
 
 The `UByte` provider generates a random UByte value between two unsigned integers.
 
-### Default Behavoir
+### Default Behavior
 
 Between `0` and `255`
 

@@ -6,7 +6,7 @@ sidebar_position: 2
 
 The `byte` provider generates a random byte value between two integers.
 
-### Default Behavoir
+### Default Behavior
 Between `-128` and `127`
 
 ### Extending the Provider

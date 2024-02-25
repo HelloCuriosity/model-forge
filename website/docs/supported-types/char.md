@@ -6,7 +6,7 @@ sidebar_position: 4
 
 The `char` provider generates a random character from a list of chars.
 
-### Default Behavoir
+### Default Behavior
 
 From `('a'..'z') + ('A'..'Z') + ('0'..'9')`
 
