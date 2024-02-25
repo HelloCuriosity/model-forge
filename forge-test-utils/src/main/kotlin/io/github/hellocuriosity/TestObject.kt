@@ -54,6 +54,8 @@ data class TestObject(
     val uIntOptional: UInt?,
     val uLongValue: ULong,
     val uLongOptional: ULong?,
+    val uShortValue: UShort,
+    val uShortOptional: UShort?,
     val uuidValue: UUID,
     val uuidOptional: UUID?,
 )
@@ -171,6 +173,9 @@ fun TestObject.assert() {
     assertULong(uLongValue)
     assertNotNull(uLongOptional)
     assertULong(uLongOptional)
+    assertUShort(uShortValue)
+    assertNotNull(uShortOptional)
+    assertUShort(uShortOptional)
     assertNotNull(uuidValue)
     assertUUID(uuidValue)
     assertNotNull(uuidOptional)
