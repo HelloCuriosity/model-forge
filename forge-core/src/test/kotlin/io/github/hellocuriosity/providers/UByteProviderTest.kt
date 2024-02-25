@@ -31,7 +31,7 @@ class UByteProviderTest {
         assertTrue(uByte in min until max)
     }
 
-    @org.junit.Test
+    @Test
     fun testGetProviderCalled() {
         every { provider.get() } returns 15u
 
