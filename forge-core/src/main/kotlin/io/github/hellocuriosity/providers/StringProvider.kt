@@ -19,11 +19,10 @@ class StringProvider(
         const val DEFAULT_VALUE = 1
     }
 
-    override fun get(): String {
-        return when {
+    override fun get(): String =
+        when {
             wordCount < 0 -> throw ModelForgeException("Cannot generate string of $wordCount words")
             wordCount == 0 -> ""
             else -> lorem.getWords(wordCount)
         }
-    }
 }

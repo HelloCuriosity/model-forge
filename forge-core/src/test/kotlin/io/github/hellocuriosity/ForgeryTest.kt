@@ -71,9 +71,13 @@ class ForgeryTest {
 
     @Test
     fun testForgeryWithProvider() {
-        data class FancyObject(val retrieveMe: String = "wrong it")
+        data class FancyObject(
+            val retrieveMe: String = "wrong it",
+        )
 
-        class FancyHolder(val value: FancyObject)
+        class FancyHolder(
+            val value: FancyObject,
+        )
 
         val forger =
             ModelForge().apply {
@@ -113,6 +117,7 @@ class ForgeryTest {
  * Find the enum case or null when not found.
  * The receiver is the predicate. This allows for `Enum::value.safeFindEnumCase("value")` on an Enum(val value: String)
  */
-private inline fun <reified T : Enum<T>, V> ((T) -> V).safeFindEnumCase(value: V): T? {
-    return enumValues<T>().firstOrNull { this(it) == value }
-}
+private inline fun <reified T : Enum<T>, V> ((T) -> V).safeFindEnumCase(value: V): T? =
+    enumValues<T>().firstOrNull {
+        this(it) == value
+    }

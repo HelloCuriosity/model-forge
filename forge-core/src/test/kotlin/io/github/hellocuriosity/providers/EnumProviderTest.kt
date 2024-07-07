@@ -21,7 +21,10 @@ import kotlin.test.assertEquals
 )
 class EnumProviderTest {
     @RunWith(Parameterized::class)
-    open class TestEnums(private val expected: TestEnum, private val mock: Int) {
+    open class TestEnums(
+        private val expected: TestEnum,
+        private val mock: Int,
+    ) {
         companion object {
             @JvmStatic
             @Parameterized.Parameters
