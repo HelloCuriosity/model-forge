@@ -114,9 +114,9 @@ open class ModelForge {
         val value = type.actualTypeArguments[1] as Class<*>
 
         val map =
-            (0 until size).map {
+            (0 until size).associate {
                 build(key) to build(value)
-            }.toMap()
+            }
 
         return map
     }
