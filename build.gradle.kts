@@ -52,16 +52,3 @@ tasks.withType<DetektCreateBaselineTask>().configureEach {
 dependencies {
     kover(project(":forge-core"))
 }
-
-koverReport {
-    defaults {
-        xml {
-            onCheck = false
-            setReportFile(layout.buildDirectory.file("$buildDir/reports/kover/result.xml"))
-        }
-        html {
-            onCheck = false
-            setReportDir(layout.buildDirectory.dir("$buildDir/reports/kover/html-result"))
-        }
-    }
-}
