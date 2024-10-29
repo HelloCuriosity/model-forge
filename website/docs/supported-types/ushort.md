@@ -2,7 +2,7 @@
 sidebar_position: 18
 ---
 
-# UShort (Snapshot)
+# UShort
 
 The `UShort` provider generates a random UShort value between two unsigned integers.
 

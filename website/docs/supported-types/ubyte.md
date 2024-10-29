@@ -2,7 +2,7 @@
 sidebar_position: 15
 ---
 
-# UByte (Snapshot)
+# UByte
 
 The `UByte` provider generates a random UByte value between two unsigned integers.
 
