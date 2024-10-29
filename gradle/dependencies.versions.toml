@@ -2,7 +2,7 @@
 javax = "1"
 objenesis = "3.4"
 lorem = "2.2"
-jupiter = "5.11.2"
+jupiter = "5.11.3"
 mockk = "1.13.13"
 kotlin = "1.9.22"
 kotlinter = "4.4.1"
