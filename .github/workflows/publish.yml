@@ -23,7 +23,7 @@ jobs:
     needs: cancel-previous
     env:
       SONATYPE_USER: ${{ secrets.SONATYPE_USER }}
-      SONATYPE_PWD: ${{ secrets.SONATYPE_PWD }}
+      SONATYPE_TOKEN: ${{ secrets.SONATYPE_TOKEN }}
       SIGNING_KEY: ${{ secrets.SIGNING_KEY }}
       SIGNING_PWD: ${{ secrets.SIGNING_PWD }}
     steps:
