@@ -53,7 +53,7 @@ publishing {
 
             credentials {
                 username = System.getenv("SONATYPE_USER")
-                password = System.getenv("SONATYPE_PWD")
+                password = System.getenv("SONATYPE_TOKEN")
             }
         }
     }
