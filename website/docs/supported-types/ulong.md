@@ -2,7 +2,7 @@
 sidebar_position: 17
 ---
 
-# ULong (Snapshot)
+# ULong
 
 The `ULong` provider generates a random ULong value between two unsigned longs.
 

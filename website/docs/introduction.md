@@ -23,10 +23,10 @@ supports the auto generation for the following types:
 * Long
 * Short
 * String
-* UByte (snapshot)
-* UInt (snapshot)
-* ULong (snapshot)
-* UShort (snapshot)
+* UByte
+* UInt
+* ULong
+* UShort
 * UUID
 
 #### Collections

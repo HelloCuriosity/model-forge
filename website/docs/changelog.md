@@ -4,6 +4,15 @@ sidebar_position: 4
 
 # Changelog
 
+## [1.5.0] - October 31st 2024
+
+* Auto generation for additional types:
+    * UByte
+    * UInt
+    * ULong
+    * UShort
+* Dependency updates
+
 ## [1.4.0] - February 19th 2024
 
 * Support Kotlin version 1.9.22

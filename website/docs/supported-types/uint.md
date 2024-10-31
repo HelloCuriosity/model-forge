@@ -2,7 +2,7 @@
 sidebar_position: 16
 ---
 
-# UInt (Snapshot)
+# UInt
 
 The `UInt` provider generates a random UInt value between two unsigned integers.
 
