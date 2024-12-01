@@ -16,6 +16,10 @@ coverage:
 	./gradlew koverHtmlReport koverXmlReport ${GRADLE_ARGS}
 .PHONY: coverage
 
+docs:
+	./gradlew dokkaHtml
+.PHONY: docs
+
 format:
 	./gradlew formatKotlin
 .PHONY: format

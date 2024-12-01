@@ -11,6 +11,9 @@ plugins {
 
     // Publishing
     alias(libs.plugins.vanniktech)
+
+    // Documentation
+    alias(libs.plugins.dokka)
 }
 
 repositories {
@@ -42,7 +45,7 @@ mavenPublishing {
 
     configure(
         KotlinJvm(
-            javadocJar = JavadocJar.Javadoc(),
+            javadocJar = JavadocJar.Dokka("dokkaHtml"),
             sourcesJar = true,
         )
     )
