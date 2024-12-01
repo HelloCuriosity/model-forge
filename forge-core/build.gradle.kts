@@ -11,6 +11,9 @@ plugins {
 
     // Publishing
     alias(libs.plugins.vanniktech)
+
+    // Documentation
+    alias(libs.plugins.dokka)
 }
 
 repositories {

@@ -1,4 +1,5 @@
 [versions]
+dokka = "1.9.20"
 javax = "1"
 objenesis = "3.4"
 lorem = "2.2"
@@ -21,6 +22,7 @@ mockK = { module = "io.mockk:mockk", version.ref = "mockk" }
 
 [plugins]
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 kotlinter = { id = "org.jmailen.kotlinter", version.ref = "kotlinter" }
 kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
 vanniktech = { id = "com.vanniktech.maven.publish", version.ref = "vanniktech" }
