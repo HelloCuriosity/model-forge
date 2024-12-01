@@ -19,4 +19,4 @@ else
 fi
 
 # Publish
-"${REPO_DIR}"/gradlew build publish
+"${REPO_DIR}"/gradlew publishToMavenCentral --no-configuration-cache
