@@ -23,7 +23,7 @@ jobs:
     needs: cancel-previous
     strategy:
       matrix:
-        java: [ '8','11','17' ]
+        java: [ '11','17' ]
     name: Test with Java ${{ matrix.java }}
     steps:
       - name: Checkout
