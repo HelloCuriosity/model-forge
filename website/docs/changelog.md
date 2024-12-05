@@ -4,6 +4,10 @@ sidebar_position: 4
 
 # Changelog
 
+## [1.5.1] - December 5th 2024
+
+* Re-enable support for java 17
+
 ## [1.5.0] - October 31st 2024
 
 * Auto generation for additional types:
