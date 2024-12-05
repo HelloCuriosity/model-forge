@@ -6,6 +6,7 @@ sidebar_position: 4
 
 ## [1.5.1] - December 5th 2024
 
+* Support Kotlin version 2.0.0
 * Re-enable support for java 17
 
 ## [1.5.0] - October 31st 2024
