@@ -25,7 +25,7 @@ Model Forge is a library to automate model generation for automated testing:
 
 ```kotlin
 dependencies {
-    testImplementation("io.github.hellocuriosity:model-forge:1.5.0")
+    testImplementation("io.github.hellocuriosity:model-forge:1.5.1")
 }
 ```
 
@@ -36,7 +36,7 @@ dependencies {
 
 ```groovy
 dependencies {
-    testImplementation 'io.github.hellocuriosity:model-forge:1.5.0'
+    testImplementation 'io.github.hellocuriosity:model-forge:1.5.1'
 }
 ```
 
@@ -55,7 +55,7 @@ repositories {
 }
 
 dependencies {
-    testImplementation("io.github.hellocuriosity:model-forge:1.5.0.xx-SNAPSHOT")
+    testImplementation("io.github.hellocuriosity:model-forge:1.5.1.xx-SNAPSHOT")
 }
 ```
 
@@ -70,7 +70,7 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'io.github.hellocuriosity:model-forge:1.5.0.xx-SNAPSHOT'
+    testImplementation 'io.github.hellocuriosity:model-forge:1.5.1.xx-SNAPSHOT'
 }
 ```
 
