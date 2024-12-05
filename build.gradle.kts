@@ -7,7 +7,12 @@ allprojects {
     group = "io.github.hellocuriosity"
     version = System.getenv("VERSION") ?: "local"
 
+    apply(plugin = "org.jetbrains.kotlin.jvm")
     apply(plugin = "org.jetbrains.kotlinx.kover")
+
+    kotlin {
+        jvmToolchain(17)
+    }
 }
 
 plugins {
