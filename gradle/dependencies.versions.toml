@@ -1,14 +1,14 @@
 [versions]
-dokka = "1.9.20"
+dokka = "2.0.0"
 javax = "1"
 objenesis = "3.4"
 lorem = "2.2"
-jupiter = "5.11.3"
-mockk = "1.13.13"
+jupiter = "5.11.4"
+mockk = "1.13.14"
 kotlin = "2.0.0"
-kotlinter = "4.5.0"
+kotlinter = "5.0.1"
 detekt = "1.23.7"
-kover = "0.8.3"
+kover = "0.9.0"
 vanniktech = "0.30.0"
 
 [libraries]
