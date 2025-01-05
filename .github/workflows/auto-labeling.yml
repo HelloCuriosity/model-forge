@@ -10,33 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      PR_NUMBER: ${{ github.event.number }}
-      REPO: ${{ github.repository_owner }}/${{ github.event.repository.name }}
+    permissions:
+      pull-requests: write
     steps:
-      - name: Bug
-        if: ${{ contains(github.event.pull_request.title, 'Bug') || contains(github.event.pull_request.title, 'Fix') }}
-        run: gh pr edit $PR_NUMBER --add-label 'bug :bug:' -R $REPO
-      - name: CI/CD
-        if: ${{ contains(github.event.pull_request.title, 'CI/CD') }}
-        run: gh pr edit $PR_NUMBER --add-label 'CI/CD :cd:' -R $REPO
-      - name: Dependencies
-        if: ${{ contains(github.event.pull_request.title, 'Dependency') || contains(github.event.pull_request.title, 'Dependencies') }}
-        run: gh pr edit $PR_NUMBER --add-label 'dependencies' -R $REPO
-      - name: Documentation
-        if: ${{ contains(github.event.pull_request.title, 'Documentation') }}
-        run: gh pr edit $PR_NUMBER --add-label 'documentation :book:' -R $REPO
-      - name: Enhancement
-        if: ${{ contains(github.event.pull_request.title, 'Enhancement') }}
-        run: gh pr edit $PR_NUMBER --add-label 'enhancement :sparkles:' -R $REPO
-      - name: Feature
-        if: ${{ contains(github.event.pull_request.title, 'Feature') }}
-        run: gh pr edit $PR_NUMBER --add-label 'feature :moneybag:' -R $REPO
-      - name: Housekeeping
-        if: ${{ contains(github.event.pull_request.title, 'Housekeeping') || contains(github.event.pull_request.title, 'Refactoring') }}
-        run: gh pr edit $PR_NUMBER --add-label 'housekeeping :broom:' -R $REPO
-      - name: Release
-        if: ${{ contains(github.event.pull_request.title, 'Release') }}
-        run: gh pr edit $PR_NUMBER --add-label 'release :tada:' -R $REPO
-      - name: Testing
-        if: ${{ contains(github.event.pull_request.title, 'Testing') }}
-        run: gh pr edit $PR_NUMBER --add-label 'testing :test_tube:' -R $REPO
+      - name: Labeling
+        uses: hopeman15/auto-labeler@0.1.1
