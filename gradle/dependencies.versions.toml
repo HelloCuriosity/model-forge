@@ -9,7 +9,7 @@ kotlin = "2.0.0"
 kotlinter = "5.0.2"
 detekt = "1.23.8"
 kover = "0.9.1"
-vanniktech = "0.31.0"
+vanniktech = "0.32.0"
 
 [libraries]
 objenesis = { module = "org.objenesis:objenesis", version.ref = "objenesis" }
