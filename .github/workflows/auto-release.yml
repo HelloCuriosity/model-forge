@@ -25,7 +25,7 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.AUTO_RELEASE_PAT }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Major Version Bump
         if: ${{ contains(github.event.*.labels.*.name, 'major :1st_place_medal:') }}
         run: make version BUMP=major
