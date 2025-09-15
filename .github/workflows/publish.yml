@@ -2,6 +2,8 @@ name: Publishing
 
 on:
   push:
+    branches:
+      - main
     tags:
       - '*'
 
