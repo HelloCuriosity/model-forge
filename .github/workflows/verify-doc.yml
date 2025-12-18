@@ -16,7 +16,7 @@ jobs:
         file: [ 'website/docs/changelog.md','README.md' ]
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Major
         if: ${{ contains(github.event.*.labels.*.name, 'major :1st_place_medal:') }}
         run: make verify-doc BUMP=major FILE=${{ matrix.file }}
