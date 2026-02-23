@@ -8,19 +8,11 @@ on:
     branches:
       - main
 
-jobs:
-  cancel-previous:
-    name: Cancel Previous
-    permissions:
-      contents: read
-      actions: write
-    runs-on: ubuntu-latest
-    steps:
-      - name: Cancel Previous Build
-        uses: styfle/cancel-workflow-action@0.13.0
-        with:
-          access_token: ${{ github.token }}
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
+jobs:
   build:
     name: Build
     permissions:
