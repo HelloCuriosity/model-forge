@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: [ '11','17' ]
+        java: [ '17','19' ]
     steps:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java: [ '11','17' ]
+        java: [ '17','19' ]
     name: Test with Java ${{ matrix.java }}
     steps:
       - name: Checkout
@@ -71,5 +71,5 @@ jobs:
       - name: "Upload Coverage Report"
         uses: codecov/codecov-action@671740ac38dd9b0130fbe1cec585b89eea48d3de # v5.5.2
         with:
-          files: ./build/reports/kover/result.xml
+          files: ./build/reports/kover/report.xml
           token: ${{ secrets.CODECOV_TOKEN }}
