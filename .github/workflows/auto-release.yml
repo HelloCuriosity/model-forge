@@ -1,31 +1,30 @@
 name: Release ✈️
 
 on:
-  pull_request:
-    types: [ closed ]
+  push:
     branches:
       - main
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
+
+permissions:
+  contents: write
 
 jobs:
   create-release:
-    if: ${{ (github.event.pull_request.merged == true) && (contains(github.event.pull_request.labels.*.name, 'release :tada:')) }}
     name: Create Release
     runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.AUTO_RELEASE_PAT }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
-      - name: Major Version Bump
-        if: ${{ contains(github.event.*.labels.*.name, 'major :1st_place_medal:') }}
-        run: make version BUMP=major
-      - name: Minor Version Bump
-        if: ${{ contains(github.event.*.labels.*.name, 'minor :2nd_place_medal:') }}
-        run: make version BUMP=minor
-      - name: Patch Version Bump
-        if: ${{ contains(github.event.*.labels.*.name, 'patch :3rd_place_medal:') }}
-        run: make version BUMP=patch
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+      - name: Version Bump
+        uses: hopeman15/verselicious@ee7da8adfe74e4e24ded07450f564697c13ca3e3 # v0.1.0
+        with:
+          github_token: ${{ secrets.RELEASE_TOKEN }}
+          major_label: 'major :1st_place_medal:'
+          minor_label: 'minor :2nd_place_medal:'
+          patch_label: 'patch :3rd_place_medal:'
