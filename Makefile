@@ -1,7 +1,7 @@
 BUMP ?= patch
 FILE ?= empty
 
-all: clean format lint lint-docs test coverage build
+all: clean format lint lint-docs test coverage build docs
 .PHONY: all
 
 build:
@@ -17,7 +17,7 @@ coverage:
 .PHONY: coverage
 
 docs:
-	./gradlew dokkaHtml
+	./gradlew dokkaGenerateHtml
 .PHONY: docs
 
 format:
