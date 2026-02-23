@@ -44,10 +44,6 @@ verify-doc:
 	./scripts/verify-doc.sh ${BUMP} ${FILE}
 .PHONY: verify-doc
 
-version:
-	./scripts/create-release.sh ${BUMP}
-.PHONY: version
-
 # Website
 build-docs:
 	(cd website/ && yarn build)
