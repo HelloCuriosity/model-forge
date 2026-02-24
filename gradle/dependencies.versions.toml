@@ -1,7 +1,7 @@
 [versions]
 dokka = "2.1.0"
 javax = "1"
-objenesis = "3.4"
+objenesis = "3.5"
 lorem = "2.2"
 jupiter = "6.0.3"
 mockk = "1.14.6"
