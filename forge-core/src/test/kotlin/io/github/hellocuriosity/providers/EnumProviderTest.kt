@@ -30,9 +30,9 @@ class EnumProviderTest {
             @Parameterized.Parameters
             fun data() =
                 listOf(
-                    arrayOf(TestEnum.ONE, 0),
-                    arrayOf(TestEnum.TWO, 1),
-                    arrayOf(TestEnum.THREE, 2),
+                    arrayOf<Any>(TestEnum.ONE, 0),
+                    arrayOf<Any>(TestEnum.TWO, 1),
+                    arrayOf<Any>(TestEnum.THREE, 2),
                 )
         }
 
