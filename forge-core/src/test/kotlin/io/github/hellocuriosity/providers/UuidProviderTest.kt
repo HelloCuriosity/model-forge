@@ -9,10 +9,8 @@ class UuidProviderTest {
         val uuid = UuidProvider().get().toString()
         val groups = uuid.split("-")
 
-        /**
-         * UUIDs are displayed in five groups separated by hyphens,
-         * in the form 8-4-4-4-12 for a total of 36 characters
-         */
+        // UUIDs are displayed in five groups separated by hyphens,
+        // in the form 8-4-4-4-12 for a total of 36 characters
         assertEquals(36, uuid.length)
         assertEquals(5, groups.size)
         assertEquals(8, groups[0].length)

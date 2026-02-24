@@ -63,13 +63,23 @@ open class ModelForge {
                 clazz.eligibleFields().map { field ->
                     field.isAccessible = true
                     when (field.type) {
-                        List::class.java -> field.set(model, field.getValues())
-                        Map::class.java -> field.set(model, field.getValues())
-                        Set::class.java -> field.set(model, field.getValues())
-                        else ->
+                        List::class.java -> {
+                            field.set(model, field.getValues())
+                        }
+
+                        Map::class.java -> {
+                            field.set(model, field.getValues())
+                        }
+
+                        Set::class.java -> {
+                            field.set(model, field.getValues())
+                        }
+
+                        else -> {
                             realBuild(field.type)?.also {
                                 field.set(model, it)
                             }
+                        }
                     }
                 }
             }
