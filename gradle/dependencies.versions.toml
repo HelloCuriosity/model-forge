@@ -21,6 +21,7 @@ junitJupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "jupi
 mockK = { module = "io.mockk:mockk", version.ref = "mockk" }
 
 [plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 kotlinter = { id = "org.jmailen.kotlinter", version.ref = "kotlinter" }

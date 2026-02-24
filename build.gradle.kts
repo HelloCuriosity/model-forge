@@ -16,7 +16,7 @@ allprojects {
 }
 
 plugins {
-    kotlin("jvm") version libs.versions.kotlin.get()
+    alias(libs.plugins.kotlin.jvm)
 
     // Quality gate
     alias(libs.plugins.kotlinter)
