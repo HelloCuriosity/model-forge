@@ -8,7 +8,7 @@ mockk = "1.14.9"
 kotlin = "2.3.20"
 kotlinter = "5.4.2"
 detekt = "1.23.8"
-kover = "0.9.7"
+kover = "0.9.8"
 vanniktech = "0.36.0"
 
 [libraries]
