@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkwebsite=globalThis.webpackChunkwebsite||[]).push([[759],{581(e){e.exports=JSON.parse('{"metadata":{"permalink":"/model-forge/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":0,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
