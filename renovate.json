@@ -5,5 +5,15 @@
   ],
   "labels": [
     "dependencies"
+  ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "digest",
+        "minor",
+        "patch"
+      ],
+      "automerge": true
+    }
   ]
 }
