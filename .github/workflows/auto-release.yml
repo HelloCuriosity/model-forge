@@ -22,7 +22,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Version Bump
-        uses: hopeman15/verselicious@f8ee84fd6365de9521249f0023a388380473cc5e # v0.2.1
+        uses: hopeman15/verselicious@2919a1ce90601bfd54fed5107338c28c6975dc64 # v0.3.0
         with:
           github_token: ${{ secrets.RELEASE_TOKEN }}
           major_label: 'major :1st_place_medal:'
