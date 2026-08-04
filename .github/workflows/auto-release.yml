@@ -18,11 +18,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
       - name: Version Bump
-        uses: hopeman15/verselicious@f8ee84fd6365de9521249f0023a388380473cc5e # v0.2.1
+        uses: hopeman15/verselicious@2919a1ce90601bfd54fed5107338c28c6975dc64 # v0.3.0
         with:
           github_token: ${{ secrets.RELEASE_TOKEN }}
           major_label: 'major :1st_place_medal:'
