@@ -1,5 +1,5 @@
 [versions]
-dokka = "2.2.0"
+dokka = "2.3.0"
 javax = "1"
 objenesis = "3.6"
 lorem = "2.2"
